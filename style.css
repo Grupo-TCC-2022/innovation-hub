@@ -2,7 +2,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif, Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
 
@@ -22,6 +21,11 @@ html, body {
 
 .flex-container {
     display: flex;
+    box-shadow: 1px 2px var(--font-grey);
+}
+
+a {
+    box-shadow: none !important;
 }
 
 .page-header {
@@ -48,19 +52,22 @@ html, body {
 
 .body-content {
     width: 100%;
-    justify-content: space-between;
     padding: 20px 0px;
     height: 80%;
+    margin: 0px 0px 0px 0px;
+    max-width: none;
+    box-shadow: none !important;
 }
 
 .center-advertising {
     background-color: var(--soft-grey);
-    width: 500px;
-    height: 150px;
+    height: fit-content;
     padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin: 0 20px !important;
+    border-radius: 5px;
 }
 
 .center-advertising p {
@@ -77,9 +84,10 @@ html, body {
 
 .left-panel {
     background-color: var(--soft-grey);
-    width: 25%;
     height: 100%;
     padding: 10px;
+    overflow-y: auto;
+    border-radius: 5px;
 }
 
 .left-panel p {
@@ -91,14 +99,15 @@ html, body {
 
 .right-body-group {
     flex-direction: column;
-    width: 25%;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 .right-panel {
     background-color: var(--soft-grey);
-    width: 100%;
     height: 40%;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .right-panel-2 {
@@ -111,3 +120,42 @@ html, body {
 }
 
 /*-------------------------------*/
+
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+    .body-content {
+        flex-direction: column;
+        padding: 15px !important;
+    }
+
+    .left-panel {
+        width: 100% !important;
+        margin: 0 !important;
+        order: 1;
+        border-radius: 3px;
+    }
+
+    .center-advertising {
+        width: 100% !important;
+        margin: 0 !important;
+        order: 3;
+        display: table;
+        border-radius: 3px;
+    }
+
+    .right-body-group {
+        width: 100% !important;
+        margin: 0 !important;
+        order: 2;
+        height: 100%;
+    }
+
+    .right-panel {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 3px;
+    }
+
+    .mobile-column {
+        margin-top: 20px !important;
+    }
+}
