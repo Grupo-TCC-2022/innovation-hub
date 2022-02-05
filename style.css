@@ -106,6 +106,14 @@ a {
     border: none !important;
 }
 
+.collection-header {
+    color: var(--font-grey);
+}
+
+.collection-item:hover {
+    background-color: #ff0 !important;
+}
+
 /*----------------------------*/
 
 .right-body-group {
