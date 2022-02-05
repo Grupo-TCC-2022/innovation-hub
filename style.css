@@ -114,6 +114,10 @@ a {
     background-color: #ff0 !important;
 }
 
+.collection-item {
+    color: var(--font-grey);
+}
+
 /*----------------------------*/
 
 .right-body-group {
