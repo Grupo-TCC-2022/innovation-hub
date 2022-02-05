@@ -1,3 +1,4 @@
+/*Aqui estão os comandos para zera margin e padding, fontes, tirar sublinha de link e cores padrão*/
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +6,19 @@
     text-decoration: none;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --dark-grey: #68788C;
-    --soft-grey: #afbdce;
+    --soft-grey: #cfdae7;
     --font-grey: #31363d;
   }
 
-/*-----------------------------*/
+/*Aqui está o header, a parte superior de navegação do site*/
 
 .flex-container {
     display: flex;
@@ -23,7 +30,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 5px;
-    margin-bottom: 20px;
 }
 
 .brand-logo {
@@ -38,15 +44,23 @@
     width: 45px;
 }
 
-/*---------------------------------*/
+/*Corpo da home page*/
+
+.body-content {
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 0px;
+    height: 80%;
+}
 
 .center-advertising {
     background-color: var(--soft-grey);
     width: 500px;
     height: 150px;
-    margin: auto;
     padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .center-advertising p {
@@ -58,3 +72,42 @@
 .center-advertising a p:hover{
     color: var(--dark-grey);
 }
+
+/*-----------------------------*/
+
+.left-panel {
+    background-color: var(--soft-grey);
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+}
+
+.left-panel p {
+    color: var(--font-grey);
+    font-size: 1.2em;
+}
+
+/*----------------------------*/
+
+.right-body-group {
+    flex-direction: column;
+    width: 25%;
+}
+
+.right-panel {
+    background-color: var(--soft-grey);
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+}
+
+.right-panel-2 {
+    margin-top: 20px;
+}
+
+.right-panel p {
+    color: var(--font-grey);
+    font-size: 1.2em;
+}
+
+/*-------------------------------*/
