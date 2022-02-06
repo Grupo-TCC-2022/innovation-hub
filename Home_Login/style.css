@@ -28,10 +28,23 @@
     --primary: #F2E205;
     --secondary: #68788C;
     --font-color: #F2EEB3;
+    --blue: #3684b1;
 }
 
 .top-bar, .top-bar ul {
     background-color: var(--primary);
+}
+
+.top-bar-right .menu a {
+    padding: 0 5px !important;
+}
+
+#nav_bar_on_fire_icon {
+    padding-right: 0 !important;
+}
+
+#nav_bar_recycle_icon {
+    padding-right: 0 !important;
 }
 
 .title-bar {
@@ -61,6 +74,18 @@ body {
 
 .left-panel a {
     color: var(--font-color);
+}
+
+.left-panel .menu li {
+    transition: 0.3s;
+}
+
+.left-panel .menu li:hover {
+    background-color: var(--primary);
+}
+
+.left-panel .menu .menu:hover {
+    background-color: var(--blue);
 }
 
 /*Left panel*/
