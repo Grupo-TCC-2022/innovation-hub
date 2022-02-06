@@ -3,6 +3,25 @@
     #mobile-menu {
         flex-direction: column;
     }
+    .cell {
+        margin-top: 10px;
+    }
+    .body-content {
+        margin-top: 0px !important;
+        padding: 10px;
+    }
+
+    .left-panel {
+        order: 0;
+    }
+
+    .middle-promotion {
+        order: 2;
+    }
+
+    .right-group {
+        order: 1;
+    }
 }
 
 :root {
@@ -21,6 +40,10 @@
 
 .title-bar-title {
     color: var(--secondary);
+}
+
+body {
+    background-image: url("../assets/images/lamps-background.png");
 }
 /*Top nav bar*/
 
@@ -51,6 +74,7 @@
 
 .middle-promotion p {
     color: var(--font-color);
+    text-align: center;
 }
 
 /*Middle promotion*/
