@@ -24,6 +24,12 @@
     }
 }
 
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .cell {
+        margin-top: 10px;
+    }
+}
+
 :root {
     --primary: #F2E205;
     --secondary: #68788C;
@@ -80,12 +86,12 @@ body {
     transition: 0.3s;
 }
 
-.left-panel .menu li:hover {
+.left-panel .menu li:not(.nohover):hover {
     background-color: var(--primary);
 }
 
-.left-panel .menu .menu:hover {
-    background-color: var(--blue);
+.menu-text {
+    cursor: default;
 }
 
 /*Left panel*/
@@ -95,11 +101,17 @@ body {
     background-color: var(--secondary);
     padding: 10px;
     height: fit-content;
+    transition: 0.3s;
 }
 
 .middle-promotion p {
     color: var(--font-color);
     text-align: center;
+}
+
+.middle-promotion:hover {
+    cursor: pointer;
+    background-color: var(--blue);
 }
 
 /*Middle promotion*/
@@ -122,6 +134,14 @@ body {
 
 .right-group a {
     color: var(--font-color);
+}
+
+.right-group .menu li {
+    transition: 0.3s;
+}
+
+.right-group .menu li:not(.nohover):hover {
+    background-color: var(--primary);
 }
 
 /*Right group*/
