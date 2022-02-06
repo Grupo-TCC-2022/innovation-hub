@@ -1,0 +1,80 @@
+/*Top nav bar*/
+@media screen and (max-width: 39.9375em) {
+    #mobile-menu {
+        flex-direction: column;
+    }
+}
+
+:root {
+    --primary: #F2E205;
+    --secondary: #68788C;
+    --font-color: #F2EEB3;
+}
+
+.top-bar, .top-bar ul {
+    background-color: var(--primary);
+}
+
+.title-bar {
+    background-color: var(--primary);
+}
+
+.title-bar-title {
+    color: var(--secondary);
+}
+/*Top nav bar*/
+
+/*Body content*/
+
+.body-content {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/*Left panel*/
+.left-panel {
+    background-color: var(--secondary);
+}
+
+.left-panel a {
+    color: var(--font-color);
+}
+
+/*Left panel*/
+
+/*Middle promotion*/
+.middle-promotion {
+    background-color: var(--secondary);
+    padding: 10px;
+    height: fit-content;
+}
+
+.middle-promotion p {
+    color: var(--font-color);
+}
+
+/*Middle promotion*/
+
+/*Right group*/
+.recent-projects-panel {
+    height: fit-content;
+    background-color: var(--secondary);
+}
+
+.explore-panel {
+    height: fit-content;
+    background-color: var(--secondary);
+    margin-top: 10px;
+}
+
+.cell .menu-text {
+    color: var(--primary) !important;
+}
+
+.right-group a {
+    color: var(--font-color);
+}
+
+/*Right group*/
+
+/*Body content*/
