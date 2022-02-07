@@ -10,18 +10,6 @@
         margin-top: 0px !important;
         padding: 10px;
     }
-
-    .left-panel {
-        order: 0;
-    }
-
-    .middle-promotion {
-        order: 2;
-    }
-
-    .right-group {
-        order: 1;
-    }
 }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
@@ -69,7 +57,7 @@ body {
 /*Body content*/
 
 .body-content {
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -100,7 +88,7 @@ body {
 .middle-promotion {
     background-color: var(--secondary);
     padding: 10px;
-    height: fit-content;
+    height: fit-content !important;
     transition: 0.3s;
 }
 
@@ -116,34 +104,51 @@ body {
 
 /*Middle promotion*/
 
-/*Right group*/
-.recent-projects-panel {
-    height: fit-content;
+/*Ideas notes*/
+.recycle-idea {
+    background-color: var(--blue);
+    padding: 10px;
+    padding-bottom: 0 !important;
+}
+
+.recycle-idea-top p {
+    margin-bottom: 3px !important;
+}
+
+.recycle-idea-botton {
+    margin-top: 5px;
+}
+
+.recycle-idea-title {
+    background-color: var(--font-color);
+    width: max-content;
+    height: max-content;
+    padding: 0 5px;
+}
+
+.recycle-idea-type {
     background-color: var(--secondary);
+    width: max-content;
+    height: max-content;
+    padding: 0 5px;
 }
 
-.explore-panel {
-    height: fit-content;
-    background-color: var(--secondary);
-    margin-top: 10px;
-}
-
-.cell .menu-text {
-    color: var(--primary) !important;
-}
-
-.right-group a {
-    color: var(--font-color);
-}
-
-.right-group .menu li {
-    transition: 0.3s;
-}
-
-.right-group .menu li:not(.nohover):hover {
+.recycle-idea-description {
     background-color: var(--primary);
+    padding: 0 5px;
 }
 
-/*Right group*/
+.grid-margin-x {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media print, screen and (min-width: 40em) {
+    .grid-margin-x {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+/*Ideas notes*/
 
 /*Body content*/
