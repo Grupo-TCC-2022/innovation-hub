@@ -41,8 +41,8 @@
     background-color: var(--primary);
 }
 
-.top-bar-right .menu a {
-    padding: 0 5px !important;
+.top-bar-right .menu svg {
+    margin: 0 5px !important;
 }
 
 #nav_bar_on_fire_icon {
