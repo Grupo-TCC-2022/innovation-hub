@@ -1,0 +1,154 @@
+/*Top nav bar*/
+@media screen and (max-width: 39.9375em) {
+    #mobile-menu {
+        flex-direction: column;
+    }
+    .cell {
+        margin-top: 10px;
+    }
+    .body-content {
+        margin-top: 0px !important;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .cell {
+        margin-top: 10px;
+    }
+}
+
+:root {
+    --primary: #F2E205;
+    --secondary: #68788C;
+    --font-color: #F2EEB3;
+    --blue: #68c6e2;
+}
+
+.top-bar, .top-bar ul {
+    background-color: var(--primary);
+}
+
+.top-bar-right .menu a {
+    padding: 0 5px !important;
+}
+
+#nav_bar_on_fire_icon {
+    padding-right: 0 !important;
+}
+
+#nav_bar_recycle_icon {
+    padding-right: 0 !important;
+}
+
+.title-bar {
+    background-color: var(--primary);
+}
+
+.title-bar-title {
+    color: var(--secondary);
+}
+
+body {
+    background-image: url("../assets/images/lamps-background.png");
+}
+/*Top nav bar*/
+
+/*Body content*/
+
+.body-content {
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/*Left panel*/
+.left-panel {
+    background-color: var(--secondary);
+}
+
+.left-panel a {
+    color: var(--font-color);
+}
+
+.left-panel .menu li {
+    transition: 0.3s;
+}
+
+.left-panel .menu li:not(.nohover):hover {
+    background-color: var(--primary);
+}
+
+.menu-text {
+    cursor: default;
+}
+
+/*Left panel*/
+
+/*Middle promotion*/
+.middle-promotion {
+    background-color: var(--secondary);
+    padding: 10px;
+    height: fit-content !important;
+    transition: 0.3s;
+}
+
+.middle-promotion p {
+    color: var(--font-color);
+    text-align: center;
+}
+
+.middle-promotion:hover {
+    cursor: pointer;
+    background-color: var(--blue);
+}
+
+/*Middle promotion*/
+
+/*Ideas notes*/
+.recycle-idea {
+    background-color: var(--blue);
+    padding: 10px;
+    padding-bottom: 0 !important;
+}
+
+.recycle-idea-top p {
+    margin-bottom: 3px !important;
+}
+
+.recycle-idea-botton {
+    margin-top: 5px;
+}
+
+.recycle-idea-title {
+    background-color: var(--font-color);
+    width: max-content;
+    height: max-content;
+    padding: 0 5px;
+}
+
+.recycle-idea-type {
+    background-color: var(--secondary);
+    width: max-content;
+    height: max-content;
+    padding: 0 5px;
+}
+
+.recycle-idea-description {
+    background-color: var(--primary);
+    padding: 0 5px;
+}
+
+.grid-margin-x {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media print, screen and (min-width: 40em) {
+    .grid-margin-x {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+/*Ideas notes*/
+
+/*Body content*/
