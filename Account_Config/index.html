@@ -45,7 +45,7 @@
           <li>
             <a href="#"><i class="fas fa-user-circle"></i>Conta</a></button></a>
             <ul class="menu">
-              <li><a href="../Account_Config/index.html"><i class="fas fa-tools"></i>Configurações</a></li>
+              <li><a href="#"><i class="fas fa-tools"></i>Configurações</a></li>
               <li><a href="../Home_Page/index.html"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
               <!-- ... -->
             </ul>
@@ -96,13 +96,43 @@
         </div>
         <!--Left panel-->
 
-        <!--Middle promotion-->
+        <!--Middle promotion turned into a account settings-->
         <div class="cell small-12 large-5 middle-promotion">
-            <p>
-                Assine o PLUS e tenha a possibilidade de exportar arquivos UML prontos dentro das normas padrões a partir da alimentação de dados feita ao longo do percurso
-            </p>
+            <form>
+                <div class="grid-container">
+                  <div class="grid-y">
+                    <div class="medium-6 cell">
+                      <label>E-mail
+                        <input type="email" placeholder="emailantigo@gmail.com">
+                      </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Nome completo
+                          <input type="text" placeholder="Reginaldo Antônio de Jesus">
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Apelido
+                          <input type="text" placeholder="Apelido">
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Nova senha
+                          <input type="password" placeholder="Nova senha">
+                        </label>
+                    </div>
+                    <div class="medium-6 cell">
+                        <label>Repita a nova senha
+                          <input type="password" placeholder="Repita a nova senha">
+                        </label>
+                    </div>
+                    <label for="signin-submite-btn" class="button">Salvar</label>
+                    <input type="submit" id="signin-submite-btn" class="show-for-sr">
+                  </div>
+                </div>
+              </form>
         </div>
-        <!--Middle promotion-->
+        <!--Middle promotion turned into a account settings-->
 
         <!--Right group-->
         <div class="cell small-12 large-3 right-group grid-y">
