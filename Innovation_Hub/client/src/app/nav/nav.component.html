@@ -42,20 +42,25 @@
       <button
         class="btn btn-secondary my-2 my-sm-0 mx-2"
         type="button"
-        (click)="openModal(template)"
+        (click)="openModal(signupmodal)"
       >
         Cadastrar
       </button>
-      <button class="btn btn-primary my-2 my-sm-0 mx-2" type="button">
+      <button
+        class="btn btn-primary my-2 my-sm-0 mx-2"
+        type="button"
+        (click)="openModal(loginmodal)"
+      >
         Entrar
       </button>
     </div>
   </div>
 </nav>
 
-<ng-template #template>
+<!--Signup Modal-->
+<ng-template #signupmodal>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
+    <h4 class="modal-title pull-left">Cadastro</h4>
     <button
       type="button"
       class="btn-close close pull-right"
@@ -65,5 +70,100 @@
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>
-  <div class="modal-body">This is a modal.</div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">E-mail</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Apelido</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="usernameHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Repita a senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button
+        type="button"
+        class="btn btn-secondary ml-2"
+        (click)="modalRef?.hide()"
+      >
+        Fechar
+      </button>
+    </form>
+    <a href="#" (click)="modalRef?.hide()" (click)="openModal(loginmodal)"
+      >Já possui uma conta? Clique para fazer login!</a
+    >
+  </div>
+</ng-template>
+
+<!--Login Modal-->
+<ng-template #loginmodal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Entrar</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">E-mail ou apelido</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button
+        type="button"
+        class="btn btn-secondary ml-2"
+        (click)="modalRef?.hide()"
+      >
+        Fechar
+      </button>
+    </form>
+    <a href="#" (click)="modalRef?.hide()" (click)="openModal(signupmodal)"
+      >Não possui cadastro? Clique para fazer cadastro!</a
+    >
+  </div>
 </ng-template>
