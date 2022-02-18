@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
         <li class="nav-item active">
           <a class="nav-link" href="#"
             >Em Alta <span class="sr-only">(current)</span></a
@@ -39,20 +39,31 @@
             </button>
           </form>
       -->
-      <button
-        class="btn btn-secondary my-2 my-sm-0 mx-2"
-        type="button"
-        (click)="openModal(signupmodal)"
-      >
-        Cadastrar
-      </button>
-      <button
-        class="btn btn-primary my-2 my-sm-0 mx-2"
-        type="button"
-        (click)="openModal(loginmodal)"
-      >
-        Entrar
-      </button>
+      <div class="dropdown" *ngIf="loggedIn" dropdown>
+        <a class="dropdown-toggle text-light" dropdownToggle>Bem Vindo</a>
+        <div class="dropdown-menu mt-2" *dropdownMenu>
+          <a class="dropdown-item">Conta</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()">Sair</a>
+        </div>
+      </div>
+
+      <div class="navbar-nav ml-auto" *ngIf="!loggedIn">
+        <button
+          class="btn btn-secondary my-2 my-sm-0 mx-2"
+          type="button"
+          (click)="openModal(signupmodal)"
+        >
+          Cadastrar
+        </button>
+        <button
+          class="btn btn-primary my-2 my-sm-0 mx-2"
+          type="button"
+          (click)="openModal(loginmodal)"
+        >
+          Entrar
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -115,7 +126,10 @@
         Fechar
       </button>
     </form>
-    <a href="#" (click)="modalRef?.hide()" (click)="openModal(loginmodal)"
+    <a
+      class="already-account"
+      (click)="modalRef?.hide()"
+      (click)="openModal(loginmodal)"
       >Já possui uma conta? Clique para fazer login!</a
     >
   </div>
@@ -157,7 +171,9 @@
           [(ngModel)]="model.password"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button type="submit" class="btn btn-primary" (click)="modalRef?.hide()">
+        Entrar
+      </button>
       <button
         type="button"
         class="btn btn-secondary ml-2"
@@ -166,7 +182,10 @@
         Fechar
       </button>
     </form>
-    <a href="#" (click)="modalRef?.hide()" (click)="openModal(signupmodal)"
+    <a
+      class="no-account"
+      (click)="modalRef?.hide()"
+      (click)="openModal(signupmodal)"
       >Não possui cadastro? Clique para fazer cadastro!</a
     >
   </div>
