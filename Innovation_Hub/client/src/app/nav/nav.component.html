@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Innovation Hub</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"
+            >Em Alta <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projetos Arquivados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ideias Abandonadas</a>
+        </li>
+      </ul>
+      <!--
+          <form class="form-inline mt-2 mt-md-0">
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+      -->
+      <button
+        class="btn btn-secondary my-2 my-sm-0 mx-2"
+        type="button"
+        (click)="openModal(template)"
+      >
+        Cadastrar
+      </button>
+      <button class="btn btn-primary my-2 my-sm-0 mx-2" type="button">
+        Entrar
+      </button>
+    </div>
+  </div>
+</nav>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">This is a modal.</div>
+</ng-template>
