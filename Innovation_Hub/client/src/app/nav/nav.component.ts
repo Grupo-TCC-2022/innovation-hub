@@ -1,5 +1,7 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Observable } from 'rxjs';
+import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
  
 @Component({
@@ -8,12 +10,14 @@ import { AccountService } from '../_services/account.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
   modalRef?: BsModalRef;
-  constructor(private modalService: BsModalService, private accountService: AccountService) {}
+  constructor(private modalService: BsModalService, public accountService: AccountService) {}
+
+  ngOnInit(): void {
+  }
 
   model: any = {}
-  loggedIn: boolean;
  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
@@ -22,13 +26,12 @@ export class NavComponent {
   login() {
     this.accountService.login(this.model).subscribe(response => {
       console.log(response);
-      this.loggedIn = true;
     }, error => {
       console.log(error);
     });
   }
 
   logout() {
-    this.loggedIn = false;
+    this.accountService.logout();
   }
 }

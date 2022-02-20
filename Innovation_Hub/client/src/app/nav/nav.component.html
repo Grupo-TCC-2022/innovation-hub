@@ -13,7 +13,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
+      <ul class="navbar-nav mr-auto" *ngIf="accountService.currenUser$ | async">
         <li class="nav-item active">
           <a class="nav-link" href="#"
             >Em Alta <span class="sr-only">(current)</span></a
@@ -39,7 +39,7 @@
             </button>
           </form>
       -->
-      <div class="dropdown" *ngIf="loggedIn" dropdown>
+      <div class="dropdown" *ngIf="accountService.currenUser$ | async" dropdown>
         <a class="dropdown-toggle text-light" dropdownToggle>Bem Vindo</a>
         <div class="dropdown-menu mt-2" *dropdownMenu>
           <a class="dropdown-item">Conta</a>
@@ -48,7 +48,10 @@
         </div>
       </div>
 
-      <div class="navbar-nav ml-auto" *ngIf="!loggedIn">
+      <div
+        class="navbar-nav ml-auto"
+        *ngIf="(accountService.currenUser$ | async) === null"
+      >
         <button
           class="btn btn-secondary my-2 my-sm-0 mx-2"
           type="button"
