@@ -11,7 +11,7 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  modalRef?: BsModalRef;
+  public modalRef?: BsModalRef;
   constructor(private modalService: BsModalService, public accountService: AccountService) {}
 
   ngOnInit(): void {
@@ -23,8 +23,16 @@ export class NavComponent implements OnInit {
     this.modalRef = this.modalService.show(template);
   }
 
+  register() {
+    this.accountService.register(this.model, this).subscribe(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    });
+  }
+
   login() {
-    this.accountService.login(this.model).subscribe(response => {
+    this.accountService.login(this.model, this).subscribe(response => {
       console.log(response);
     }, error => {
       console.log(error);
