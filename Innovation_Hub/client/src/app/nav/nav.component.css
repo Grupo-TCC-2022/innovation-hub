@@ -7,3 +7,39 @@
 .no-account {
   cursor: pointer;
 }
+
+.nav-bg {
+  background-color: #f2f2f2 !important;
+}
+
+.app-border {
+  border: 2px solid #a6a6a6 !important;
+}
+
+.app-border-bottom {
+  border-bottom: 2px solid #a6a6a6 !important;
+}
+
+.color-primary {
+  color: #f29f05 !important;
+}
+
+.color-secondary {
+  color: #a6a6a6 !important;
+}
+
+.font-size-logo {
+  font-size: 1.4em !important;
+}
+
+.font-size-button {
+  font-size: 1em !important;
+}
+
+.font-size-small {
+  font-size: 1.2em !important;
+}
+
+.app-buttom:hover {
+  background-color: #f29f05 !important;
+}

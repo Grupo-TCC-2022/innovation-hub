@@ -1,6 +1,12 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav
+  class="navbar navbar-expand-md navbar-dark fixed-top app-border-bottom nav-bg"
+>
   <div class="container">
-    <a class="navbar-brand" href="#">Innovation Hub</a>
+    <a
+      class="navbar-brand font-weight-bold color-primary font-size-logo"
+      href="#"
+      >Innovation Hub</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -15,15 +21,11 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto" *ngIf="accountService.currenUser$ | async">
         <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Em Alta <span class="sr-only">(current)</span></a
+          <a
+            class="nav-link color-secondary font-weight-bold font-size-button"
+            href="#"
+            >Início <span class="sr-only">(current)</span></a
           >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Projetos Arquivados</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Ideias Abandonadas</a>
         </li>
       </ul>
       <!--
@@ -40,11 +42,22 @@
           </form>
       -->
       <div class="dropdown" *ngIf="accountService.currenUser$ | async" dropdown>
-        <a class="dropdown-toggle text-light" dropdownToggle>Bem Vindo</a>
+        <a
+          class="dropdown-toggle text-light color-secondary font-size-button font-weight-bold"
+          dropdownToggle
+          >Bem Vindo</a
+        >
         <div class="dropdown-menu mt-2" *dropdownMenu>
-          <a class="dropdown-item">Conta</a>
+          <a
+            class="dropdown-item color-secondary font-size-button font-weight-bold"
+            >Conta</a
+          >
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="logout()">Sair</a>
+          <a
+            class="dropdown-item color-secondary font-size-button font-weight-bold"
+            (click)="logout()"
+            >Sair</a
+          >
         </div>
       </div>
 
@@ -53,14 +66,14 @@
         *ngIf="(accountService.currenUser$ | async) === null"
       >
         <button
-          class="btn btn-secondary my-2 my-sm-0 mx-2"
+          class="btn btn-secondary my-2 my-sm-0 mx-2 bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
           type="button"
           (click)="openModal(signupmodal)"
         >
           Cadastrar
         </button>
         <button
-          class="btn btn-primary my-2 my-sm-0 mx-2"
+          class="btn btn-primary my-2 my-sm-0 mx-2 bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
           type="button"
           (click)="openModal(loginmodal)"
         >
@@ -74,7 +87,7 @@
 <!--Signup Modal-->
 <ng-template #signupmodal>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Cadastro</h4>
+    <h4 class="modal-title pull-left color-primary">Cadastro</h4>
     <button
       type="button"
       class="btn-close close pull-right"
@@ -84,13 +97,13 @@
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body color-primary">
     <form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
       <div class="form-group">
-        <label for="exampleInputEmail1">E-mail</label>
+        <label class="font-size-small" for="exampleInputEmail1">E-mail</label>
         <input
           type="email"
-          class="form-control"
+          class="form-control app-border"
           aria-describedby="emailHelp"
           name="email"
           [(ngModel)]="model.email"
@@ -98,10 +111,10 @@
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Apelido</label>
+        <label class="font-size-small" for="exampleInputEmail1">Apelido</label>
         <input
           type="text"
-          class="form-control"
+          class="form-control app-border"
           aria-describedby="usernameHelp"
           name="username"
           [(ngModel)]="model.username"
@@ -109,36 +122,43 @@
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Senha</label>
+        <label class="font-size-small" for="exampleInputPassword1">Senha</label>
         <input
           type="password"
-          class="form-control"
+          class="form-control app-border"
           name="password"
           [(ngModel)]="model.password"
           placeholder="Senha"
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Repita a senha</label>
+        <label class="font-size-small" for="exampleInputPassword1"
+          >Repita a senha</label
+        >
         <input
           type="password"
-          class="form-control"
+          class="form-control app-border"
           name="confirmpassword"
           [(ngModel)]="model.confirmpassword"
           placeholder="Repita a senha"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <button
+        type="submit"
+        class="btn btn-primary bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
+      >
+        Cadastrar
+      </button>
       <button
         type="button"
-        class="btn btn-secondary ml-2"
+        class="btn btn-secondary ml-2 bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
         (click)="modalRef?.hide()"
       >
         Fechar
       </button>
     </form>
     <a
-      class="already-account"
+      class="already-account color-primary"
       (click)="modalRef?.hide()"
       (click)="openModal(loginmodal)"
       >Já possui uma conta? Clique para fazer login!</a
@@ -149,7 +169,7 @@
 <!--Login Modal-->
 <ng-template #loginmodal>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Entrar</h4>
+    <h4 class="modal-title pull-left color-primary">Entrar</h4>
     <button
       type="button"
       class="btn-close close pull-right"
@@ -159,40 +179,49 @@
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body color-primary">
     <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
       <div class="form-group">
-        <label for="exampleInputEmail1">E-mail ou apelido</label>
+        <label class="font-size-small" for="exampleInputEmail1"
+          >E-mail ou apelido</label
+        >
         <input
           type="text"
-          class="form-control"
+          class="form-control app-border"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           name="emailorusername"
+          placeholder="E-mail ou apelido"
           [(ngModel)]="model.emailorusername"
         />
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Senha</label>
+        <label class="font-size-small" for="exampleInputPassword1">Senha</label>
         <input
           type="password"
-          class="form-control"
+          class="form-control app-border"
           id="exampleInputPassword1"
           name="password"
+          placeholder="Senha"
           [(ngModel)]="model.password"
         />
       </div>
-      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button
+        type="submit"
+        class="btn btn-primary btn btn-secondary bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
+      >
+        Entrar
+      </button>
       <button
         type="button"
-        class="btn btn-secondary ml-2"
+        class="btn btn-secondary ml-2 bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
         (click)="modalRef?.hide()"
       >
         Fechar
       </button>
     </form>
     <a
-      class="no-account"
+      class="no-account color-primary"
       (click)="modalRef?.hide()"
       (click)="openModal(signupmodal)"
       >Não possui cadastro? Clique para fazer cadastro!</a

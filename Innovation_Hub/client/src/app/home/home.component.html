@@ -1,1 +1,292 @@
-<div class="container mt-5"></div>
+<div class="home-bg">
+  <div
+    class="card container color-primary card-bg app-border"
+    style="max-width: 60rem; border-radius: 10px"
+  >
+    <div class="card-body">
+      <h1 class="card-title">
+        Bem vindo, comece já a descobrir e compartilhar ideias.
+      </h1>
+      <h3 class="card-text mt-4">O que você quer descobrir hoje?</h3>
+      <form>
+        <div class="form-group search-form">
+          <input
+            type="text"
+            class="form-control app-border color-secondary"
+            aria-describedby="emailHelp"
+            placeholder="Pesquisar..."
+            style="max-width: fit-content"
+          />
+          <button
+            type="submit"
+            class="btn app-border color-secondary font-weight-bold app-buttom"
+            style="margin-left: 10px"
+          >
+            Pesquisar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div
+  class="container pt-3 pb-5 app-border-bottom"
+  *ngIf="accountService.currenUser$ | async"
+>
+  <div>
+    <div class="row" style="align-items: center">
+      <h4 class="color-secondary" style="text-align: center">
+        Equipes em que participo
+      </h4>
+      <button
+        class="btn btn-primary my-2 my-sm-0 mx-2 bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
+        type="button"
+      >
+        Criar Equipe
+      </button>
+    </div>
+    <div class="row flex-nowrap teams-container">
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Equipe TCC da facul
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4">
+    <div class="row">
+      <h4 class="color-secondary">Projetos em desenvolvimento</h4>
+    </div>
+    <div class="row flex-nowrap teams-container">
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-3 pb-5 home-body">
+  <div>
+    <div class="row">
+      <h4 class="color-secondary">Projetos em alta</h4>
+    </div>
+    <div class="row">
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+      <div
+        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
+        style="width: 18rem; padding: 0"
+      >
+        <img
+          src="../../assets/images/test-image-card.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title card-title-teams color-secondary">
+            Projeto nota 10
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h4 class="color-secondary">Categorias</h4>
+    <div class="home-categories">
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Arte e Entretenimento
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Automóveis e Outros Veículos
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Informática e Eletrônica
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Educação e Comunicação
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Vida e Família
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Negócios e Finanças
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Culinária e Gastronomia
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Saúde
+      </button>
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
+      >
+        Artesanato e Hobby
+      </button>
+    </div>
+  </div>
+</div>
