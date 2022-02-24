@@ -1,0 +1,16 @@
+.dropdown-toggle,
+.dropdown-item {
+  cursor: pointer;
+}
+
+.color-secondary {
+  color: #a6a6a6 !important;
+}
+
+.font-size-button {
+  font-size: 1em !important;
+}
+
+.color-secondary {
+  color: #a6a6a6 !important;
+}

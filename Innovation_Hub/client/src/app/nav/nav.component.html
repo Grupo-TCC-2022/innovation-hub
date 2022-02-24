@@ -28,39 +28,7 @@
           >
         </li>
       </ul>
-      <!--
-          <form class="form-inline mt-2 mt-md-0">
-            <input
-              class="form-control mr-sm-2"
-              type="text"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-      -->
-      <div class="dropdown" *ngIf="accountService.currenUser$ | async" dropdown>
-        <a
-          class="dropdown-toggle text-light color-secondary font-size-button font-weight-bold"
-          dropdownToggle
-          >Bem Vindo</a
-        >
-        <div class="dropdown-menu mt-2" *dropdownMenu>
-          <a
-            class="dropdown-item color-secondary font-size-button font-weight-bold"
-            >Conta</a
-          >
-          <div class="dropdown-divider"></div>
-          <a
-            class="dropdown-item color-secondary font-size-button font-weight-bold"
-            (click)="logout()"
-            >Sair</a
-          >
-        </div>
-      </div>
-
+      <app-welcome-dropdown></app-welcome-dropdown>
       <div
         class="navbar-nav ml-auto"
         *ngIf="(accountService.currenUser$ | async) === null"
@@ -121,6 +89,7 @@
           placeholder="Apelido"
         />
       </div>
+      <app-interest-area-dropdown></app-interest-area-dropdown>
       <div class="form-group">
         <label class="font-size-small" for="exampleInputPassword1">Senha</label>
         <input

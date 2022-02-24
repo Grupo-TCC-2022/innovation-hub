@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Observable } from 'rxjs';
 import { User } from '../_models/user';
@@ -13,11 +13,10 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
   public modalRef?: BsModalRef;
   constructor(private modalService: BsModalService, public accountService: AccountService) {}
+  model: any = {}
 
   ngOnInit(): void {
   }
-
-  model: any = {}
  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
@@ -37,9 +36,5 @@ export class NavComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-  }
-
-  logout() {
-    this.accountService.logout();
   }
 }

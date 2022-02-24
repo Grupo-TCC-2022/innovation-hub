@@ -9,12 +9,16 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
+import { WelcomeDropdownComponent } from './nav/welcome-dropdown/welcome-dropdown.component';
+import { InterestAreaDropdownComponent } from './nav/interest-areas-dropdown/interest-areas-dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    WelcomeDropdownComponent,
+    InterestAreaDropdownComponent
   ],
   imports: [
     BrowserModule,

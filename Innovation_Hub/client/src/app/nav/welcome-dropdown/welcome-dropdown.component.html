@@ -1,0 +1,18 @@
+<div class="dropdown" *ngIf="accountService.currenUser$ | async" dropdown>
+  <a
+    class="dropdown-toggle text-light color-secondary font-size-button font-weight-bold"
+    dropdownToggle
+    >Bem Vindo</a
+  >
+  <div class="dropdown-menu mt-2" *dropdownMenu>
+    <a class="dropdown-item color-secondary font-size-button font-weight-bold"
+      >Conta</a
+    >
+    <div class="dropdown-divider"></div>
+    <a
+      class="dropdown-item color-secondary font-size-button font-weight-bold"
+      (click)="logout()"
+      >Sair</a
+    >
+  </div>
+</div>
