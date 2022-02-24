@@ -1,9 +1,12 @@
+using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Entities.Enums;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -26,12 +29,20 @@ namespace API.Controllers
         {
             if (await UserExists(registerDto.UserName)) return BadRequest("Username already exists");
 
+            //Creating interest areas
+            List<InterestArea> interestAreas = new List<InterestArea>();
+            foreach (var interestArea in registerDto.InterestAreas)
+            {
+                interestAreas.Add(new InterestArea(Enum.Parse<InterestAreaEnum>(interestArea)));
+            }
+
             using var hmac = new HMACSHA512();
 
             var user = new AppUser
             {
                 Email = registerDto.Email,
                 UserName = registerDto.UserName.ToLower(),
+                InterestAreas = interestAreas,
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
@@ -42,6 +53,7 @@ namespace API.Controllers
             return new UserDto
             {
                 UserName = user.UserName,
+                InterestAreas = user.InterestAreas,
                 Token = _tokenService.CreateToken(user)
             };
         }

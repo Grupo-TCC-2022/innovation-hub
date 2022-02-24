@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.DTOs
 {
@@ -13,6 +10,10 @@ namespace API.DTOs
         public string Email { get; set; }
         [Required]
         public string UserName { get; set; }
+
+        [Required]
+        public List<string> InterestAreas { get; set; }
+
         [Required(ErrorMessage = "Password is required")]
         [StringLength(255, ErrorMessage = "Must be between 5 and 255 characters", MinimumLength = 5)]
         [DataType(DataType.Password)]

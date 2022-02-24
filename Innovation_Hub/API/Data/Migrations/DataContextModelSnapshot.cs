@@ -38,6 +38,32 @@ namespace API.Data.Migrations
 
                     b.ToTable("Users");
                 });
+
+            modelBuilder.Entity("API.Entities.InterestArea", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("AppUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("InterestAreaName")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("InterestAreas");
+                });
+
+            modelBuilder.Entity("API.Entities.InterestArea", b =>
+                {
+                    b.HasOne("API.Entities.AppUser", null)
+                        .WithMany("InterestAreas")
+                        .HasForeignKey("AppUserId");
+                });
 #pragma warning restore 612, 618
         }
     }
