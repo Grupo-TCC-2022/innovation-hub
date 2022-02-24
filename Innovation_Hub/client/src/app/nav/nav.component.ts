@@ -1,7 +1,5 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Observable } from 'rxjs';
-import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
  
 @Component({
@@ -14,8 +12,23 @@ export class NavComponent implements OnInit {
   public modalRef?: BsModalRef;
   constructor(private modalService: BsModalService, public accountService: AccountService) {}
   model: any = {}
+  interestareas: any = []
 
   ngOnInit(): void {
+  }
+
+  onAreaSelect(e: any) {
+    this.interestareas = this.interestareas.filter((element) => {
+      if(e.target.value == element && !e.target.checked) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    if(e.target.checked) {
+      this.interestareas.push(e.target.value);
+    }
+    this.model.interestAreas = this.interestareas;
   }
  
   openModal(template: TemplateRef<any>) {
@@ -23,6 +36,7 @@ export class NavComponent implements OnInit {
   }
 
   register() {
+    console.log(this.model);
     this.accountService.register(this.model, this).subscribe(response => {
       console.log(response);
     }, error => {
