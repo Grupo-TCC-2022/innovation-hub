@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
-using API.Entities.Enums;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static API.Entities.InterestArea;
 
 namespace API.Controllers
 {
@@ -31,9 +31,13 @@ namespace API.Controllers
 
             //Creating interest areas
             List<InterestArea> interestAreas = new List<InterestArea>();
-            foreach (var interestArea in registerDto.InterestAreas)
+            if (registerDto.InterestAreas.Length > 0)
             {
-                interestAreas.Add(new InterestArea(Enum.Parse<InterestAreaEnum>(interestArea)));
+                foreach (var interestArea in registerDto.InterestAreas)
+                {
+                    interestAreas.Add(new InterestArea(Enum.Parse<InterestAreaEnum>(interestArea)));
+                }
+
             }
 
             using var hmac = new HMACSHA512();

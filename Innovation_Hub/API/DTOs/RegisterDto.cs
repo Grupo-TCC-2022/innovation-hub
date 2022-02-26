@@ -11,8 +11,8 @@ namespace API.DTOs
         [Required]
         public string UserName { get; set; }
 
-        [Required]
-        public List<string> InterestAreas { get; set; }
+        [Required(ErrorMessage = "Select at least one interest area"), MinLength(1, ErrorMessage = "Select at least one interest area")]
+        public string[] InterestAreas { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
         [StringLength(255, ErrorMessage = "Must be between 5 and 255 characters", MinimumLength = 5)]

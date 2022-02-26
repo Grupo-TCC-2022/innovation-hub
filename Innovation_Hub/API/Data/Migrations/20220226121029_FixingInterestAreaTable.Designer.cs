@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220224171827_AppUserAndInterestAreaRelationship")]
-    partial class AppUserAndInterestAreaRelationship
+    [Migration("20220226121029_FixingInterestAreaTable")]
+    partial class FixingInterestAreaTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,8 +50,9 @@ namespace API.Data.Migrations
                     b.Property<int?>("AppUserId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("InterestAreaName")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("InterestAreaName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
