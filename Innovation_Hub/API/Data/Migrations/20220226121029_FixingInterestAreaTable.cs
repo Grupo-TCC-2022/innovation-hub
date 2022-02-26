@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class AppUserAndInterestAreaRelationship : Migration
+    public partial class FixingInterestAreaTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,7 +29,7 @@ namespace API.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    InterestAreaName = table.Column<int>(nullable: false),
+                    InterestAreaName = table.Column<string>(nullable: false),
                     AppUserId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

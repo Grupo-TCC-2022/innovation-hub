@@ -1,7 +1,8 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AccountService } from '../_services/account.service';
- 
+import { InterestAreasService } from '../_services/interestAreas.service';
+
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'app-nav',
@@ -10,27 +11,42 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
   public modalRef?: BsModalRef;
-  constructor(private modalService: BsModalService, public accountService: AccountService) {}
+  constructor(private modalService: BsModalService, public accountService: AccountService, public interestedAreasService: InterestAreasService) { }
   model: any = {}
   interestareas: any = []
+  interestareascount: any = 0;
 
   ngOnInit(): void {
+    this.getInterestAreas();
+  }
+
+  getInterestAreas() {
+    return this.interestedAreasService.getInterestAreas().subscribe(response => {
+      response.forEach(element => {
+        this.interestedAreasService.interestAreasList$.push(element);
+      });
+      console.log(this.interestedAreasService.interestAreasList$);
+    }, error => {
+      console.log(error);
+    })
   }
 
   onAreaSelect(e: any) {
     this.interestareas = this.interestareas.filter((element) => {
-      if(e.target.value == element && !e.target.checked) {
+      if (e.target.value == element && !e.target.checked) {
         return false;
       } else {
         return true;
       }
     });
-    if(e.target.checked) {
+    if (e.target.checked) {
       this.interestareas.push(e.target.value);
     }
     this.model.interestAreas = this.interestareas;
+
+    this.interestareascount = this.interestareas.length;
   }
- 
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }

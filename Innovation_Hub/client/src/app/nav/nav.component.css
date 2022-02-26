@@ -53,7 +53,7 @@ a {
 }
 
 .form-check-label {
-  display: block;
+  display: block !important;
 }
 
 .app-dropdown-border {

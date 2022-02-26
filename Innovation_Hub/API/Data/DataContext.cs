@@ -1,5 +1,4 @@
 using API.Entities;
-using API.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -11,5 +10,20 @@ namespace API.Data
         }
         public DbSet<AppUser> Users { get; set; }
         public DbSet<InterestArea> InterestAreas { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AppUser>()
+                .ToTable("Users");
+
+            modelBuilder.Entity<InterestArea>()
+                .ToTable("InterestAreas");
+
+            modelBuilder.Entity<InterestArea>()
+                .Property(c => c.InterestAreaName)
+                .HasConversion<string>();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
