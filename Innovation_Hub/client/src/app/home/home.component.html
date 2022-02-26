@@ -236,6 +236,14 @@
       <button
         class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
         type="button"
+        *ngFor="let area of this.interestedAreasService.interestAreasList$"
+      >
+        {{ area.replaceAll("_", " ") }}
+      </button>
+
+      <button
+        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+        type="button"
       >
         Arte e Entretenimento
       </button>

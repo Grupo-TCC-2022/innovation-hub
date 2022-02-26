@@ -11,14 +11,22 @@ import { User } from '../_models/user';
 export class InterestAreasService {
   baseUrl = 'https://localhost:5001/api/';
   interestAreasList$: any = [];
-  interestAreasListFormated$: any = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getInterestAreas();
+  }
 
   getInterestAreas() {
-    return this.http.get(this.baseUrl + 'interestareas/interest_areas').pipe(
+    this.http.get(this.baseUrl + 'interestareas/interest_areas').pipe(
       map((response: any) => {
         return response;
-      }));
+      })).subscribe(response => {
+        response.forEach(element => {
+          this.interestAreasList$.push(element);
+        });
+        console.log(this.interestAreasList$);
+      }, error => {
+        console.log(error);
+      });
   }
 }

@@ -17,18 +17,6 @@ export class NavComponent implements OnInit {
   interestareascount: any = 0;
 
   ngOnInit(): void {
-    this.getInterestAreas();
-  }
-
-  getInterestAreas() {
-    return this.interestedAreasService.getInterestAreas().subscribe(response => {
-      response.forEach(element => {
-        this.interestedAreasService.interestAreasList$.push(element);
-      });
-      console.log(this.interestedAreasService.interestAreasList$);
-    }, error => {
-      console.log(error);
-    })
   }
 
   onAreaSelect(e: any) {
