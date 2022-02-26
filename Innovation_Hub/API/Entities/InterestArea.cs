@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/*Entities, tambem chamada de model, corresponde ao namespace para definição e armazenamento de
+dados, usado para definir os atributos das entidades do sistema*/
 namespace API.Entities
 {
+    /*Classe InterestArea ou Area de Interesse, que guardara todas as areas de interesse
+    catalogadas no site*/
     public class InterestArea
     {
+        /*Enum Area de Interesse, estrutura de dados usada para guardar os valores constantes do
+        sistema, atraves de um workaround (gambiarra) estamos passando essa lista de valores
+        como estao embaixo, com underlines como separador de espaco para a view, e la esses
+        valores atraves do metodo String.ReplaceAll todas as underlines sao substituidas por
+        espacos*/
         public enum InterestAreaEnum
         {
             Arte_e_Cultura,
