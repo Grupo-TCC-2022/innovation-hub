@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,6 +9,13 @@ namespace API.DTOs
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        public string Name { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        public string LastName { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        public DateTime Birthday { get; set; }
+
         [Required]
         public string UserName { get; set; }
 
