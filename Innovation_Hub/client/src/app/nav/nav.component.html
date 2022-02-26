@@ -87,6 +87,43 @@
         />
       </div>
       <div class="form-group">
+        <label class="font-size-small" for="exampleInputEmail1">Nome</label>
+        <input
+          type="text"
+          class="form-control app-border"
+          aria-describedby="nameHelp"
+          name="name"
+          [(ngModel)]="model.name"
+          placeholder="Nome"
+        />
+      </div>
+      <div class="form-group">
+        <label class="font-size-small" for="exampleInputEmail1"
+          >Sobrenome</label
+        >
+        <input
+          type="text"
+          class="form-control app-border"
+          aria-describedby="lastnameHelp"
+          name="lastname"
+          [(ngModel)]="model.lastname"
+          placeholder="Sobrenome"
+        />
+      </div>
+      <div class="form-group">
+        <label class="font-size-small" for="exampleInputEmail1"
+          >Data de nascimento</label
+        >
+        <input
+          type="date"
+          class="form-control app-border"
+          aria-describedby="birthdayHelp"
+          name="birthday"
+          [(ngModel)]="model.birthday"
+          placeholder="Data de Nascimento"
+        />
+      </div>
+      <div class="form-group">
         <label class="font-size-small" for="exampleInputEmail1">Apelido</label>
         <input
           type="text"
