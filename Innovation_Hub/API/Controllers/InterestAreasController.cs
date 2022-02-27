@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -27,7 +28,19 @@ namespace API.Controllers
         [HttpGet("interest_areas")]
         public IEnumerable<string> InterestAreas()
         {
-            return Enum.GetNames(typeof(InterestAreaEnum));
+            List<string> interestAreas = new List<string>();
+
+            foreach (var value in Enum.GetValues(typeof(InterestAreaEnum)))
+            {
+                var description = value.ToString();
+                var fieldInfo = value.GetType().GetField(value.ToString());
+
+                var attrs = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), true);
+                description = ((DescriptionAttribute)attrs[0]).Description;
+                interestAreas.Add(description);
+            }
+
+            return interestAreas;
         }
     }
 }
