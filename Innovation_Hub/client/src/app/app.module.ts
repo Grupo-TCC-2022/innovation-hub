@@ -11,13 +11,20 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { WelcomeDropdownComponent } from './nav/welcome-dropdown/welcome-dropdown.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FeedComponent } from './feed/feed.component';
+import { MessagesComponent } from './feed/messages/messages.component';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    WelcomeDropdownComponent
+    WelcomeDropdownComponent,
+    FeedComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,12 @@ import { WelcomeDropdownComponent } from './nav/welcome-dropdown/welcome-dropdow
     BrowserAnimationsModule,
     ModalModule.forRoot(),
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    AppRoutingModule,
+    RouterModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

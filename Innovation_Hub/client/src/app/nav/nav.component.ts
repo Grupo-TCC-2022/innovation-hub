@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
 import { InterestAreasService } from '../_services/interestAreas.service';
 
@@ -11,7 +13,7 @@ import { InterestAreasService } from '../_services/interestAreas.service';
 })
 export class NavComponent implements OnInit {
   public modalRef?: BsModalRef;
-  constructor(private modalService: BsModalService, public accountService: AccountService, public interestedAreasService: InterestAreasService) { }
+  constructor(private modalService: BsModalService, public accountService: AccountService, public interestedAreasService: InterestAreasService, private router: Router, private toastr: ToastrService) { }
   model: any = {}
   interestareas: any = []
   interestareascount: any = 0;
@@ -45,14 +47,17 @@ export class NavComponent implements OnInit {
       console.log(response);
     }, error => {
       console.log(error);
+      this.toastr.error(error.error);
     });
   }
 
   login() {
     this.accountService.login(this.model, this).subscribe(response => {
+      this.router.navigateByUrl('/feed');
       console.log(response);
     }, error => {
       console.log(error);
+      this.toastr.error(error.error);
     });
   }
 }
