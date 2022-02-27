@@ -8,9 +8,9 @@ namespace API.DTOs
 {
     public class LoginDto
     {
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Emailorusername { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string Password { get; set; }
     }
 }

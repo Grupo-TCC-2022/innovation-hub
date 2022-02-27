@@ -6,7 +6,7 @@ namespace API.DTOs
 {
     public class RegisterDto
     {
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         [EmailAddress]
         public string Email { get; set; }
         [Required(ErrorMessage = "This field is required")]
@@ -16,7 +16,7 @@ namespace API.DTOs
         [Required(ErrorMessage = "This field is required")]
         public DateTime Birthday { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Select at least one interest area"), MinLength(1, ErrorMessage = "Select at least one interest area")]
