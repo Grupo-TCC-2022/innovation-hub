@@ -8,9 +8,9 @@ namespace API.DTOs
 {
     public class LoginDto
     {
-        [Required]
+        [Required(ErrorMessage = "E-mail ou apelido são necessários para login")]
         public string Emailorusername { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Senha é necessária para login")]
         public string Password { get; set; }
     }
 }

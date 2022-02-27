@@ -45,9 +45,6 @@ export class NavComponent implements OnInit {
     console.log(this.model);
     this.accountService.register(this.model, this).subscribe(response => {
       console.log(response);
-    }, error => {
-      console.log(error);
-      this.toastr.error(error.error);
     });
   }
 
@@ -55,9 +52,6 @@ export class NavComponent implements OnInit {
     this.accountService.login(this.model, this).subscribe(response => {
       this.router.navigateByUrl('/feed');
       console.log(response);
-    }, error => {
-      console.log(error);
-      this.toastr.error(error.error);
     });
   }
 }
