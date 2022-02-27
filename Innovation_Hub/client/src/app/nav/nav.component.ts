@@ -31,7 +31,7 @@ export class NavComponent implements OnInit {
       this.interestareas.push(e.target.value);
     }
     this.model.interestAreas = this.interestareas;
-
+    console.log(this.interestareas);
     this.interestareascount = this.interestareas.length;
   }
 

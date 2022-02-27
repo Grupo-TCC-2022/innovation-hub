@@ -156,13 +156,16 @@
           >
             <div
               class="form-check dropdown-item color-secondary font-size-small col-lg-6"
-              *ngFor="let area of interestedAreasService.interestAreasList$"
+              *ngFor="
+                let area of interestedAreasService.interestAreasList$;
+                index as i
+              "
             >
               <input
                 class="form-check-input"
                 type="checkbox"
                 name="interestareas"
-                value="{{ area }}"
+                value="{{ i }}"
                 id="{{ area }}"
                 (click)="onAreaSelect($event)"
               />

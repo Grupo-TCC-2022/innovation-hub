@@ -57,9 +57,8 @@ namespace API.Data.Migrations
                     b.Property<int?>("AppUserId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("InterestAreaName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("InterestAreaName")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
