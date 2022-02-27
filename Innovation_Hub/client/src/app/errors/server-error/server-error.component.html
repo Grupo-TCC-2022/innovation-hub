@@ -1,4 +1,9 @@
-<h4>Erro interno do servidor - regarregar a página fará o erro desaparecer</h4>
-<ng-container *ngIf="error">
-  <h5 class="text-danger">Erro: {{ error.message }}</h5>
-</ng-container>
+<div class="container home-bg">
+  <h4>
+    Erro interno do servidor - regarregar a página fará o erro desaparecer
+  </h4>
+  <button class="btn btn-secondary" routerLink="/">Retornar</button>
+  <ng-container *ngIf="error">
+    <h5 class="text-danger">Erro: {{ error.message }}</h5>
+  </ng-container>
+</div>

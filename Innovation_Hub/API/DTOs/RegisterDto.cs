@@ -6,30 +6,45 @@ namespace API.DTOs
 {
     public class RegisterDto
     {
-        [Required(ErrorMessage = "This field is required")]
+        [Required(ErrorMessage = "E-mail é necessário para cadastro")]
+        [StringLength(50, ErrorMessage = "E-mail deve ter entre 5 e 50 caracteres", MinimumLength = 5)]
         [EmailAddress]
         public string Email { get; set; }
-        [Required(ErrorMessage = "This field is required")]
+
+
+        [Required(ErrorMessage = "Nome é necessário para cadastro")]
+        [StringLength(50, ErrorMessage = "Nome deve ter entre 5 e 50 caracteres", MinimumLength = 5)]
         public string Name { get; set; }
-        [Required(ErrorMessage = "This field is required")]
+
+
+        [Required(ErrorMessage = "Sobrenome é necessário para cadastro")]
+        [StringLength(50, ErrorMessage = "Sobrenome deve ter entre 5 e 50 caracteres", MinimumLength = 5)]
         public string LastName { get; set; }
-        [Required(ErrorMessage = "This field is required")]
+
+
+        [Required(ErrorMessage = "Data de nascimento é necessária para cadastro")]
         public DateTime Birthday { get; set; }
 
-        [Required(ErrorMessage = "This field is required")]
+
+        [Required(ErrorMessage = "Apelido é necessário para cadastro")]
+        [StringLength(50, ErrorMessage = "Apelido deve ter entre 5 e 50 caracteres", MinimumLength = 5)]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Select at least one interest area"), MinLength(1, ErrorMessage = "Select at least one interest area")]
+
+        [Required(ErrorMessage = "Selecione pelo menos uma área de interesse"), MinLength(1, ErrorMessage = "Selecione pelo menos uma área de interesse")]
         public string[] InterestAreas { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(255, ErrorMessage = "Must be between 5 and 255 characters", MinimumLength = 5)]
+
+        [Required(ErrorMessage = "Senha é necessária para cadastro")]
+        [StringLength(50, ErrorMessage = "Senha deve ter entre 5 e 50 caracteres", MinimumLength = 5)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Required(ErrorMessage = "Confirm Password is required")]
-        [StringLength(255, ErrorMessage = "Must be between 5 and 255 characters", MinimumLength = 5)]
+
+
+        [Required(ErrorMessage = "Confirme a senha")]
+        [StringLength(50, ErrorMessage = "Senha deve ter entre 5 e 50 caracteres", MinimumLength = 5)]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Compare("Password", ErrorMessage = "As senhas não são iguais")]
         public string ConfirmPassword { get; set; }
     }
 }
