@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 
 /*Entities, tambem chamada de model, corresponde ao namespace para definição e armazenamento de
-dados, usado para definir os atributos das entidades do sistema*/
+dados, usado para definir os atributos das entidades do sistema
+Abstracao de coisas fisicas ou nao do mundo real*/
 namespace API.Entities
 {
     /*AppUser ou Usuario, eh a pessoa que pode registrar e fazer login no site, dentre
