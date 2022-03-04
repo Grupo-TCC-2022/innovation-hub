@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using API.Extensions;
 
 /*Entities, tambem chamada de model, corresponde ao namespace para definição e armazenamento de
 dados, usado para definir os atributos das entidades do sistema
@@ -34,5 +35,10 @@ namespace API.Entities
         encriptada como sequencias de caracteres em byte*/
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+
+        public int GetAge()
+        {
+            return Birthday.CalculateAge();
+        }
     }
 }

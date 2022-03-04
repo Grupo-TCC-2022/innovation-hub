@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace API.Entities
 {
     /*Classe InterestArea ou Area de Interesse, que guardara todas as areas de interesse
     catalogadas no site*/
+    [Table("InterestAreas")]
     public class InterestArea
     {
         /*Enum Area de Interesse, estrutura de dados usada para guardar os valores constantes do
@@ -60,7 +62,6 @@ namespace API.Entities
 
         public int Id { get; set; }
         public InterestAreaEnum InterestAreaName { get; set; }
-
         public InterestArea(InterestAreaEnum InterestAreaName)
         {
             this.InterestAreaName = InterestAreaName;
