@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Entities.Enums;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using static API.Entities.InterestArea;
 
 namespace API.Controllers
 {
