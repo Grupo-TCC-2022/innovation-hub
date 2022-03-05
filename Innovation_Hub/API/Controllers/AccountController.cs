@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Entities.Enums;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using static API.Entities.InterestArea;
 
 namespace API.Controllers
 {
@@ -88,7 +88,7 @@ namespace API.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             /*Verificando se o email/apelido corresponde a algum registrado no banco*/
-            var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == loginDto.Emailorusername) ?? await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Emailorusername);
+            var user = await _context.Users.Include(p => p.InterestAreas).SingleOrDefaultAsync(x => x.Email == loginDto.Emailorusername) ?? await _context.Users.Include(p => p.InterestAreas).SingleOrDefaultAsync(x => x.UserName == loginDto.Emailorusername);
 
             if (user == null) return Unauthorized("Invalid login");
 
@@ -104,6 +104,7 @@ namespace API.Controllers
             return new UserDto
             {
                 UserName = user.UserName,
+                InterestAreas = user.InterestAreas,
                 Token = _tokenService.CreateToken(user)
             }; ;
         }
