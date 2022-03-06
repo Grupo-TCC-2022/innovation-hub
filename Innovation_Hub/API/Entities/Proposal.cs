@@ -6,8 +6,9 @@ using API.Entities.Enums;
 
 namespace API.Entities
 {
-    public abstract class Proposal
+    public class Proposal
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public InterestAreaEnum Category { get; set; }

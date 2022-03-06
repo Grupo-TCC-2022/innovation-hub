@@ -12,5 +12,9 @@ namespace API.Data
         {
         }
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<Proposal> Proposals { get; set; }
+        public DbSet<Idea> Ideas { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Problem> Problems { get; set; }
     }
 }
