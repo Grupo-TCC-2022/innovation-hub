@@ -21,5 +21,9 @@ namespace API.Interfaces
         void AddIdea(Idea idea);
         void AddProject(Project project);
         void AddProblem(Problem problem);
+
+        public void AddIdeas(List<Idea> ideas);
+        public void AddProjects(List<Project> projects);
+        public void AddProblems(List<Problem> problems);
     }
 }

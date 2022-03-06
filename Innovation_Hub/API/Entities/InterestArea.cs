@@ -18,6 +18,8 @@ namespace API.Entities
     {
         public int Id { get; set; }
         public InterestAreaEnum InterestAreaName { get; set; }
+
+        public InterestArea() { }
         public InterestArea(InterestAreaEnum InterestAreaName)
         {
             this.InterestAreaName = InterestAreaName;

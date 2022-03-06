@@ -73,5 +73,29 @@ namespace API.Data
         {
             _context.Entry(proposal).State = EntityState.Modified;
         }
+
+        public void AddIdeas(List<Idea> ideas)
+        {
+            foreach (Idea i in ideas)
+            {
+                _context.Ideas.Add(i);
+            }
+        }
+
+        public void AddProjects(List<Project> projects)
+        {
+            foreach (Project p in projects)
+            {
+                _context.Projects.Add(p);
+            }
+        }
+
+        public void AddProblems(List<Problem> problems)
+        {
+            foreach (Problem p in problems)
+            {
+                _context.Problems.Add(p);
+            }
+        }
     }
 }
