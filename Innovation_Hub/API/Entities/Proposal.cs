@@ -6,7 +6,7 @@ using API.Entities.Enums;
 
 namespace API.Entities
 {
-    public class Proposal
+    public abstract class Proposal
     {
         public int Id { get; set; }
         public string Title { get; set; }

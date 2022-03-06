@@ -19,7 +19,6 @@ namespace API.Data
             _context = context;
         }
 
-        //----------------------------------------------
         public void AddIdea(Idea idea)
         {
             _context.Ideas.Add(idea);
@@ -35,31 +34,34 @@ namespace API.Data
             _context.Projects.Add(project);
         }
 
-        //----------------------------------------------
-
-        public async Task<Proposal> GetProposalByIdAsync(int id)
+        public async Task<Idea> GetIdeaByIdAsync(int id)
         {
-            return await _context.Proposals.FindAsync(id);
+            return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<Proposal> GetProposalByTitleAsync(string title, string discriminator)
+        public async Task<IEnumerable<Idea>> GetIdeasAsync()
         {
-            switch (discriminator.ToLower())
-            {
-                case "idea":
-                    return await _context.Ideas.Include(p => p.Comments).SingleOrDefaultAsync(x => x.Title == title);
-                case "project":
-                    return await _context.Projects.Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Networks).SingleOrDefaultAsync(x => x.Title == title);
-                case "problem":
-                    return await _context.Ideas.Include(p => p.Comments).SingleOrDefaultAsync(x => x.Title == title);
-            }
-
-            return null;
+            return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).ToListAsync();
         }
 
-        public async Task<IEnumerable<Proposal>> GetProposalsAsync()
+        public async Task<Problem> GetProblemByIdAsync(int id)
         {
-            return await _context.Proposals.Include(p => p.Comments).ToListAsync();
+            return await _context.Problems.Include(p => p.Comments).FirstOrDefaultAsync(i => i.Id == id);
+        }
+
+        public async Task<IEnumerable<Problem>> GetProblemsAsync()
+        {
+            return await _context.Problems.Include(p => p.Comments).ToListAsync();
+        }
+
+        public async Task<Project> GetProjectByIdAsync(int id)
+        {
+            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Networks).FirstOrDefaultAsync(i => i.Id == id);
+        }
+
+        public async Task<IEnumerable<Project>> GetProjectsAsync()
+        {
+            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Networks).ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()

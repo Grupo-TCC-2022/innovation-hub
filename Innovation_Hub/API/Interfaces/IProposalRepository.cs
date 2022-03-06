@@ -12,9 +12,12 @@ namespace API.Interfaces
     {
         void Update(Proposal proposal);
         Task<bool> SaveAllAsync();
-        Task<IEnumerable<Proposal>> GetProposalsAsync();
-        Task<Proposal> GetProposalByIdAsync(int id);
-        Task<Proposal> GetProposalByTitleAsync(string title, string discriminator);
+        Task<IEnumerable<Idea>> GetIdeasAsync();
+        Task<IEnumerable<Project>> GetProjectsAsync();
+        Task<IEnumerable<Problem>> GetProblemsAsync();
+        Task<Idea> GetIdeaByIdAsync(int id);
+        Task<Project> GetProjectByIdAsync(int id);
+        Task<Problem> GetProblemByIdAsync(int id);
         void AddIdea(Idea idea);
         void AddProject(Project project);
         void AddProblem(Problem problem);

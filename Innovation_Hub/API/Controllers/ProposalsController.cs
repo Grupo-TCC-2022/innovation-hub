@@ -17,12 +17,40 @@ namespace API.Controllers
             _proposalRepository = proposalRepository;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Proposal>>> GetProposals()
+        [HttpGet("idea/{id}")]
+        public async Task<ActionResult<Idea>> GetIdea(int id)
         {
-            var proposals = await _proposalRepository.GetProposalsAsync();
+            return Ok(await _proposalRepository.GetIdeaByIdAsync(id));
+        }
 
-            return Ok(proposals);
+        [HttpGet("project/{id}")]
+        public async Task<ActionResult<Project>> GetProject(int id)
+        {
+            return Ok(await _proposalRepository.GetProjectByIdAsync(id));
+        }
+
+        [HttpGet("problem/{id}")]
+        public async Task<ActionResult<Problem>> GetProblem(int id)
+        {
+            return Ok(await _proposalRepository.GetProblemByIdAsync(id));
+        }
+
+        [HttpGet("ideas")]
+        public async Task<ActionResult<IEnumerable<Idea>>> GetIdeas()
+        {
+            return Ok(await _proposalRepository.GetIdeasAsync());
+        }
+
+        [HttpGet("projects")]
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
+        {
+            return Ok(await _proposalRepository.GetProjectsAsync());
+        }
+
+        [HttpGet("problems")]
+        public async Task<ActionResult<IEnumerable<Problem>>> GetProblems()
+        {
+            return Ok(await _proposalRepository.GetProblemsAsync());
         }
 
         [HttpPost("postidea")]
