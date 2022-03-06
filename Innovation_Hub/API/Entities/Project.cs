@@ -11,6 +11,6 @@ namespace API.Entities
         public bool IsPrivate { get; set; }
         public List<Phase> Phases { get; set; }
         public AppUser ProjectManager { get; set; }
-        public List<Social> Networks { get; set; }
+        public List<Social> Socials { get; set; }
     }
 }

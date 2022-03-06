@@ -56,12 +56,12 @@ namespace API.Data
 
         public async Task<Project> GetProjectByIdAsync(int id)
         {
-            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Networks).FirstOrDefaultAsync(i => i.Id == id);
+            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).FirstOrDefaultAsync(i => i.Id == id);
         }
 
         public async Task<IEnumerable<Project>> GetProjectsAsync()
         {
-            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Networks).ToListAsync();
+            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()

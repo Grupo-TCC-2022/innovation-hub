@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220306182859_AppUserProposal")]
-    partial class AppUserProposal
+    [Migration("20220306203849_UsersProposals")]
+    partial class UsersProposals
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -141,6 +141,9 @@ namespace API.Data.Migrations
                     b.Property<int>("AgeRestriction")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Archived")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("Category")
                         .HasColumnType("INTEGER");
 
@@ -150,6 +153,9 @@ namespace API.Data.Migrations
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("Finished")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
@@ -244,7 +250,7 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.Social", b =>
                 {
                     b.HasOne("API.Entities.Project", null)
-                        .WithMany("Networks")
+                        .WithMany("Socials")
                         .HasForeignKey("ProjectId");
                 });
 

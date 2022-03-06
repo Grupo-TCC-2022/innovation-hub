@@ -139,6 +139,9 @@ namespace API.Data.Migrations
                     b.Property<int>("AgeRestriction")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("Archived")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("Category")
                         .HasColumnType("INTEGER");
 
@@ -148,6 +151,9 @@ namespace API.Data.Migrations
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("Finished")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
@@ -242,7 +248,7 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.Social", b =>
                 {
                     b.HasOne("API.Entities.Project", null)
-                        .WithMany("Networks")
+                        .WithMany("Socials")
                         .HasForeignKey("ProjectId");
                 });
 

@@ -14,5 +14,7 @@ namespace API.Entities
         public InterestAreaEnum Category { get; set; }
         public int AgeRestriction { get; set; }
         public List<Comment> Comments { get; set; }
+        public bool Finished { get; set; }
+        public bool Archived { get; set; }
     }
 }

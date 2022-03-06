@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class AppUserProposal : Migration
+    public partial class UsersProposals : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -105,6 +105,8 @@ namespace API.Data.Migrations
                     Description = table.Column<string>(nullable: true),
                     Category = table.Column<int>(nullable: false),
                     AgeRestriction = table.Column<int>(nullable: false),
+                    Finished = table.Column<bool>(nullable: false),
+                    Archived = table.Column<bool>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
                     IsPrivate = table.Column<bool>(nullable: true),
                     ProjectManagerId = table.Column<int>(nullable: true)
