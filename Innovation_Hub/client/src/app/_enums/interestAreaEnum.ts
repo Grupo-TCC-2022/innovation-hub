@@ -1,0 +1,20 @@
+export enum interestAreaEnum {
+    Arte_e_Cultura = "Arte e Cultura",
+    Musica_e_Entretenimento = "Música e Entretenimento",
+    Automoveis_e_Veiculos = "Automóveis e Veiculos",
+    Informatica_e_Eletronica = "Informática e Eletronica",
+    Educacao = "Educação",
+    Vida = "Vida",
+    Familia = "Família",
+    Negocios_e_Empreendedorismo = "Negócios e Empreendedorismo",
+    Culinaria_e_Gastronomia = "Culinaria e Gastronomia",
+    Saude_e_Bem_Estar = "Saúde e Bem Estar",
+    Esporte = "Esporte",
+    Viagem_e_Turismo = "Viagem e Turismo",
+    Economia_e_Financas = "Economia e Finanças",
+    Politica_e_Mundo = "Política e Mundo",
+    Ciencia_e_Tecnologia = "Ciência e Tecnologia",
+    Trabalho_e_Carreira = "Trabalho e Carreira",
+    Psicologia_e_Sociedade = "Psicologia e Sociedade",
+    Meio_Ambiente = "Meio Ambiente"
+}

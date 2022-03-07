@@ -3,6 +3,7 @@ import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { ItemFilter } from '../_interfaces/ItemFilter';
 import { AccountService } from '../_services/account.service';
+import { InterestAreaService } from '../_services/interest-area.service';
 import { InterestAreasService } from '../_services/interestAreas.service';
 import { ProposalsService } from '../_services/proposals.service';
 
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     take: 20
   }
 
-  constructor(public accountService: AccountService, public interestedAreasService: InterestAreasService, public proposalsService: ProposalsService) { }
+  constructor(public accountService: AccountService, public interestedAreasService: InterestAreasService, public proposalsService: ProposalsService, public interestAreaService: InterestAreaService) { }
 
   onProjectsTab() {
     this.filterDto.skip = 0;

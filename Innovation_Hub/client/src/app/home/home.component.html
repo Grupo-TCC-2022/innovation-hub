@@ -111,6 +111,7 @@
             name="inlineRadioOptions"
             id="inlineRadio1"
             value="option1"
+            checked
           />
           <label class="form-check-label" for="inlineRadio1">Em Alta</label>
         </div>
@@ -141,7 +142,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ project.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            {{ project.category }}
+            {{ interestAreaService.getInterestAreaName(project.category) }}
           </h6>
           <p class="card-text">
             {{ project.description }}
@@ -166,7 +167,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ idea.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            {{ idea.category }}
+            {{ interestAreaService.getInterestAreaName(idea.category) }}
           </h6>
           <p class="card-text">
             {{ idea.description }}
@@ -191,7 +192,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ problem.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            {{ problem.category }}
+            {{ interestAreaService.getInterestAreaName(problem.category) }}
           </h6>
           <p class="card-text">
             {{ problem.description }}
