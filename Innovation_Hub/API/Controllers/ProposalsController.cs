@@ -36,21 +36,27 @@ namespace API.Controllers
         }
 
         [HttpGet("ideas")]
-        public async Task<ActionResult<IEnumerable<Idea>>> GetIdeas()
+        public async Task<ActionResult<IEnumerable<Idea>>> GetIdeas([FromQuery] Filter filter)
         {
-            return Ok(await _proposalRepository.GetIdeasAsync());
+            IEnumerable<Idea> ideas = await _proposalRepository.GetIdeasAsync();
+            ideas = ideas.Skip(filter.Skip).Take(filter.Take);
+            return Ok(ideas);
         }
 
         [HttpGet("projects")]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjects([FromQuery] Filter filter)
         {
-            return Ok(await _proposalRepository.GetProjectsAsync());
+            IEnumerable<Project> projects = await _proposalRepository.GetProjectsAsync();
+            projects = projects.Skip(filter.Skip).Take(filter.Take);
+            return Ok(projects);
         }
 
         [HttpGet("problems")]
-        public async Task<ActionResult<IEnumerable<Problem>>> GetProblems()
+        public async Task<ActionResult<IEnumerable<Problem>>> GetProblems([FromQuery] Filter filter)
         {
-            return Ok(await _proposalRepository.GetProblemsAsync());
+            IEnumerable<Problem> problems = await _proposalRepository.GetProblemsAsync();
+            problems = problems.Skip(filter.Skip).Take(filter.Take);
+            return Ok(problems);
         }
 
         [HttpPost("postidea")]

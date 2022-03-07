@@ -127,11 +127,16 @@
       </div>
     </div>
     <!--Projetos-->
-    <div class="row" *ngIf="proposalType === 'projects'">
+    <div
+      class="row"
+      *ngIf="proposalType === 'projects'"
+      (scroll)="onProjectsScroll($event)"
+      style="overflow-y: auto; max-height: 1000px"
+    >
       <div
         class="card mb-2 mr-2"
         style="width: 18rem"
-        *ngFor="let project of proposalsService.projectsList$"
+        *ngFor="let project of items$ | async"
       >
         <div class="card-body">
           <h5 class="card-title">{{ project.title }}</h5>
@@ -147,11 +152,16 @@
       </div>
     </div>
     <!--Ideias-->
-    <div class="row" *ngIf="proposalType === 'ideas'">
+    <div
+      class="row"
+      *ngIf="proposalType === 'ideas'"
+      (scroll)="onIdeasScroll($event)"
+      style="overflow-y: auto; max-height: 1000px"
+    >
       <div
         class="card mb-2 mr-2"
         style="width: 18rem"
-        *ngFor="let idea of proposalsService.ideasList$"
+        *ngFor="let idea of items$ | async"
       >
         <div class="card-body">
           <h5 class="card-title">{{ idea.title }}</h5>
@@ -167,11 +177,16 @@
       </div>
     </div>
     <!--Problemas-->
-    <div class="row" *ngIf="proposalType === 'problems'">
+    <div
+      class="row"
+      *ngIf="proposalType === 'problems'"
+      (scroll)="onProblemsScroll($event)"
+      style="overflow-y: auto; max-height: 1000px"
+    >
       <div
         class="card mb-2 mr-2"
         style="width: 18rem"
-        *ngFor="let problem of proposalsService.problemsList$"
+        *ngFor="let problem of items$ | async"
       >
         <div class="card-body">
           <h5 class="card-title">{{ problem.title }}</h5>
