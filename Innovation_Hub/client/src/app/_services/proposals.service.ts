@@ -13,6 +13,8 @@ export class ProposalsService {
 
   constructor(private http: HttpClient) {
     this.getProjectsScroll();
+    this.getIdeasScroll();
+    this.getProblemsScroll();
   }
 
   getIdeasScroll() {

@@ -9,10 +9,21 @@ import { ProposalsService } from '../_services/proposals.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public onFire: boolean;
-  public recents: boolean;
+  public proposalType: any = "projects";
 
   constructor(public accountService: AccountService, public interestedAreasService: InterestAreasService, public proposalsService: ProposalsService) { }
+
+  onProjectsTab() {
+    this.proposalType = "projects"
+  }
+
+  onIdeasTab() {
+    this.proposalType = "ideas"
+  }
+
+  onProblemsTab() {
+    this.proposalType = "problems"
+  }
 
   ngOnInit(): void {
   }

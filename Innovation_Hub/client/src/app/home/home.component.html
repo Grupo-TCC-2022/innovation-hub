@@ -96,9 +96,11 @@
     <div class="row">
       <div>
         <tabset>
-          <tab heading="Projetos" id="tab1"><br /></tab>
-          <tab heading="Ideias"><br /></tab>
-          <tab heading="Problemas"><br /></tab>
+          <tab heading="Projetos" id="tab1" (selectTab)="onProjectsTab()"
+            ><br
+          /></tab>
+          <tab heading="Ideias" (selectTab)="onIdeasTab()"><br /></tab>
+          <tab heading="Problemas" (selectTab)="onProblemsTab()"><br /></tab>
         </tabset>
       </div>
       <div class="ml-auto mr-5 mt-2 color-secondary">
@@ -124,7 +126,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <!--Projetos-->
+    <div class="row" *ngIf="proposalType === 'projects'">
       <div
         class="card mb-2 mr-2"
         style="width: 18rem"
@@ -132,9 +135,51 @@
       >
         <div class="card-body">
           <h5 class="card-title">{{ project.title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ project.category }}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ project.category }}
+          </h6>
           <p class="card-text">
             {{ project.description }}
+          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <!--Ideias-->
+    <div class="row" *ngIf="proposalType === 'ideas'">
+      <div
+        class="card mb-2 mr-2"
+        style="width: 18rem"
+        *ngFor="let idea of proposalsService.ideasList$"
+      >
+        <div class="card-body">
+          <h5 class="card-title">{{ idea.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ idea.category }}
+          </h6>
+          <p class="card-text">
+            {{ idea.description }}
+          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <!--Problemas-->
+    <div class="row" *ngIf="proposalType === 'problems'">
+      <div
+        class="card mb-2 mr-2"
+        style="width: 18rem"
+        *ngFor="let problem of proposalsService.problemsList$"
+      >
+        <div class="card-body">
+          <h5 class="card-title">{{ problem.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ problem.category }}
+          </h6>
+          <p class="card-text">
+            {{ problem.description }}
           </p>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
