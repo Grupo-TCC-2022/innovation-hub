@@ -87,150 +87,62 @@
   </div>
 </div>
 
-<div class="container pt-3 pb-5 home-body">
-  <div>
+<div
+  class="container pt-3 pb-5 home-body row"
+  *ngIf="(accountService.currentUser$ | async) === null"
+  style="margin: auto"
+>
+  <div class="col-lg-10">
     <div class="row">
-      <h4 class="color-secondary">Projetos em alta</h4>
+      <div>
+        <tabset>
+          <tab heading="Projetos" id="tab1"><br /></tab>
+          <tab heading="Ideias"><br /></tab>
+          <tab heading="Problemas"><br /></tab>
+        </tabset>
+      </div>
+      <div class="ml-auto mr-5 mt-2 color-secondary">
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value="option1"
+          />
+          <label class="form-check-label" for="inlineRadio1">Em Alta</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-check-label" for="inlineRadio2">Recentes</label>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
+        class="card mb-2 mr-2"
+        style="width: 18rem"
+        *ngFor="let project of proposalsService.projectsList$"
       >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
         <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
-        </div>
-      </div>
-      <div
-        class="card mr-4 col-sm-6 col-md-4 col-lg-2 mb-4"
-        style="width: 18rem; padding: 0"
-      >
-        <img
-          src="../../assets/images/test-image-card.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title card-title-teams color-secondary">
-            Projeto nota 10
-          </h5>
+          <h5 class="card-title">{{ project.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ project.category }}</h6>
+          <p class="card-text">
+            {{ project.description }}
+          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
         </div>
       </div>
     </div>
   </div>
-  <div>
+  <div class="col-lg-2">
     <h4 class="color-secondary">Categorias</h4>
     <div class="home-categories">
       <button
@@ -239,61 +151,6 @@
         *ngFor="let area of this.interestedAreasService.interestAreasList$"
       >
         {{ area.replaceAll("_", " ") }}
-      </button>
-
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Arte e Entretenimento
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Automóveis e Outros Veículos
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Informática e Eletrônica
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Educação e Comunicação
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Vida e Família
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Negócios e Finanças
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Culinária e Gastronomia
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Saúde
-      </button>
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-      >
-        Artesanato e Hobby
       </button>
     </div>
   </div>

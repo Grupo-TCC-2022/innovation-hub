@@ -44,6 +44,7 @@ export class NavComponent implements OnInit {
   register() {
     console.log(this.model);
     this.accountService.register(this.model, this).subscribe(response => {
+      this.router.navigateByUrl('/feed');
       console.log(response);
     });
   }

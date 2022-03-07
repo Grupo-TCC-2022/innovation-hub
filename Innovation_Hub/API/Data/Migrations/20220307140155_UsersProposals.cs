@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class UserProposals : Migration
+    public partial class UsersProposals : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +14,7 @@ namespace API.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CommentText = table.Column<string>(nullable: true),
-                    Date = table.Column<DateTime>(nullable: false),
+                    CommentDate = table.Column<DateTime>(nullable: false),
                     VotesCount = table.Column<int>(nullable: false),
                     Anonymous = table.Column<bool>(nullable: false),
                     ProposalId = table.Column<int>(nullable: true)
@@ -107,6 +107,7 @@ namespace API.Data.Migrations
                     AgeRestriction = table.Column<int>(nullable: false),
                     Finished = table.Column<bool>(nullable: false),
                     Archived = table.Column<bool>(nullable: false),
+                    CreationDate = table.Column<DateTime>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
                     IsPrivate = table.Column<bool>(nullable: true),
                     ProjectManagerId = table.Column<int>(nullable: true)

@@ -16,5 +16,6 @@ namespace API.Entities
         public List<Comment> Comments { get; set; }
         public bool Finished { get; set; }
         public bool Archived { get; set; }
+        public DateTime CreationDate { get; set; } = DateTime.Now;
     }
 }

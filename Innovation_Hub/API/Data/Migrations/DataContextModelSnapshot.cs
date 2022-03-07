@@ -67,10 +67,10 @@ namespace API.Data.Migrations
                     b.Property<bool>("Anonymous")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CommentText")
+                    b.Property<DateTime>("CommentDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<string>("CommentText")
                         .HasColumnType("TEXT");
 
                     b.Property<int?>("ProposalId")
@@ -144,6 +144,9 @@ namespace API.Data.Migrations
 
                     b.Property<int>("Category")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");

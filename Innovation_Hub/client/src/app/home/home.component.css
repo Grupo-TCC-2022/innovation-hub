@@ -52,6 +52,7 @@
 .home-body {
   display: flex;
   flex-direction: row;
+  width: max-content;
 }
 
 .home-categories {
