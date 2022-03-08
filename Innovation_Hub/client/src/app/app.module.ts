@@ -19,6 +19,7 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
       positionClass: 'toast-bottom-right'
     }),
     TabsModule,
+    FontAwesomeModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }

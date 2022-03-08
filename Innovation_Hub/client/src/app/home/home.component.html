@@ -135,11 +135,16 @@
       style="overflow-y: auto; max-height: 1000px"
     >
       <div
-        class="card mb-2 mr-2"
+        class="card mb-2 mr-2 col-sm-12 col-lg-12"
         style="width: 18rem"
         *ngFor="let project of items$ | async"
       >
         <div class="card-body">
+          <fa-icon
+            [icon]="starFavoriteRegular"
+            class="fa-lg star-favorite"
+            (click)="toggleVote($event)"
+          ></fa-icon>
           <h5 class="card-title">{{ project.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">
             {{ interestAreaService.getInterestAreaName(project.category) }}
@@ -147,8 +152,34 @@
           <p class="card-text">
             {{ project.description }}
           </p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div
+            style="display: flex; flex-direction: row"
+            (click)="toggleVote($event)"
+          >
+            <fa-icon
+              [icon]="arrowSolid"
+              class="fa-lg"
+              [hidden]="true"
+            ></fa-icon>
+            <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
+            <h5 class="ml-2">{{ project.votes }}</h5>
+            <div class="ml-auto">
+              <button
+                type="submit"
+                class="btn app-border color-secondary font-weight-bold app-buttom"
+                style="margin-left: 10px"
+              >
+                Comentar
+              </button>
+              <button
+                type="submit"
+                class="btn app-border color-secondary font-weight-bold app-buttom"
+                style="margin-left: 10px"
+              >
+                Participar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -160,11 +191,16 @@
       style="overflow-y: auto; max-height: 1000px"
     >
       <div
-        class="card mb-2 mr-2"
+        class="card mb-2 mr-2 col-sm-12 col-lg-12"
         style="width: 18rem"
         *ngFor="let idea of items$ | async"
       >
         <div class="card-body">
+          <fa-icon
+            [icon]="starFavoriteRegular"
+            class="fa-lg star-favorite"
+            (click)="toggleVote($event)"
+          ></fa-icon>
           <h5 class="card-title">{{ idea.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">
             {{ interestAreaService.getInterestAreaName(idea.category) }}
@@ -172,8 +208,34 @@
           <p class="card-text">
             {{ idea.description }}
           </p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div
+            style="display: flex; flex-direction: row"
+            (click)="toggleVote($event)"
+          >
+            <fa-icon
+              [icon]="arrowSolid"
+              class="fa-lg"
+              [hidden]="true"
+            ></fa-icon>
+            <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
+            <h5 class="ml-2">{{ idea.votes }}</h5>
+            <div class="ml-auto">
+              <button
+                type="submit"
+                class="btn app-border color-secondary font-weight-bold app-buttom"
+                style="margin-left: 10px"
+              >
+                Comentar
+              </button>
+              <button
+                type="submit"
+                class="btn app-border color-secondary font-weight-bold app-buttom"
+                style="margin-left: 10px"
+              >
+                Participar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -185,11 +247,16 @@
       style="overflow-y: auto; max-height: 1000px"
     >
       <div
-        class="card mb-2 mr-2"
+        class="card mb-2 mr-2 col-sm-12 col-lg-12"
         style="width: 18rem"
         *ngFor="let problem of items$ | async"
       >
         <div class="card-body">
+          <fa-icon
+            [icon]="starFavoriteRegular"
+            class="fa-lg star-favorite"
+            (click)="toggleVote($event)"
+          ></fa-icon>
           <h5 class="card-title">{{ problem.title }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">
             {{ interestAreaService.getInterestAreaName(problem.category) }}
@@ -197,8 +264,34 @@
           <p class="card-text">
             {{ problem.description }}
           </p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <div
+            style="display: flex; flex-direction: row"
+            (click)="toggleVote($event)"
+          >
+            <fa-icon
+              [icon]="arrowSolid"
+              class="fa-lg"
+              [hidden]="true"
+            ></fa-icon>
+            <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
+            <h5 class="ml-2">{{ problem.votes }}</h5>
+            <div class="ml-auto">
+              <button
+                type="submit"
+                class="btn app-border color-secondary font-weight-bold app-buttom"
+                style="margin-left: 10px"
+              >
+                Comentar
+              </button>
+              <button
+                type="submit"
+                class="btn app-border color-secondary font-weight-bold app-buttom"
+                style="margin-left: 10px"
+              >
+                Participar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

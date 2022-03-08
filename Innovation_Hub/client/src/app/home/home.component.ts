@@ -6,6 +6,10 @@ import { AccountService } from '../_services/account.service';
 import { InterestAreaService } from '../_services/interest-area.service';
 import { InterestAreasService } from '../_services/interestAreas.service';
 import { ProposalsService } from '../_services/proposals.service';
+import { faArrowCircleUp as arrowSolid } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleUp as arrowRegular } from '@fortawesome/free-regular-svg-icons';
+import { faStar as starFavoriteSolid } from '@fortawesome/free-solid-svg-icons';
+import { faStar as starFavoriteRegular } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -20,8 +24,20 @@ export class HomeComponent implements OnInit {
     skip: 0,
     take: 20
   }
+  onFire: boolean = true;
+  recents: boolean;
+
+  arrowSolid = arrowSolid;
+  arrowRegular = arrowRegular;
+  starFavoriteSolid = starFavoriteSolid;
+  starFavoriteRegular = starFavoriteRegular;
 
   constructor(public accountService: AccountService, public interestedAreasService: InterestAreasService, public proposalsService: ProposalsService, public interestAreaService: InterestAreaService) { }
+
+  toggleVote(event: any) {
+    console.log(alert("Faça login"));
+    //A fazer
+  }
 
   onProjectsTab() {
     this.filterDto.skip = 0;
@@ -84,7 +100,6 @@ export class HomeComponent implements OnInit {
       } else {
         updatedValue = response;
       }
-      console.log(updatedValue);
       this.obsArray.next(updatedValue);
     }, error => {
       console.log(error);

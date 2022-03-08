@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220307140155_UsersProposals")]
+    [Migration("20220308124111_UsersProposals")]
     partial class UsersProposals
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -162,6 +162,9 @@ namespace API.Data.Migrations
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Votes")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

@@ -108,6 +108,7 @@ namespace API.Data.Migrations
                     Finished = table.Column<bool>(nullable: false),
                     Archived = table.Column<bool>(nullable: false),
                     CreationDate = table.Column<DateTime>(nullable: false),
+                    Votes = table.Column<int>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
                     IsPrivate = table.Column<bool>(nullable: true),
                     ProjectManagerId = table.Column<int>(nullable: true)

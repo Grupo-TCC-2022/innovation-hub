@@ -17,5 +17,6 @@ namespace API.Entities
         public bool Finished { get; set; }
         public bool Archived { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
+        public int Votes { get; set; }
     }
 }

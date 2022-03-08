@@ -161,6 +161,9 @@ namespace API.Data.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Votes")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.ToTable("Proposals");
