@@ -110,8 +110,9 @@
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value="option1"
+            value="1"
             checked
+            (change)="toggleRadios($event.target.value)"
           />
           <label class="form-check-label" for="inlineRadio1">Em Alta</label>
         </div>
@@ -121,7 +122,8 @@
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio2"
-            value="option2"
+            value="2"
+            (change)="toggleRadios($event.target.value)"
           />
           <label class="form-check-label" for="inlineRadio2">Recentes</label>
         </div>
@@ -151,6 +153,9 @@
           </h6>
           <p class="card-text">
             {{ project.description }}
+          </p>
+          <p class="card-text text-muted">
+            {{ project.creationDate | date: "dd/MM/yy" }}
           </p>
           <div
             style="display: flex; flex-direction: row"
@@ -208,6 +213,9 @@
           <p class="card-text">
             {{ idea.description }}
           </p>
+          <p class="card-text text-muted">
+            {{ idea.creationDate | date: "dd/MM/yy" }}
+          </p>
           <div
             style="display: flex; flex-direction: row"
             (click)="toggleVote($event)"
@@ -263,6 +271,9 @@
           </h6>
           <p class="card-text">
             {{ problem.description }}
+          </p>
+          <p class="card-text text-muted">
+            {{ problem.creationDate | date: "dd/MM/yy" }}
           </p>
           <div
             style="display: flex; flex-direction: row"

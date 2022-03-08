@@ -39,7 +39,14 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Idea>>> GetIdeas([FromQuery] Filter filter)
         {
             IEnumerable<Idea> ideas = await _proposalRepository.GetIdeasAsync();
-            ideas = ideas.Skip(filter.Skip).Take(filter.Take);
+            if (filter.OrderBy == "votes")
+            {
+                ideas = ideas.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);
+            }
+            else if (filter.OrderBy == "recents")
+            {
+                ideas = ideas.OrderByDescending(k => k.CreationDate).Skip(filter.Skip).Take(filter.Take);
+            }
             return Ok(ideas);
         }
 
@@ -47,7 +54,14 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects([FromQuery] Filter filter)
         {
             IEnumerable<Project> projects = await _proposalRepository.GetProjectsAsync();
-            projects = projects.Skip(filter.Skip).Take(filter.Take);
+            if (filter.OrderBy == "votes")
+            {
+                projects = projects.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);
+            }
+            else if (filter.OrderBy == "recents")
+            {
+                projects = projects.OrderByDescending(k => k.CreationDate).Skip(filter.Skip).Take(filter.Take);
+            }
             return Ok(projects);
         }
 
@@ -55,7 +69,14 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Problem>>> GetProblems([FromQuery] Filter filter)
         {
             IEnumerable<Problem> problems = await _proposalRepository.GetProblemsAsync();
-            problems = problems.Skip(filter.Skip).Take(filter.Take);
+            if (filter.OrderBy == "votes")
+            {
+                problems = problems.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);
+            }
+            else if (filter.OrderBy == "recents")
+            {
+                problems = problems.OrderByDescending(k => k.CreationDate).Skip(filter.Skip).Take(filter.Take);
+            }
             return Ok(problems);
         }
 

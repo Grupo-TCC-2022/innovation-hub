@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   items$: Observable<any> = this.obsArray.asObservable();
   filterDto: ItemFilter = {
     skip: 0,
-    take: 20
+    take: 20,
   }
   onFire: boolean = true;
   recents: boolean;
@@ -37,6 +37,35 @@ export class HomeComponent implements OnInit {
   toggleVote(event: any) {
     console.log(alert("Faça login"));
     //A fazer
+  }
+
+  toggleRadios(value) {
+    if (value == "1") {
+      this.recents = false;
+      this.onFire = true;
+    } else if (value = "2") {
+      this.onFire = false;
+      this.recents = true;
+    }
+    switch (this.proposalType) {
+      case "projects":
+        this.filterDto.skip = 0;
+        this.obsArray.next([]);
+        this.getProjectsScroll();
+        break;
+      case "ideas":
+        this.filterDto.skip = 0;
+        this.obsArray.next([]);
+        this.getIdeasScroll();
+        break;
+      case "problems":
+        this.filterDto.skip = 0;
+        this.obsArray.next([]);
+        this.getProblemsScroll();
+        break;
+      default:
+        break;
+    }
   }
 
   onProjectsTab() {
@@ -100,6 +129,7 @@ export class HomeComponent implements OnInit {
       } else {
         updatedValue = response;
       }
+      console.log(updatedValue);
       this.obsArray.next(updatedValue);
     }, error => {
       console.log(error);
@@ -159,6 +189,12 @@ export class HomeComponent implements OnInit {
   turnFilterIntoUrl(filterDto?: ItemFilter) {
     if (filterDto.skip != 0) {
       filterDto.skip += 20;
+    }
+
+    if (this.onFire) {
+      filterDto.orderBy = "votes";
+    } else if (this.recents) {
+      filterDto.orderBy = "recents";
     }
 
     let urlFilter = '?';
