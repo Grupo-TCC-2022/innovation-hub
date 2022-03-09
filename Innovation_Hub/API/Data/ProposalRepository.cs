@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Entities;
+using API.Entities.Enums;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -39,9 +40,16 @@ namespace API.Data
             return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<IEnumerable<Idea>> GetIdeasAsync()
+        public async Task<IEnumerable<Idea>> GetIdeasAsync(InterestAreaEnum? category)
         {
-            return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).ToListAsync();
+            if (category != null)
+            {
+                return await _context.Ideas.Where(p => p.Category.Equals(category)).Include(p => p.TeamMembers).Include(p => p.Comments).ToListAsync();
+            }
+            else
+            {
+                return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).ToListAsync();
+            }
         }
 
         public async Task<Problem> GetProblemByIdAsync(int id)
@@ -49,9 +57,16 @@ namespace API.Data
             return await _context.Problems.Include(p => p.Comments).FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<IEnumerable<Problem>> GetProblemsAsync()
+        public async Task<IEnumerable<Problem>> GetProblemsAsync(InterestAreaEnum? category)
         {
-            return await _context.Problems.Include(p => p.Comments).ToListAsync();
+            if (category != null)
+            {
+                return await _context.Problems.Where(p => p.Category.Equals(category)).Include(p => p.Comments).ToListAsync();
+            }
+            else
+            {
+                return await _context.Problems.Include(p => p.Comments).ToListAsync();
+            }
         }
 
         public async Task<Project> GetProjectByIdAsync(int id)
@@ -59,9 +74,17 @@ namespace API.Data
             return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<IEnumerable<Project>> GetProjectsAsync()
+        public async Task<IEnumerable<Project>> GetProjectsAsync(InterestAreaEnum? category)
         {
-            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).ToListAsync();
+            if (category != null)
+            {
+                return await _context.Projects.Where(p => p.Category.Equals(category)).Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).ToListAsync();
+
+            }
+            else
+            {
+                return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).ToListAsync();
+            }
         }
 
         public async Task<bool> SaveAllAsync()

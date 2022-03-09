@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Entities;
+using API.Entities.Enums;
 using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,7 +39,8 @@ namespace API.Controllers
         [HttpGet("ideas")]
         public async Task<ActionResult<IEnumerable<Idea>>> GetIdeas([FromQuery] Filter filter)
         {
-            IEnumerable<Idea> ideas = await _proposalRepository.GetIdeasAsync();
+            IEnumerable<Idea> ideas = await _proposalRepository.GetIdeasAsync(filter.Category);
+
             if (filter.OrderBy == "votes")
             {
                 ideas = ideas.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);
@@ -53,7 +55,7 @@ namespace API.Controllers
         [HttpGet("projects")]
         public async Task<ActionResult<IEnumerable<Project>>> GetProjects([FromQuery] Filter filter)
         {
-            IEnumerable<Project> projects = await _proposalRepository.GetProjectsAsync();
+            IEnumerable<Project> projects = await _proposalRepository.GetProjectsAsync(filter.Category);
             if (filter.OrderBy == "votes")
             {
                 projects = projects.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);
@@ -68,7 +70,7 @@ namespace API.Controllers
         [HttpGet("problems")]
         public async Task<ActionResult<IEnumerable<Problem>>> GetProblems([FromQuery] Filter filter)
         {
-            IEnumerable<Problem> problems = await _proposalRepository.GetProblemsAsync();
+            IEnumerable<Problem> problems = await _proposalRepository.GetProblemsAsync((InterestAreaEnum)filter.Category);
             if (filter.OrderBy == "votes")
             {
                 problems = problems.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);

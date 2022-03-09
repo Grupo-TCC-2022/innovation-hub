@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Entities.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Interfaces
@@ -12,9 +13,9 @@ namespace API.Interfaces
     {
         void Update(Proposal proposal);
         Task<bool> SaveAllAsync();
-        Task<IEnumerable<Idea>> GetIdeasAsync();
-        Task<IEnumerable<Project>> GetProjectsAsync();
-        Task<IEnumerable<Problem>> GetProblemsAsync();
+        Task<IEnumerable<Idea>> GetIdeasAsync(InterestAreaEnum? category);
+        Task<IEnumerable<Project>> GetProjectsAsync(InterestAreaEnum? category);
+        Task<IEnumerable<Problem>> GetProblemsAsync(InterestAreaEnum? category);
         Task<Idea> GetIdeaByIdAsync(int id);
         Task<Project> GetProjectByIdAsync(int id);
         Task<Problem> GetProblemByIdAsync(int id);
