@@ -55,13 +55,13 @@ export class InterestAreaService {
       case 14:
         return interestAreaEnum.Ciencia_e_Tecnologia;
         break;
-      case 16:
+      case 15:
         return interestAreaEnum.Trabalho_e_Carreira;
         break;
-      case 17:
+      case 16:
         return interestAreaEnum.Psicologia_e_Sociedade;
         break;
-      case 18:
+      case 17:
         return interestAreaEnum.Meio_Ambiente;
         break;
       default:

@@ -144,7 +144,7 @@
         <div class="card-body">
           <fa-icon
             [icon]="starFavoriteRegular"
-            class="fa-lg star-favorite"
+            class="fa-lg star-favorite cursor-pointer"
             (click)="toggleVote($event)"
           ></fa-icon>
           <h5 class="card-title">{{ project.title }}</h5>
@@ -159,6 +159,7 @@
           </p>
           <div
             style="display: flex; flex-direction: row"
+            class="cursor-pointer"
             (click)="toggleVote($event)"
           >
             <fa-icon
@@ -203,7 +204,7 @@
         <div class="card-body">
           <fa-icon
             [icon]="starFavoriteRegular"
-            class="fa-lg star-favorite"
+            class="fa-lg star-favorite cursor-pointer"
             (click)="toggleVote($event)"
           ></fa-icon>
           <h5 class="card-title">{{ idea.title }}</h5>
@@ -218,6 +219,7 @@
           </p>
           <div
             style="display: flex; flex-direction: row"
+            class="cursor-pointer"
             (click)="toggleVote($event)"
           >
             <fa-icon
@@ -262,7 +264,7 @@
         <div class="card-body">
           <fa-icon
             [icon]="starFavoriteRegular"
-            class="fa-lg star-favorite"
+            class="fa-lg star-favorite cursor-pointer"
             (click)="toggleVote($event)"
           ></fa-icon>
           <h5 class="card-title">{{ problem.title }}</h5>
@@ -277,6 +279,7 @@
           </p>
           <div
             style="display: flex; flex-direction: row"
+            class="cursor-pointer"
             (click)="toggleVote($event)"
           >
             <fa-icon
