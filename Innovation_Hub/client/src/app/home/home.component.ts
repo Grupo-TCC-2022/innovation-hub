@@ -35,8 +35,8 @@ export class HomeComponent implements OnInit {
   constructor(public accountService: AccountService, public interestedAreasService: InterestAreasService, public proposalsService: ProposalsService, public interestAreaService: InterestAreaService) { }
 
   toggleVote(event: any) {
-    console.log(alert("Faça login"));
     //A fazer
+    document.getElementById("openModalBtn").click();
   }
 
   setCategory(value: any) {
