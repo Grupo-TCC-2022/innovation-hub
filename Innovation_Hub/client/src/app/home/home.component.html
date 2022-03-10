@@ -134,7 +134,7 @@
       class="row"
       *ngIf="proposalType === 'projects'"
       (scroll)="onProjectsScroll($event)"
-      style="overflow-y: auto; max-height: 1000px"
+      style="overflow-y: auto; max-height: 1000px; overflow-x: hidden"
     >
       <div
         class="card mb-2 mr-2 col-sm-12 col-lg-12"
@@ -193,7 +193,7 @@
       class="row"
       *ngIf="proposalType === 'ideas'"
       (scroll)="onIdeasScroll($event)"
-      style="overflow-y: auto; max-height: 1000px"
+      style="overflow-y: auto; max-height: 1000px; overflow-x: hidden"
     >
       <div
         class="card mb-2 mr-2 col-sm-12 col-lg-12"
@@ -252,7 +252,7 @@
       class="row"
       *ngIf="proposalType === 'problems'"
       (scroll)="onProblemsScroll($event)"
-      style="overflow-y: auto; max-height: 1000px"
+      style="overflow-y: auto; max-height: 1000px; overflow-x: hidden"
     >
       <div
         class="card mb-2 mr-2 col-sm-12 col-lg-12"
@@ -310,13 +310,21 @@
   <div class="col-lg-2">
     <h4 class="color-secondary">Categorias</h4>
     <div class="home-categories">
-      <button
-        class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
-        type="button"
-        *ngFor="let area of this.interestedAreasService.interestAreasList$"
+      <div
+        *ngFor="
+          let area of this.interestedAreasService.interestAreasList$;
+          index as i
+        "
       >
-        {{ area.replaceAll("_", " ") }}
-      </button>
+        <button
+          class="btn btn-primary mx-2 bg-transparent app-border color-secondary font-size-category font-weight-bold app-buttom mb-2"
+          type="button"
+          value="{{ i }}"
+          (click)="setCategory($event.target.value)"
+        >
+          {{ area }}
+        </button>
+      </div>
     </div>
   </div>
 </div>

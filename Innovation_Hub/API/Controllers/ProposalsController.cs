@@ -70,7 +70,7 @@ namespace API.Controllers
         [HttpGet("problems")]
         public async Task<ActionResult<IEnumerable<Problem>>> GetProblems([FromQuery] Filter filter)
         {
-            IEnumerable<Problem> problems = await _proposalRepository.GetProblemsAsync((InterestAreaEnum)filter.Category);
+            IEnumerable<Problem> problems = await _proposalRepository.GetProblemsAsync(filter.Category);
             if (filter.OrderBy == "votes")
             {
                 problems = problems.OrderByDescending(k => k.Votes).Skip(filter.Skip).Take(filter.Take);

@@ -39,6 +39,20 @@ export class HomeComponent implements OnInit {
     //A fazer
   }
 
+  setCategory(value: any) {
+    this.filterDto.category = value;
+    this.filterDto.skip = 0;
+    this.obsArray.next([]);
+    console.log(value);
+    if (this.proposalType == "ideas") {
+      this.getIdeasScroll();
+    } else if (this.proposalType == "projects") {
+      this.getProjectsScroll();
+    } else if (this.proposalType == "problems") {
+      this.getProblemsScroll();
+    }
+  }
+
   toggleRadios(value) {
     if (value == "1") {
       this.recents = false;
