@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220312192036_AppUserProblems")]
-    partial class AppUserProblems
+    [Migration("20220312202933_AppUserProposal")]
+    partial class AppUserProposal
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,13 +55,10 @@ namespace API.Data.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProblemId")
+                    b.Property<int>("ProposalId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ProposalId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("AppUserId", "ProblemId");
+                    b.HasKey("AppUserId", "ProposalId");
 
                     b.HasIndex("ProposalId");
 
@@ -239,7 +236,9 @@ namespace API.Data.Migrations
 
                     b.HasOne("API.Entities.Proposal", "Proposal")
                         .WithMany("TeamMembers")
-                        .HasForeignKey("ProposalId");
+                        .HasForeignKey("ProposalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("API.Entities.Comment", b =>

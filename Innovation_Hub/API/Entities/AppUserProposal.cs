@@ -8,14 +8,14 @@ namespace API.Entities
     public class AppUserProposal
     {
         public AppUserProposal() { }
-        public AppUserProposal(int AppUserId, int ProblemId)
+        public AppUserProposal(int AppUserId, int ProposalId)
         {
             this.AppUserId = AppUserId;
-            this.ProblemId = ProblemId;
+            this.ProposalId = ProposalId;
         }
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
-        public int ProblemId { get; set; }
+        public int ProposalId { get; set; }
         public Proposal Proposal { get; set; }
     }
 }

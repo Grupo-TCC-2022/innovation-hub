@@ -20,7 +20,7 @@ namespace API.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<AppUserProposal>()
-                .HasKey(AD => new { AD.AppUserId, AD.ProblemId });
+                .HasKey(AD => new { AD.AppUserId, AD.ProposalId });
 
         }
     }

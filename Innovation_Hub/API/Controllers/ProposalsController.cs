@@ -109,21 +109,21 @@ namespace API.Controllers
         }
 
         [HttpPost("postideas")]
-        public async void PostIdeas(List<Idea> ideas)
+        public async void PostIdeas(IEnumerable<Idea> ideas)
         {
             _proposalRepository.AddIdeas(ideas);
             await _proposalRepository.SaveAllAsync();
         }
 
         [HttpPost("postprojects")]
-        public async void PostProjects(List<Project> projects)
+        public async void PostProjects(IEnumerable<Project> projects)
         {
             _proposalRepository.AddProjects(projects);
             await _proposalRepository.SaveAllAsync();
         }
 
         [HttpPost("postproblems")]
-        public async void PostProblems(List<Problem> problems)
+        public async void PostProblems(IEnumerable<Problem> problems)
         {
             _proposalRepository.AddProblems(problems);
             await _proposalRepository.SaveAllAsync();

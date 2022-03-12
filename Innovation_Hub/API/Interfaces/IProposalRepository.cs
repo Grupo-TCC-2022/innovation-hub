@@ -23,8 +23,8 @@ namespace API.Interfaces
         void AddProject(Project project);
         void AddProblem(Problem problem);
 
-        public void AddIdeas(List<Idea> ideas);
-        public void AddProjects(List<Project> projects);
-        public void AddProblems(List<Problem> problems);
+        public void AddIdeas(IEnumerable<Idea> ideas);
+        public void AddProjects(IEnumerable<Project> projects);
+        public void AddProblems(IEnumerable<Problem> problems);
     }
 }

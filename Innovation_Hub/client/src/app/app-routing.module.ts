@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { FeedComponent } from './feed/feed.component';
-import { MessagesComponent } from './feed/messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { FeedComponent } from './feed/feed/feed.component';
+import { MessagesComponent } from './feed/messages/messages.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

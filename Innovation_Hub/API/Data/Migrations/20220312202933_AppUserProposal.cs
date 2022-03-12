@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class AppUserProblems : Migration
+    public partial class AppUserProposal : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -80,12 +80,11 @@ namespace API.Data.Migrations
                 columns: table => new
                 {
                     AppUserId = table.Column<int>(nullable: false),
-                    ProblemId = table.Column<int>(nullable: false),
-                    ProposalId = table.Column<int>(nullable: true)
+                    ProposalId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AppUserProposals", x => new { x.AppUserId, x.ProblemId });
+                    table.PrimaryKey("PK_AppUserProposals", x => new { x.AppUserId, x.ProposalId });
                     table.ForeignKey(
                         name: "FK_AppUserProposals_Users_AppUserId",
                         column: x => x.AppUserId,
@@ -97,7 +96,7 @@ namespace API.Data.Migrations
                         column: x => x.ProposalId,
                         principalTable: "Proposal",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

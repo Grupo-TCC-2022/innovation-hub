@@ -11,8 +11,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { WelcomeDropdownComponent } from './nav/welcome-dropdown/welcome-dropdown.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FeedComponent } from './feed/feed.component';
-import { MessagesComponent } from './feed/messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -20,6 +18,9 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FeedComponent } from './feed/feed/feed.component';
+import { MessagesComponent } from './feed/messages/messages.component';
+import { FeedCardComponent } from './feed/feed-card/feed-card.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +28,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavComponent,
     HomeComponent,
     WelcomeDropdownComponent,
+    NotFoundComponent,
+    ServerErrorComponent,
     FeedComponent,
     MessagesComponent,
-    NotFoundComponent,
-    ServerErrorComponent
+    FeedCardComponent
   ],
   imports: [
     BrowserModule,

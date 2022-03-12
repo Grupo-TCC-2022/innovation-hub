@@ -97,7 +97,7 @@ namespace API.Data
             _context.Entry(proposal).State = EntityState.Modified;
         }
 
-        public void AddIdeas(List<Idea> ideas)
+        public void AddIdeas(IEnumerable<Idea> ideas)
         {
             foreach (Idea i in ideas)
             {
@@ -105,7 +105,7 @@ namespace API.Data
             }
         }
 
-        public void AddProjects(List<Project> projects)
+        public void AddProjects(IEnumerable<Project> projects)
         {
             foreach (Project p in projects)
             {
@@ -113,7 +113,7 @@ namespace API.Data
             }
         }
 
-        public void AddProblems(List<Problem> problems)
+        public void AddProblems(IEnumerable<Problem> problems)
         {
             foreach (Problem p in problems)
             {
