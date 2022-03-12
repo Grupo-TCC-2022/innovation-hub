@@ -37,53 +37,53 @@ namespace API.Data
 
         public async Task<Idea> GetIdeaByIdAsync(int id)
         {
-            return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).FirstOrDefaultAsync(i => i.Id == id);
+            return await _context.Ideas.Include(p => p.Comments).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).FirstOrDefaultAsync(i => i.Id == id);
         }
 
         public async Task<IEnumerable<Idea>> GetIdeasAsync(InterestAreaEnum? category)
         {
             if (category != null)
             {
-                return await _context.Ideas.Where(p => p.Category.Equals(category)).Include(p => p.TeamMembers).Include(p => p.Comments).ToListAsync();
+                return await _context.Ideas.Where(p => p.Category.Equals(category)).Include(p => p.Comments).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).ToListAsync();
             }
             else
             {
-                return await _context.Ideas.Include(p => p.TeamMembers).Include(p => p.Comments).ToListAsync();
+                return await _context.Ideas.Include(p => p.Comments).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).ToListAsync();
             }
         }
 
         public async Task<Problem> GetProblemByIdAsync(int id)
         {
-            return await _context.Problems.Include(p => p.Comments).FirstOrDefaultAsync(i => i.Id == id);
+            return await _context.Problems.Include(p => p.Comments).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).FirstOrDefaultAsync(i => i.Id == id);
         }
 
         public async Task<IEnumerable<Problem>> GetProblemsAsync(InterestAreaEnum? category)
         {
             if (category != null)
             {
-                return await _context.Problems.Where(p => p.Category.Equals(category)).Include(p => p.Comments).ToListAsync();
+                return await _context.Problems.Where(p => p.Category.Equals(category)).Include(p => p.Comments).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).ToListAsync();
             }
             else
             {
-                return await _context.Problems.Include(p => p.Comments).ToListAsync();
+                return await _context.Problems.Include(p => p.Comments).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).ToListAsync();
             }
         }
 
         public async Task<Project> GetProjectByIdAsync(int id)
         {
-            return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).FirstOrDefaultAsync(i => i.Id == id);
+            return await _context.Projects.Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).FirstOrDefaultAsync(i => i.Id == id);
         }
 
         public async Task<IEnumerable<Project>> GetProjectsAsync(InterestAreaEnum? category)
         {
             if (category != null)
             {
-                return await _context.Projects.Where(p => p.Category.Equals(category)).Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).ToListAsync();
+                return await _context.Projects.Where(p => p.Category.Equals(category)).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).ToListAsync();
 
             }
             else
             {
-                return await _context.Projects.Include(p => p.TeamMembers).Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).ToListAsync();
+                return await _context.Projects.Include(p => p.Comments).Include(p => p.Phases).Include(p => p.Socials).Include(p => p.TeamMembers).ThenInclude(p => p.AppUser).ToListAsync();
             }
         }
 

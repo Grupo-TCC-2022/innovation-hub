@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
 import { ItemFilter } from '../_interfaces/ItemFilter';
 import { AccountService } from '../_services/account.service';
 import { InterestAreaService } from '../_services/interest-area.service';
 import { InterestAreasService } from '../_services/interestAreas.service';
-import { ProposalsService } from '../_services/proposals.service';
 import { faArrowCircleUp as arrowSolid } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleUp as arrowRegular } from '@fortawesome/free-regular-svg-icons';
 import { faStar as starFavoriteSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as starFavoriteRegular } from '@fortawesome/free-regular-svg-icons';
+import { ProposalsService } from '../_services/proposals.service';
 
 @Component({
   selector: 'app-home',

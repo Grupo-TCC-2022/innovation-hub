@@ -40,5 +40,7 @@ namespace API.Entities
         {
             return Birthday.CalculateAge();
         }
+
+        public IEnumerable<AppUserProposal> ProposalsIamIn { get; set; }
     }
 }
