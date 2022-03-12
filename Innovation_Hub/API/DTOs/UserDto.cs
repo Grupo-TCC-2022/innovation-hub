@@ -18,7 +18,7 @@ namespace API.DTOs
     public class UserDto
     {
         public string UserName { get; set; }
-        public List<InterestArea> InterestAreas { get; set; }
+        public IEnumerable<InterestArea> InterestAreas { get; set; }
         public string Token { get; set; }
     }
 }

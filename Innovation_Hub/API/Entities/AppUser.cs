@@ -29,7 +29,7 @@ namespace API.Entities
         para * (muitos), ou seja, um usuario pode ter varias areas de interesse, quando se usar
         o entity framework ele criara duas tabelas no banco que se relacionarao por chaves
         estrangeiras*/
-        public List<InterestArea> InterestAreas { get; set; }
+        public IEnumerable<InterestArea> InterestAreas { get; set; }
 
         /*Atributos Password usados para encriptacao de senha pelo metodo hash, onde a senha eh
         encriptada como sequencias de caracteres em byte*/
