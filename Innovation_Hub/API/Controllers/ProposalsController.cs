@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.DTOs;
 using API.Entities;
 using API.Entities.Enums;
 using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -12,10 +14,12 @@ namespace API.Controllers
     public class ProposalsController : BaseApiController
     {
         private readonly IProposalRepository _proposalRepository;
+        private readonly IMapper _mapper;
 
-        public ProposalsController(IProposalRepository proposalRepository)
+        public ProposalsController(IProposalRepository proposalRepository, IMapper mapper)
         {
             _proposalRepository = proposalRepository;
+            _mapper = mapper;
         }
 
         [HttpGet("idea/{id}")]
@@ -37,7 +41,7 @@ namespace API.Controllers
         }
 
         [HttpGet("ideas")]
-        public async Task<ActionResult<IEnumerable<Idea>>> GetIdeas([FromQuery] Filter filter)
+        public async Task<ActionResult<IEnumerable<IdeaDto>>> GetIdeas([FromQuery] Filter filter)
         {
             IEnumerable<Idea> ideas = await _proposalRepository.GetIdeasAsync(filter.Category);
 
@@ -49,7 +53,8 @@ namespace API.Controllers
             {
                 ideas = ideas.OrderByDescending(k => k.CreationDate).Skip(filter.Skip).Take(filter.Take);
             }
-            return Ok(ideas);
+
+            return Ok(_mapper.Map<IEnumerable<IdeaDto>>(ideas));
         }
 
         [HttpGet("projects")]

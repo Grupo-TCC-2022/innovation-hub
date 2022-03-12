@@ -28,9 +28,6 @@ namespace API.Data.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("IdeaId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
@@ -43,19 +40,30 @@ namespace API.Data.Migrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("BLOB");
 
-                    b.Property<int?>("ProjectId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdeaId");
-
-                    b.HasIndex("ProjectId");
-
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("API.Entities.AppUserProposal", b =>
+                {
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProblemId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ProposalId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("AppUserId", "ProblemId");
+
+                    b.HasIndex("ProposalId");
+
+                    b.ToTable("AppUserProposals");
                 });
 
             modelBuilder.Entity("API.Entities.Comment", b =>
@@ -166,7 +174,7 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Proposals");
+                    b.ToTable("Proposal");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Proposal");
                 });
@@ -219,15 +227,17 @@ namespace API.Data.Migrations
                     b.HasDiscriminator().HasValue("Project");
                 });
 
-            modelBuilder.Entity("API.Entities.AppUser", b =>
+            modelBuilder.Entity("API.Entities.AppUserProposal", b =>
                 {
-                    b.HasOne("API.Entities.Idea", null)
-                        .WithMany("TeamMembers")
-                        .HasForeignKey("IdeaId");
+                    b.HasOne("API.Entities.AppUser", "AppUser")
+                        .WithMany("ProposalsIamIn")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("API.Entities.Project", null)
+                    b.HasOne("API.Entities.Proposal", "Proposal")
                         .WithMany("TeamMembers")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProposalId");
                 });
 
             modelBuilder.Entity("API.Entities.Comment", b =>

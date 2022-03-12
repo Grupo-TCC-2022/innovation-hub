@@ -13,6 +13,10 @@ namespace API.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<AppUser, MemberDto>();
+            CreateMap<Idea, IdeaDto>();
+            CreateMap<Project, ProjectDto>();
+            CreateMap<Problem, ProblemDto>();
+            CreateMap<AppUserProposal, AppUserProposalDto>();
         }
     }
 }

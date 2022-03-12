@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Entities;
 using API.Entities.Enums;
 
-namespace API.Entities
+namespace API.DTOs
 {
-    public abstract class Proposal
+    public class ProblemDto
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -18,6 +19,6 @@ namespace API.Entities
         public bool Archived { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;
         public int Votes { get; set; }
-        public IEnumerable<AppUserProposal> TeamMembers { get; set; }
+        public IEnumerable<AppUserProposalDto> TeamMembers { get; set; }
     }
 }
