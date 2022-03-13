@@ -1,1 +1,44 @@
-<p>feed-card works!</p>
+<div class="card mb-2 mr-2 col-sm-12 col-lg-12">
+  <div class="card-body">
+    <fa-icon
+      [icon]="starFavoriteRegular"
+      class="fa-lg star-favorite cursor-pointer"
+      (click)="toggleVote($event)"
+    ></fa-icon>
+    <h5 class="card-title">{{ proposal.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      {{ interestAreaService.getInterestAreaName(proposal.category) }}
+    </h6>
+    <p class="card-text">
+      {{ proposal.description }}
+    </p>
+    <p class="card-text text-muted">
+      {{ proposal.creationDate | date: "dd/MM/yy" }}
+    </p>
+    <div
+      style="display: flex; flex-direction: row"
+      class="cursor-pointer"
+      (click)="toggleVote($event)"
+    >
+      <fa-icon [icon]="arrowSolid" class="fa-lg" [hidden]="true"></fa-icon>
+      <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
+      <h5 class="ml-2">{{ proposal.votes }}</h5>
+      <div class="ml-auto">
+        <button
+          type="submit"
+          class="btn app-border color-secondary font-weight-bold app-buttom"
+          style="margin-left: 10px"
+        >
+          Comentar
+        </button>
+        <button
+          type="submit"
+          class="btn app-border color-secondary font-weight-bold app-buttom"
+          style="margin-left: 10px"
+        >
+          Participar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
