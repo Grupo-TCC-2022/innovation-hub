@@ -42,5 +42,6 @@ namespace API.Entities
         }
 
         public IEnumerable<AppUserProposal> ProposalsIamIn { get; set; }
+        public IEnumerable<Proposal> FavoriteProposals { get; set; }
     }
 }

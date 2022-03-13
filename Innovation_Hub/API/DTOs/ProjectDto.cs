@@ -14,7 +14,7 @@ namespace API.DTOs
         public string Description { get; set; }
         public InterestAreaEnum Category { get; set; }
         public int AgeRestriction { get; set; }
-        public IEnumerable<Comment> Comments { get; set; }
+        public IEnumerable<CommentDto> Comments { get; set; }
         public bool Finished { get; set; }
         public bool Archived { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;

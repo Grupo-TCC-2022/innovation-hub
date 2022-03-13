@@ -16,6 +16,7 @@ namespace API.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<Problem> Problems { get; set; }
         public DbSet<AppUserProposal> AppUserProposals { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

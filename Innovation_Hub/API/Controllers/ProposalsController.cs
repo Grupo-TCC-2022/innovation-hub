@@ -128,5 +128,19 @@ namespace API.Controllers
             _proposalRepository.AddProblems(problems);
             await _proposalRepository.SaveAllAsync();
         }
+
+        [HttpPost("comment")]
+        public async void Comment(Comment comment)
+        {
+            _proposalRepository.addComment(comment);
+            await _proposalRepository.SaveAllAsync();
+        }
+
+        [HttpGet("upvotecomment")]
+        public async Task upvoteCommentAsync(int commentId)
+        {
+            _proposalRepository.upvoteCommentAsync(commentId);
+            await _proposalRepository.SaveAllAsync();
+        }
     }
 }

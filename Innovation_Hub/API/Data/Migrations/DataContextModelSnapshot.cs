@@ -75,16 +75,21 @@ namespace API.Data.Migrations
                     b.Property<DateTime>("CommentDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("CommentOwnerId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("CommentText")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ProposalId")
+                    b.Property<int>("ProposalId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("VotesCount")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CommentOwnerId");
 
                     b.HasIndex("ProposalId");
 
@@ -144,6 +149,9 @@ namespace API.Data.Migrations
                     b.Property<int>("AgeRestriction")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("AppUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("Archived")
                         .HasColumnType("INTEGER");
 
@@ -170,6 +178,8 @@ namespace API.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Proposal");
 
@@ -241,9 +251,15 @@ namespace API.Data.Migrations
 
             modelBuilder.Entity("API.Entities.Comment", b =>
                 {
+                    b.HasOne("API.Entities.AppUser", "CommentOwner")
+                        .WithMany()
+                        .HasForeignKey("CommentOwnerId");
+
                     b.HasOne("API.Entities.Proposal", null)
                         .WithMany("Comments")
-                        .HasForeignKey("ProposalId");
+                        .HasForeignKey("ProposalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("API.Entities.InterestArea", b =>
@@ -258,6 +274,13 @@ namespace API.Data.Migrations
                     b.HasOne("API.Entities.Project", null)
                         .WithMany("Phases")
                         .HasForeignKey("ProjectId");
+                });
+
+            modelBuilder.Entity("API.Entities.Proposal", b =>
+                {
+                    b.HasOne("API.Entities.AppUser", null)
+                        .WithMany("FavoriteProposals")
+                        .HasForeignKey("AppUserId");
                 });
 
             modelBuilder.Entity("API.Entities.Social", b =>

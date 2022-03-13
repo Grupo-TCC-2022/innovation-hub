@@ -12,6 +12,7 @@ namespace API.Interfaces
     public interface IProposalRepository
     {
         void Update(Proposal proposal);
+        void Update(Comment comment);
         Task<bool> SaveAllAsync();
         Task<IEnumerable<Idea>> GetIdeasAsync(InterestAreaEnum? category);
         Task<IEnumerable<Project>> GetProjectsAsync(InterestAreaEnum? category);
@@ -26,5 +27,8 @@ namespace API.Interfaces
         public void AddIdeas(IEnumerable<Idea> ideas);
         public void AddProjects(IEnumerable<Project> projects);
         public void AddProblems(IEnumerable<Problem> problems);
+
+        public void addComment(Comment comment);
+        public void upvoteCommentAsync(int commentId);
     }
 }

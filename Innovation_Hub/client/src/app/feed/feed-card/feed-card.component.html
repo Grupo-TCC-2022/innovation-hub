@@ -52,7 +52,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <form #loginForm="ngForm" autocomplete="off">
+    <form #loginForm="ngForm" autocomplete="off" (ngSubmit)="postComment()">
       <div class="form-group">
         <textarea
           class="form-control app-border mb-2"
@@ -60,6 +60,8 @@
           rows="4"
           cols="40"
           placeholder="Escreva aqui"
+          name="commenttext"
+          [(ngModel)]="model.commenttext"
         ></textarea>
         <button
           type="submit"
@@ -76,16 +78,20 @@
         </button>
       </div>
     </form>
-    <div style="overflow-y: scroll; max-height: 400px">
+    <div style="overflow-y: scroll; max-height: 300px; overflow-x: hidden">
       <div
         class="container comment-container mb-2"
         *ngFor="let comment of proposal.comments"
       >
-        <p>{{ comment.commentText }}</p>
+        <p style="overflow-wrap: break-word">{{ comment.commentText }}</p>
         <p class="card-text text-muted">
           {{ comment.commentDate | date: "dd/MM/yy" }}
         </p>
-        <div style="display: flex; flex-direction: row">
+        <div
+          class="icons-upvote"
+          style="display: flex; flex-direction: row"
+          (click)="upvoteComment(comment.id)"
+        >
           <fa-icon [icon]="arrowSolid" class="fa-lg" [hidden]="true"></fa-icon>
           <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
           <h5 class="ml-2">{{ comment.votesCount }}</h5>

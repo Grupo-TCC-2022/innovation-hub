@@ -60,6 +60,7 @@ namespace API.Data.Migrations
                     Archived = table.Column<bool>(nullable: false),
                     CreationDate = table.Column<DateTime>(nullable: false),
                     Votes = table.Column<int>(nullable: false),
+                    AppUserId = table.Column<int>(nullable: true),
                     Discriminator = table.Column<string>(nullable: false),
                     IsPrivate = table.Column<bool>(nullable: true),
                     ProjectManagerId = table.Column<int>(nullable: true)
@@ -70,6 +71,12 @@ namespace API.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Proposal_Users_ProjectManagerId",
                         column: x => x.ProjectManagerId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Proposal_Users_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -105,21 +112,28 @@ namespace API.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    ProposalId = table.Column<int>(nullable: false),
                     CommentText = table.Column<string>(nullable: true),
                     CommentDate = table.Column<DateTime>(nullable: false),
                     VotesCount = table.Column<int>(nullable: false),
                     Anonymous = table.Column<bool>(nullable: false),
-                    ProposalId = table.Column<int>(nullable: true)
+                    CommentOwnerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Comments_Users_CommentOwnerId",
+                        column: x => x.CommentOwnerId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_Comments_Proposal_ProposalId",
                         column: x => x.ProposalId,
                         principalTable: "Proposal",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -170,6 +184,11 @@ namespace API.Data.Migrations
                 column: "ProposalId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comments_CommentOwnerId",
+                table: "Comments",
+                column: "CommentOwnerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Comments_ProposalId",
                 table: "Comments",
                 column: "ProposalId");
@@ -188,6 +207,11 @@ namespace API.Data.Migrations
                 name: "IX_Proposal_ProjectManagerId",
                 table: "Proposal",
                 column: "ProjectManagerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Proposal_AppUserId",
+                table: "Proposal",
+                column: "AppUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Socials_ProjectId",

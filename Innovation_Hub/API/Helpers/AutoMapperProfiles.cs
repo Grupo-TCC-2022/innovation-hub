@@ -17,6 +17,7 @@ namespace API.Helpers
             CreateMap<Project, ProjectDto>();
             CreateMap<Problem, ProblemDto>();
             CreateMap<AppUserProposal, AppUserProposalDto>();
+            CreateMap<Comment, CommentDto>();
         }
     }
 }

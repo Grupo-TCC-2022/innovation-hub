@@ -97,6 +97,11 @@ namespace API.Data
             _context.Entry(proposal).State = EntityState.Modified;
         }
 
+        public void Update(Comment comment)
+        {
+            _context.Entry(comment).State = EntityState.Modified;
+        }
+
         public void AddIdeas(IEnumerable<Idea> ideas)
         {
             foreach (Idea i in ideas)
@@ -118,6 +123,23 @@ namespace API.Data
             foreach (Problem p in problems)
             {
                 _context.Problems.Add(p);
+            }
+        }
+
+        public void addComment(Comment comment)
+        {
+            _context.Comments.Add(comment);
+        }
+
+        public void upvoteCommentAsync(int commentId)
+        {
+            Comment comment = _context.Comments.Find(commentId);
+            Console.WriteLine(comment.VotesCount);
+
+            if (comment != null)
+            {
+                comment.VotesCount = comment.VotesCount + 1;
+                _context.SaveChanges();
             }
         }
     }

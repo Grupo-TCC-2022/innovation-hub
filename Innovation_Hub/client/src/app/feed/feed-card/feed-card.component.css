@@ -28,3 +28,7 @@
 .color-primary {
   color: #f29f05 !important;
 }
+
+.icons-upvote:hover {
+  cursor: pointer;
+}

@@ -5,6 +5,9 @@ import { faStar as starFavoriteSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as starFavoriteRegular } from '@fortawesome/free-regular-svg-icons';
 import { InterestAreaService } from 'src/app/_services/interest-area.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { CommentService } from 'src/app/_services/comment.service';
+import { ToastrService } from 'ngx-toastr';
+import { UpvoteCommentService } from 'src/app/_services/upvote-comment.service';
 
 @Component({
   selector: 'app-feed-card',
@@ -18,11 +21,24 @@ export class FeedCardComponent implements OnInit {
   starFavoriteSolid = starFavoriteSolid;
   starFavoriteRegular = starFavoriteRegular;
   public modalRef?: BsModalRef;
+  model: any = {}
 
-  constructor(public interestAreaService: InterestAreaService, private modalService: BsModalService) { }
+  constructor(public interestAreaService: InterestAreaService, private modalService: BsModalService, public commentService: CommentService, private toastr: ToastrService, public upvoteCommentService: UpvoteCommentService) { }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+  }
+
+  postComment() {
+    this.model.proposalid = this.proposal.id;
+    console.log(this.model);
+    this.commentService.postComment(this.model).subscribe();
+    this.toastr.success("Comentário feito com sucesso")
+    this.model.commenttext = "";
+  }
+
+  upvoteComment(commentId: number) {
+    this.upvoteCommentService.upvoteComment(commentId).subscribe();
   }
 
   ngOnInit(): void {
