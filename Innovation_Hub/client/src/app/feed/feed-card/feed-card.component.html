@@ -3,7 +3,6 @@
     <fa-icon
       [icon]="starFavoriteRegular"
       class="fa-lg star-favorite cursor-pointer"
-      (click)="toggleVote($event)"
     ></fa-icon>
     <h5 class="card-title">{{ proposal.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">
@@ -15,11 +14,7 @@
     <p class="card-text text-muted">
       {{ proposal.creationDate | date: "dd/MM/yy" }}
     </p>
-    <div
-      style="display: flex; flex-direction: row"
-      class="cursor-pointer"
-      (click)="toggleVote($event)"
-    >
+    <div style="display: flex; flex-direction: row" class="cursor-pointer">
       <fa-icon [icon]="arrowSolid" class="fa-lg" [hidden]="true"></fa-icon>
       <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
       <h5 class="ml-2">{{ proposal.votes }}</h5>
@@ -28,6 +23,7 @@
           type="submit"
           class="btn app-border color-secondary font-weight-bold app-buttom"
           style="margin-left: 10px"
+          (click)="openModal(commentsmodal)"
         >
           Comentar
         </button>
@@ -42,3 +38,59 @@
     </div>
   </div>
 </div>
+
+<ng-template #commentsmodal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left color-primary">Comentários</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #loginForm="ngForm" autocomplete="off">
+      <div class="form-group">
+        <textarea
+          class="form-control app-border mb-2"
+          id="exampleFormControlTextarea1"
+          rows="4"
+          cols="40"
+          placeholder="Escreva aqui"
+        ></textarea>
+        <button
+          type="submit"
+          class="btn btn-primary btn btn-secondary bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
+        >
+          Comentar
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary ml-2 bg-transparent app-border color-secondary font-size-button font-weight-bold app-buttom"
+          (click)="modalRef?.hide()"
+        >
+          Fechar
+        </button>
+      </div>
+    </form>
+    <div style="overflow-y: scroll; max-height: 400px">
+      <div
+        class="container comment-container mb-2"
+        *ngFor="let comment of proposal.comments"
+      >
+        <p>{{ comment.commentText }}</p>
+        <p class="card-text text-muted">
+          {{ comment.commentDate | date: "dd/MM/yy" }}
+        </p>
+        <div style="display: flex; flex-direction: row">
+          <fa-icon [icon]="arrowSolid" class="fa-lg" [hidden]="true"></fa-icon>
+          <fa-icon [icon]="arrowRegular" class="fa-lg"></fa-icon>
+          <h5 class="ml-2">{{ comment.votesCount }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

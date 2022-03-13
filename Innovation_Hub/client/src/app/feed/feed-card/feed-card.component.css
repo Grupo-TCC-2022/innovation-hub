@@ -19,3 +19,12 @@
 .app-buttom:hover {
   background-color: #f29f05 !important;
 }
+
+.comment-container {
+  border: 2px solid #a6a6a6 !important;
+  border-radius: 5px;
+}
+
+.color-primary {
+  color: #f29f05 !important;
+}

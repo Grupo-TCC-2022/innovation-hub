@@ -6,7 +6,6 @@ import { AuthGuard } from './_guards/auth.guard';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { FeedComponent } from './feed/feed/feed.component';
-import { MessagesComponent } from './feed/messages/messages.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,8 +14,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'feed', component: FeedComponent, canActivate: [AuthGuard] },
-      { path: 'feed/:id/messages', component: MessagesComponent },
+      { path: 'feed', component: FeedComponent, canActivate: [AuthGuard] }
     ]
   },
   { path: 'not-found', component: NotFoundComponent },

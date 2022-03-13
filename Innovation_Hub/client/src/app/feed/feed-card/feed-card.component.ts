@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { faArrowCircleUp as arrowSolid } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleUp as arrowRegular } from '@fortawesome/free-regular-svg-icons';
 import { faStar as starFavoriteSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as starFavoriteRegular } from '@fortawesome/free-regular-svg-icons';
 import { InterestAreaService } from 'src/app/_services/interest-area.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-feed-card',
@@ -16,12 +17,12 @@ export class FeedCardComponent implements OnInit {
   arrowRegular = arrowRegular;
   starFavoriteSolid = starFavoriteSolid;
   starFavoriteRegular = starFavoriteRegular;
+  public modalRef?: BsModalRef;
 
-  constructor(public interestAreaService: InterestAreaService) { }
+  constructor(public interestAreaService: InterestAreaService, private modalService: BsModalService) { }
 
-  toggleVote(event: any) {
-    //A fazer
-    document.getElementById("openModalBtn").click();
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   ngOnInit(): void {

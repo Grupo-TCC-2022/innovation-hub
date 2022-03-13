@@ -19,7 +19,6 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FeedComponent } from './feed/feed/feed.component';
-import { MessagesComponent } from './feed/messages/messages.component';
 import { FeedCardComponent } from './feed/feed-card/feed-card.component';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { FeedCardComponent } from './feed/feed-card/feed-card.component';
     NotFoundComponent,
     ServerErrorComponent,
     FeedComponent,
-    MessagesComponent,
     FeedCardComponent
   ],
   imports: [
