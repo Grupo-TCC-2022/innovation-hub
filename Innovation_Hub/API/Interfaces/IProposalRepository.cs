@@ -29,6 +29,6 @@ namespace API.Interfaces
         public void AddProblems(IEnumerable<Problem> problems);
 
         public void addComment(Comment comment);
-        public void upvoteCommentAsync(int commentId);
+        public void upvoteCommentAsync(int commentId, string userName);
     }
 }

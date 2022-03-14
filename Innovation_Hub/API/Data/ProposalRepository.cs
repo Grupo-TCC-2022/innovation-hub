@@ -102,6 +102,11 @@ namespace API.Data
             _context.Entry(comment).State = EntityState.Modified;
         }
 
+        public void Update(AppUser user)
+        {
+            _context.Entry(user).State = EntityState.Modified;
+        }
+
         public void AddIdeas(IEnumerable<Idea> ideas)
         {
             foreach (Idea i in ideas)
@@ -131,14 +136,32 @@ namespace API.Data
             _context.Comments.Add(comment);
         }
 
-        public void upvoteCommentAsync(int commentId)
+        public void upvoteCommentAsync(int commentId, string userName)
         {
             Comment comment = _context.Comments.Find(commentId);
             Console.WriteLine(comment.VotesCount);
 
+            AppUser user = _context.Users.Include(p => p.CommentsIUpvoted).SingleOrDefault(x => x.UserName == userName);
+
+            bool upvoted = false;
+
             if (comment != null)
             {
-                comment.VotesCount = comment.VotesCount + 1;
+                foreach (Comment c in user.CommentsIUpvoted)
+                {
+                    if (c.Id == comment.Id) upvoted = true;
+                }
+
+                if (!upvoted)
+                {
+                    user.CommentsIUpvoted = user.CommentsIUpvoted.Append(comment).ToList();
+                    comment.VotesCount = comment.VotesCount + 1;
+                }
+                else
+                {
+                    user.CommentsIUpvoted = user.CommentsIUpvoted.Where(comm => comm.Id != comment.Id).ToList();
+                    comment.VotesCount = comment.VotesCount - 1;
+                }
                 _context.SaveChanges();
             }
         }

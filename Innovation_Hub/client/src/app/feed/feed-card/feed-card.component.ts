@@ -38,6 +38,16 @@ export class FeedCardComponent implements OnInit {
   }
 
   upvoteComment(commentId: number) {
+    console.log(document.getElementById(commentId + "count").innerHTML);
+    if (document.getElementById(commentId + "solid").hidden) {
+      document.getElementById(commentId + "count").innerHTML = String(Number.parseInt(document.getElementById(commentId + "count").innerHTML) + 1);
+    } else {
+      document.getElementById(commentId + "count").innerHTML = String(Number.parseInt(document.getElementById(commentId + "count").innerHTML) - 1);
+    }
+    document.getElementById(commentId + "solid").hidden = !document.getElementById(commentId + "solid").hidden;
+    document.getElementById(commentId + "regular").hidden = !document.getElementById(commentId + "regular").hidden;
+
+
     this.upvoteCommentService.upvoteComment(commentId).subscribe();
   }
 

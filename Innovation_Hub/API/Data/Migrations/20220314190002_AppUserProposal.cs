@@ -117,14 +117,15 @@ namespace API.Data.Migrations
                     CommentDate = table.Column<DateTime>(nullable: false),
                     VotesCount = table.Column<int>(nullable: false),
                     Anonymous = table.Column<bool>(nullable: false),
-                    CommentOwnerId = table.Column<int>(nullable: true)
+                    CommentOwner = table.Column<string>(nullable: true),
+                    AppUserId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comments_Users_CommentOwnerId",
-                        column: x => x.CommentOwnerId,
+                        name: "FK_Comments_Users_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -184,9 +185,9 @@ namespace API.Data.Migrations
                 column: "ProposalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_CommentOwnerId",
+                name: "IX_Comments_AppUserId",
                 table: "Comments",
-                column: "CommentOwnerId");
+                column: "AppUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_ProposalId",

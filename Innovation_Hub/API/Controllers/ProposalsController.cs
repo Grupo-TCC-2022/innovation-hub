@@ -130,16 +130,17 @@ namespace API.Controllers
         }
 
         [HttpPost("comment")]
-        public async void Comment(Comment comment)
+        public async void Comment(Comment comment, [FromQuery] string userName)
         {
+            comment.CommentOwner = userName;
             _proposalRepository.addComment(comment);
             await _proposalRepository.SaveAllAsync();
         }
 
         [HttpGet("upvotecomment")]
-        public async Task upvoteCommentAsync(int commentId)
+        public async Task upvoteCommentAsync([FromQuery] Filter filter)
         {
-            _proposalRepository.upvoteCommentAsync(commentId);
+            _proposalRepository.upvoteCommentAsync(filter.commentId, filter.userName);
             await _proposalRepository.SaveAllAsync();
         }
     }

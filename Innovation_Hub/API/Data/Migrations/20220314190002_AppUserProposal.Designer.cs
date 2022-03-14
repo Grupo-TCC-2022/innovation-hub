@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220313200754_AppUserProposal")]
+    [Migration("20220314190002_AppUserProposal")]
     partial class AppUserProposal
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,11 +74,14 @@ namespace API.Data.Migrations
                     b.Property<bool>("Anonymous")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("AppUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("CommentDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("CommentOwnerId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("CommentOwner")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CommentText")
                         .HasColumnType("TEXT");
@@ -91,7 +94,7 @@ namespace API.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommentOwnerId");
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("ProposalId");
 
@@ -253,9 +256,9 @@ namespace API.Data.Migrations
 
             modelBuilder.Entity("API.Entities.Comment", b =>
                 {
-                    b.HasOne("API.Entities.AppUser", "CommentOwner")
-                        .WithMany()
-                        .HasForeignKey("CommentOwnerId");
+                    b.HasOne("API.Entities.AppUser", null)
+                        .WithMany("CommentsIUpvoted")
+                        .HasForeignKey("AppUserId");
 
                     b.HasOne("API.Entities.Proposal", null)
                         .WithMany("Comments")

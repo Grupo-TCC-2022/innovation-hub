@@ -11,6 +11,6 @@ namespace API.Entities
         public DateTime CommentDate { get; set; } = DateTime.Now;
         public int VotesCount { get; set; }
         public bool Anonymous { get; set; }
-        public AppUser CommentOwner { get; set; }
+        public string CommentOwner { get; set; }
     }
 }

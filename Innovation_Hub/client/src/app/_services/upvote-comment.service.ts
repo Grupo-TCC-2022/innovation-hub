@@ -1,16 +1,18 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpvoteCommentService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   upvoteComment(commentId: number) {
-    console.log(commentId);
-    return this.http.get(this.baseUrl + `proposals/upvotecomment?commentId=` + commentId);
+    console.log();
+    const userName = JSON.parse(localStorage.getItem('user')).userName;
+    return this.http.get(this.baseUrl + `proposals/upvotecomment?commentId=` + commentId + "&userName=" + userName);
   }
 }

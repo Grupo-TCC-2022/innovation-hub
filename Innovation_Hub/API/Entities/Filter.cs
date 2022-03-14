@@ -12,5 +12,7 @@ namespace API.Entities
         public int Take { get; set; }
         public string OrderBy { get; set; }
         public InterestAreaEnum? Category { get; set; } = null;
+        public int commentId { get; set; }
+        public string userName { get; set; }
     }
 }
