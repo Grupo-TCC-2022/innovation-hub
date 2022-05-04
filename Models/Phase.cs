@@ -8,6 +8,6 @@ namespace innovation_hub.Models
         public int ProposalId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime DateFinalization { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

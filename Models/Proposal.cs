@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using innovation_hub.Models.Enums;
 
 namespace innovation_hub.Models
 {
@@ -8,15 +9,16 @@ namespace innovation_hub.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int RestrictionAge { get; set; }
+        public int AgeRestriction { get; set; }
         public bool Finished { get; set; }
-        public bool Archived { get; set; }
-        public DateTime CreationDate { get; set; } = DateTime.Now;
+        public bool Arquived { get; set; }
+        public DateTime CreationDate { get; set; }
         public int Votes { get; set; }
         public bool Private { get; set; }
-        public string Category { get; set; }
+        public ICollection<InterestArea> Categories { get; set; }
         public ICollection<Comment> Comments { get; set; }
         public ICollection<Phase> Phases { get; set; }
-        public ICollection<AppUserProposal> TeamMembers { get; set; }
+        public ICollection<AppUserProposal> AppUserProposals { get; set; }
+        public ProposalTypeEnum ProposalType { get; set; }
     }
 }
