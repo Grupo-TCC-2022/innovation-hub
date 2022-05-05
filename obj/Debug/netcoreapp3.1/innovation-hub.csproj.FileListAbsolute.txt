@@ -133,7 +133,6 @@
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.TagHelpers.output.cache
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorCoreGenerate.cache
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
@@ -146,3 +145,9 @@
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.dll
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.pdb
 /home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.genruntimeconfig.cache
+/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Feed/Index.cshtml.g.cs
+/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Create.cshtml.g.cs
+/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Delete.cshtml.g.cs
+/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Details.cshtml.g.cs
+/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Edit.cshtml.g.cs
+/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Index.cshtml.g.cs
