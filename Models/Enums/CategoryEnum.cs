@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace innovation_hub.Models.Enums
 {
     /* Guardar todas as categorias usadas para area de interesse de cadastro de pessoa e para categoria de proposta */
