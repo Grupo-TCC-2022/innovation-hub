@@ -1,7 +1,9 @@
+using System.Linq;
 using System.Threading.Tasks;
 using innovation_hub.Data;
 using innovation_hub.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace innovation_hub.Controllers
@@ -32,6 +34,7 @@ namespace innovation_hub.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Proposals = _context.Proposals.ToList();
             return View();
         }
     }

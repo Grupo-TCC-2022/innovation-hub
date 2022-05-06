@@ -11,6 +11,6 @@ namespace innovation_hub.Models
         [Required]
         public string CommentText { get; set; }
         public DateTime CommentDate { get; set; } = DateTime.Now;
-        public int? Votes { get; set; }
+        public int Votes { get; set; } = 0;
     }
 }

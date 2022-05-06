@@ -1,37 +1,44 @@
 @model innovation_hub.Models.Proposal
 
-<form asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="ProposalType" class="control-label"></label>
-        <select asp-for="ProposalType" class="form-control">
-            <option value="0">Projeto</option>
-            <option value="1">Ideia</option>
-            <option value="2">Problema</option>
-        </select>
-        <span asp-validation-for="ProposalType" class="text-danger"></span>
+<div class="mx-auto feed-container">
+    <div class="p-3 rounded feed-item">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProposalType" class="control-label"></label>
+                <select asp-for="ProposalType" class="form-control">
+                    <option value="0">Projeto</option>
+                    <option value="1">Ideia</option>
+                    <option value="2">Problema</option>
+                </select>
+                <span asp-validation-for="ProposalType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Title" class="form-control" placeholder="Título" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <textarea asp-for="Description" class="form-control" rows="5" cols="50"
+                    placeholder="Descrição"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Private" /> @Html.DisplayNameFor(model => model.Private)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Postar" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="Title" class="control-label"></label>
-        <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="control-label"></label>
-        <textarea asp-for="Description" class="form-control" rows="5" cols="50"></textarea>
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="AgeRestriction" class="control-label"></label>
-        <input asp-for="AgeRestriction" class="form-control" />
-        <span asp-validation-for="AgeRestriction" class="text-danger"></span>
-    </div>
-    <div class="form-group form-check">
-        <label class="form-check-label">
-            <input class="form-check-input" asp-for="Private" /> @Html.DisplayNameFor(model => model.Private)
-        </label>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Postar" class="btn btn-primary" />
-    </div>
-</form>
+    <!-- Conteudo do feed abaixo -->
+    @foreach (Proposal proposal in ViewBag.Proposals)
+    {
+        <div class="p-3 rounded feed-item mt-3">
+            <h5>@proposal.Title</h5>
+            <p>@proposal.Description</p>
+            <h6>Votos: @proposal.Votes</h6>
+        </div>
+    }
+</div>

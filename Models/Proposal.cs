@@ -21,7 +21,7 @@ namespace innovation_hub.Models
         public bool Finished { get; set; } = false;
         public bool Arquived { get; set; } = false;
         public DateTime CreationDate { get; set; } = DateTime.Now;
-        public int? Votes { get; set; }
+        public int Votes { get; set; } = 0;
         [Display(Name = "Privado")]
         public bool Private { get; set; } = false;
         public ICollection<InterestArea> Categories { get; set; }
