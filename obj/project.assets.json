@@ -8419,19 +8419,19 @@
     ]
   },
   "packageFolders": {
-    "/home/wendelsimoes/.nuget/packages/": {}
+    "C:\\Users\\R A Ú L\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/wendelsimoes/Desktop/innovation-hub/innovation-hub.csproj",
+      "projectUniqueName": "C:\\Users\\R A Ú L\\Documents\\TCC\\innovation-hub\\innovation-hub.csproj",
       "projectName": "innovation-hub",
-      "projectPath": "/home/wendelsimoes/Desktop/innovation-hub/innovation-hub.csproj",
-      "packagesPath": "/home/wendelsimoes/.nuget/packages/",
-      "outputPath": "/home/wendelsimoes/Desktop/innovation-hub/obj/",
+      "projectPath": "C:\\Users\\R A Ú L\\Documents\\TCC\\innovation-hub\\innovation-hub.csproj",
+      "packagesPath": "C:\\Users\\R A Ú L\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\R A Ú L\\Documents\\TCC\\innovation-hub\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/wendelsimoes/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\R A Ú L\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8441,7 +8441,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -8453,7 +8452,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -8500,7 +8498,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.418\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -8509,7 +8507,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "innovation-hub depends on Pomelo.EntityFrameworkCore.MySql (>= 3.1.5) but Pomelo.EntityFrameworkCore.MySql 3.1.5 was not found. An approximate best match of Pomelo.EntityFrameworkCore.MySql 3.2.0 was resolved.",
+      "message": "innovation-hub depende de Pomelo.EntityFrameworkCore.MySql (>= 3.1.5), mas Pomelo.EntityFrameworkCore.MySql 3.1.5 não foi encontrado. A melhor correspondência aproximada de Pomelo.EntityFrameworkCore.MySql 3.2.0 foi resolvida.",
       "libraryId": "Pomelo.EntityFrameworkCore.MySql",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

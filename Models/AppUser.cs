@@ -16,6 +16,9 @@ namespace innovation_hub.Models
         [Required]
         public string Sobrenome { get; set; }
         [Required]
+        [DataType(DataType.Password)]
+        public string Passeword { get; set; }
+        [Required]
         public DateTime DateofBirth { get; set; }
         [Required]
         public string Nickname { get; set; }
