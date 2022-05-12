@@ -26,6 +26,14 @@ namespace innovation_hub
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAuthentication("Identity.Login")
+                .AddCookie("Identity.Login", config =>
+                {
+                    config.Cookie.Name = "Identity.Login";
+                    config.LoginPath = "/Home";
+                    config.AccessDeniedPath = "/Home";
+                    config.ExpireTimeSpan = TimeSpan.FromHours(1);
+                });
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
@@ -49,6 +57,8 @@ namespace innovation_hub
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
