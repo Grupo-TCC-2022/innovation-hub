@@ -7,6 +7,8 @@ namespace innovation_hub.Models
     {
         [Key]
         public int Id { get; set; }
+        public int AppUserId { get; set; }
+        public string AppUserNickname { get; set; }
         public int ProposalId { get; set; }
         [Required]
         public string CommentText { get; set; }

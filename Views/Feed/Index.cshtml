@@ -58,8 +58,46 @@
                     }
                     <p class="card-text">@proposal.Description</p>
                     <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
+                    <button data-toggle="modal" data-target="#commentModal" type="button" class="btn btn-primary">
+                        Comentar
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- -------------------Login----------------- -->
+                            <form asp-controller="Feed" asp-action="Comment" class="mb-3">
+                                <div class="form-group">
+                                    <label for="comment">Comentar</label>
+                                    <textarea class="form-control" id="comment" name="comment"></textarea>
+                                    <input name="proposalId" value="@proposal.Id" hidden>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                            @foreach (Comment comment in proposal.Comments)
+                            {
+                                <div>
+                                    <h6>@comment.AppUserNickname</h6>
+                                    <p>@comment.CommentText</p>
+                                    <p>Votos: @comment.Votes</p>
+                                </div>
+                            }
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         }
     }
+
 </div>

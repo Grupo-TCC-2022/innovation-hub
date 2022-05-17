@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using innovation_hub.Data;
 
 namespace innovation_hub.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220517133505_AddAppUserIdToComment")]
+    partial class AddAppUserIdToComment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,9 +79,6 @@ namespace innovation_hub.Data.Migrations
 
                     b.Property<int>("AppUserId")
                         .HasColumnType("int");
-
-                    b.Property<string>("AppUserNickname")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("CommentDate")
                         .HasColumnType("datetime(6)");

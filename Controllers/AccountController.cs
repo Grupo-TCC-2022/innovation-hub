@@ -56,6 +56,7 @@ namespace innovation_hub.Controllers
             }
 
             List<Claim> direitosAcesso = new List<Claim>{
+                new Claim("id", user.Id.ToString()),
                 new Claim("username", user.Nickname),
                 new Claim("name", user.Nome)
             };

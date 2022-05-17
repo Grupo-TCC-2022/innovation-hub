@@ -48,10 +48,25 @@ namespace innovation_hub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Comment(string comment, string proposalId)
+        {
+            Comment cmt = new Comment{
+                AppUserId = Int32.Parse(User.FindFirst("id").Value),
+                AppUserNickname = User.FindFirst("username").Value,
+                CommentText =  comment,
+                ProposalId = Int32.Parse(proposalId)
+            };
+
+            _context.Add(cmt);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         [Authorize]
         public IActionResult Index()
         {
-            ViewBag.Proposals = _context.Proposals.Include(b => b.Categories).ToList();
+            ViewBag.Proposals = _context.Proposals.Include(b => b.Categories).Include(c => c.Comments).ToList();
             InterestArea interestArea = new InterestArea();
             ViewBag.Categories = interestArea.Categories;
             return View();
