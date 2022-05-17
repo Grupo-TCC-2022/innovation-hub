@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/wendelsimoes/Desktop/innovation-hub/innovation-hub.csproj": {}
+    "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj": {}
   },
   "projects": {
-    "/home/wendelsimoes/Desktop/innovation-hub/innovation-hub.csproj": {
+    "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/wendelsimoes/Desktop/innovation-hub/innovation-hub.csproj",
+        "projectUniqueName": "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj",
         "projectName": "innovation-hub",
-        "projectPath": "/home/wendelsimoes/Desktop/innovation-hub/innovation-hub.csproj",
-        "packagesPath": "/home/wendelsimoes/.nuget/packages/",
-        "outputPath": "/home/wendelsimoes/Desktop/innovation-hub/obj/",
+        "projectPath": "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj",
+        "packagesPath": "C:\\Users\\Wendel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wendel\\Desktop\\innovation-hub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/wendelsimoes/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Wendel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.419/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.419\\RuntimeIdentifierGraph.json"
         }
       }
     }

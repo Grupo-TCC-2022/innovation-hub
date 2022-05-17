@@ -56,8 +56,8 @@ namespace innovation_hub.Controllers
             }
 
             List<Claim> direitosAcesso = new List<Claim>{
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Nome)
+                new Claim("username", user.Nickname),
+                new Claim("name", user.Nome)
             };
 
             var identity = new ClaimsIdentity(direitosAcesso, "Identity.Login");

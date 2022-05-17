@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using innovation_hub.Data;
 using innovation_hub.Models;
 using innovation_hub.Models.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -47,6 +48,7 @@ namespace innovation_hub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             ViewBag.Proposals = _context.Proposals.Include(b => b.Categories).ToList();

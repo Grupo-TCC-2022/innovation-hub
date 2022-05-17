@@ -1,307 +1,153 @@
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/appsettings.Development.json
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/appsettings.json
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.deps.json
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.runtimeconfig.json
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.runtimeconfig.dev.json
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.pdb
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.Views.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.Views.pdb
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.Razor.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.Design.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/dotnet-aspnet-codegenerator-design.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/MySqlConnector.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/NuGet.Frameworks.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Pomelo.EntityFrameworkCore.MySql.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Pomelo.EntityFrameworkCore.MySql.Design.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Pomelo.JsonObject.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Collections.Immutable.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.ComponentModel.Annotations.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.AttributedModel.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.Convention.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.Hosting.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.Runtime.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.TypedParts.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.AssemblyInfoInputs.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.AssemblyInfo.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.csproj.CoreCompileInputs.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.MvcApplicationPartsAssemblyInfo.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorAssemblyInfo.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorAssemblyInfo.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/staticwebassets/innovation-hub.StaticWebAssets.Manifest.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.TagHelpers.input.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.TagHelpers.output.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorCoreGenerate.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorTargetAssemblyInfo.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorTargetAssemblyInfo.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.Views.pdb
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.csproj.CopyComplete
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.dll
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.pdb
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.genruntimeconfig.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Feed/Index.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Create.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Delete.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Details.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Edit.cshtml.g.cs
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Index.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/appsettings.Development.json
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/appsettings.json
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.exe
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.deps.json
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.runtimeconfig.json
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.runtimeconfig.dev.json
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.pdb
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.Views.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/innovation-hub.Views.pdb
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.Razor.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.Design.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/dotnet-aspnet-codegenerator-design.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/MySqlConnector.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/NuGet.Frameworks.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Pomelo.EntityFrameworkCore.MySql.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Pomelo.EntityFrameworkCore.MySql.Design.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/Pomelo.JsonObject.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Collections.Immutable.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.AttributedModel.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.Convention.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.Hosting.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.Runtime.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Composition.TypedParts.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.csprojAssemblyReference.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.AssemblyInfoInputs.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.AssemblyInfo.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.csproj.CoreCompileInputs.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.MvcApplicationPartsAssemblyInfo.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorAssemblyInfo.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorAssemblyInfo.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.TagHelpers.input.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.TagHelpers.output.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorCoreGenerate.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Feed/Index.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Create.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Delete.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Details.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Edit.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/Teste/Index.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorTargetAssemblyInfo.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.RazorTargetAssemblyInfo.cs
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.Views.pdb
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.csproj.CopyComplete
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/staticwebassets/innovation-hub.StaticWebAssets.Manifest.cache
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/staticwebassets/innovation-hub.StaticWebAssets.xml
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.dll
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.pdb
-C:/Users/R A Ú L/Documents/TCC/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.genruntimeconfig.cache
-/home/wendelsimoes/Desktop/innovation-hub/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/innovation-hub.csprojAssemblyReference.cache
-/home/wendelsimoes/Desktop/innovation-hub/obj/Debug/netcoreapp3.1/staticwebassets/innovation-hub.StaticWebAssets.xml
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.exe
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.deps.json
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.runtimeconfig.json
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.runtimeconfig.dev.json
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.pdb
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.Views.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\innovation-hub.Views.pdb
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.Design.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Wendel\Desktop\innovation-hub\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.csprojAssemblyReference.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.AssemblyInfoInputs.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.AssemblyInfo.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.csproj.CoreCompileInputs.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.RazorAssemblyInfo.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.RazorAssemblyInfo.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.TagHelpers.input.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.TagHelpers.output.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.RazorCoreGenerate.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Feed\Index.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Create.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Delete.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Details.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Edit.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Index.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.RazorTargetAssemblyInfo.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.RazorTargetAssemblyInfo.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.Views.pdb
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.csproj.CopyComplete
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\staticwebassets\innovation-hub.StaticWebAssets.Manifest.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\staticwebassets\innovation-hub.StaticWebAssets.xml
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.dll
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.pdb
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.genruntimeconfig.cache
