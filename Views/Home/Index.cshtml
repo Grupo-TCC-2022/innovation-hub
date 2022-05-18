@@ -1,8 +1,21 @@
-﻿@{
+﻿@model List<innovation_hub.Models.Proposal>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h4>Minhas propostas</h4>
+@foreach (Proposal proposal in Model)
+{
+    <div class="card feed-item mt-3">
+        <div class="card-body">
+            <h5 class="card-title">@proposal.Title</h5>
+            @foreach (var item in proposal.Categories)
+            {
+                <h6 class="card-subtitle mb-2 text-muted">@item.Category</h6>
+            }
+            <p class="card-text">@proposal.Description</p>
+            <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
+        </div>
+    </div>
+}

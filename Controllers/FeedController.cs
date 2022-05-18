@@ -25,7 +25,7 @@ namespace innovation_hub.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,AgeRestriction,Finished,Arquived,CreationDate,Votes,Private,ProposalType")] Proposal proposal, List<string> ProposalCategories)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,AgeRestriction,Finished,Arquived,CreationDate,Votes,Private,ProposalType")] Proposal proposal, List<string> ProposalCategories, string teamMembers)
         {
             if (ModelState.IsValid)
             {
@@ -43,6 +43,25 @@ namespace innovation_hub.Controllers
 
                 _context.Add(proposal);
                 await _context.SaveChangesAsync();
+
+                // Set team members
+                string[] teamMembersList = teamMembers.Split(",");
+                List<AppUserProposal> aup = new List<AppUserProposal>();
+                foreach (string member in teamMembersList)
+                {
+                    AppUser userMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == member);
+                    if(userMember != null)
+                    {
+                        aup.Add(new AppUserProposal{
+                            AppUserId = userMember.Id,
+                            ProposalId = proposal.Id
+                        });
+                    }
+                    Console.WriteLine(member);
+                }
+                proposal.AppUserProposals = aup;
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             return RedirectToAction(nameof(Index));
