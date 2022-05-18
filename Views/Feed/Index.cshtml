@@ -58,6 +58,7 @@
                     }
                     <p class="card-text">@proposal.Description</p>
                     <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
+                    <a asp-controller="Feed" asp-action="Vote" asp-route-proposalId="@proposal.Id">Votar</a>
                     <button data-toggle="modal" data-target="#commentModal" type="button" class="btn btn-primary">
                         Comentar
                     </button>

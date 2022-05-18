@@ -63,6 +63,33 @@ namespace innovation_hub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Vote(string proposalId)
+        {
+            int AppUserId = Int32.Parse(User.FindFirst("id").Value);
+
+            var aupv = await _context.AppUserProposalVote.FirstOrDefaultAsync(p => p.AppUserId == AppUserId && p.ProposalId == Int32.Parse(proposalId));
+            if (aupv != null)
+            {
+                aupv.Voted = !aupv.Voted;
+            } else {
+                aupv = new AppUserProposalVote{
+                    AppUserId = Int32.Parse(User.FindFirst("id").Value),
+                    ProposalId = Int32.Parse(proposalId),
+                    Voted = true
+                };
+                _context.Add(aupv);
+            }
+
+            var proposal = await _context.Proposals.FirstOrDefaultAsync(p => p.Id == Int32.Parse(proposalId));
+            var proposalVotes = _context.AppUserProposalVote.Where(p => p.ProposalId == Int32.Parse(proposalId)).ToList();
+            int count = proposalVotes.Sum(s => s.Voted ? 1 : 0);
+            proposal.Votes = count;
+
+            await _context.SaveChangesAsync();
+            
+            return RedirectToAction(nameof(Index));
+        }
+
         [Authorize]
         public IActionResult Index()
         {
