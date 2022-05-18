@@ -12,43 +12,40 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Innovation Hub</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Index">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- TODO -->
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
-                        </li>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand text-dark" asp-controller="Home" asp-action="Index">Innovation Hub</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         @if (!User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item">
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#loginModal">
+                                    Login
+                                </button>
+                            </li>
+
                             <li class="nav-item">
                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                 data-target="#cadastroModal">
                                     Cadastrar
                                 </button>
                             </li>
-
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-                                    Login
-                                </button>
-                            </li>
                         }
 
                         @if (User.Identity.IsAuthenticated)
                         {
-                            string bemVindo = String.Format("Bem Vindo {0}", User.FindFirst("name").Value);
-                            <li class="nav-item ml-auto">
+                            string bemVindo = String.Format("Bem Vindo, {0}", User.FindFirst("name").Value);
+                            <li class="nav-item ml-auto text-dark">
                                 <h5>
                                     @bemVindo
                                 </h5>

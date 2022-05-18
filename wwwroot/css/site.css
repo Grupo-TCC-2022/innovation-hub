@@ -1,11 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
 
 /* Provide sufficient contrast against white background */
 a {
@@ -16,6 +11,8 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+  margin: 0 50px;
+
 }
 
 .nav-pills .nav-link.active,
@@ -24,6 +21,10 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.nav-item {
+    margin: 0 50px;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -64,6 +65,15 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-image: url(./img/inov.png);
+  background-position: center center;
+  height: 70px; 
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+background-size: cover;
+ 
+
+
 }
 
 .footer {
@@ -80,8 +90,13 @@ body {
 }
 
 .feed-item {
-  background-color: #d4cece;
-}
+  background: rgba( 106, 149, 196, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );}
+
 
 .feed-item p {
   overflow-wrap: break-word;
