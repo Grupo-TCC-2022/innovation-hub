@@ -44,7 +44,7 @@ namespace innovation_hub.Controllers
             };
             _context.Add(User);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", new {password = passeword, nickName = nickName});
         }
 
         public async Task<IActionResult> Login(string password, string nickName)

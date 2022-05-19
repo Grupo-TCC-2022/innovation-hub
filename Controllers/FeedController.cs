@@ -49,16 +49,25 @@ namespace innovation_hub.Controllers
                 List<AppUserProposal> aup = new List<AppUserProposal>();
                 foreach (string member in teamMembersList)
                 {
-                    AppUser userMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == member);
-                    if(userMember != null)
+                    if(member != User.FindFirst("username").Value)
                     {
-                        aup.Add(new AppUserProposal{
-                            AppUserId = userMember.Id,
-                            ProposalId = proposal.Id
-                        });
+                        AppUser userMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == member);
+                        if(userMember != null)
+                        {
+                            aup.Add(new AppUserProposal{
+                                AppUserId = userMember.Id,
+                                ProposalId = proposal.Id
+                            });
+                        }
                     }
-                    Console.WriteLine(member);
                 }
+
+                AppUser ManagerMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == User.FindFirst("username").Value);
+                aup.Add(new AppUserProposal{
+                    AppUserId = ManagerMember.Id,
+                    ProposalId = proposal.Id
+                });
+
                 proposal.AppUserProposals = aup;
                 await _context.SaveChangesAsync();
 
@@ -98,6 +107,8 @@ namespace innovation_hub.Controllers
                 };
                 _context.Add(aupv);
             }
+
+            await _context.SaveChangesAsync();
 
             var proposal = await _context.Proposals.FirstOrDefaultAsync(p => p.Id == Int32.Parse(proposalId));
             var proposalVotes = _context.AppUserProposalVote.Where(p => p.ProposalId == Int32.Parse(proposalId)).ToList();

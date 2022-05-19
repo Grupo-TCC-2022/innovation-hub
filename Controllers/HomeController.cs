@@ -28,7 +28,8 @@ namespace innovation_hub.Controllers
             {
                 int id = Int32.Parse(User.FindFirst("id").Value);
                 List<Proposal> projetosQueEstou = _context.Proposals.Include(p => p.AppUserProposals).Where(p => p.AppUserProposals.Any(i => i.AppUserId == id)).Include(p => p.Categories).ToList();
-                return View(projetosQueEstou);
+                ViewBag.ProposalsIamIn = projetosQueEstou;
+                return View();
             }
             return View();
         }
