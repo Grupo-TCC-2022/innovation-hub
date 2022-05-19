@@ -86,13 +86,15 @@
                         class="fa-regular fa-thumbs-up fa-lg"></i></a>
                         }
                     </div>
-
-                    <button data-toggle="modal" data-target="#commentModal" type="button" class="btn btn-primary">
+                    @{
+                        string modalName = "commentModal" + @proposal.Id;
+                    }
+                    <button data-toggle="modal" data-target="#@modalName" type="button" class="btn btn-primary">
                         Comentar
                     </button>
                 </div>
             </div>
-            <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="@modalName" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -115,9 +117,34 @@
                             {
                                 <div>
                                     <h6>@comment.AppUserNickname</h6>
+                                    <p>@comment.CommentDate</p>
                                     <p>@comment.CommentText</p>
-                                    <p>Votos: @comment.Votes</p>
-                                    <a asp-controller="Feed" asp-action="VoteComment" asp-route-commentId="@comment.Id">Votar</a>
+                                    <div style="display: flex;">
+                                        <p class="mr-2">@comment.Votes</p>
+
+                                        @{
+                                            bool likedComment = false;
+                                        }
+
+                                        @foreach (AppUserCommentVote commentsILiked in ViewBag.CommentsILiked)
+                                        {
+                                            if (comment.Id == commentsILiked.CommentId)
+                                            {
+                                                likedComment = true;
+                                            }
+                                        }
+
+                                        @if (likedComment)
+                                        {
+                                            <a asp-controller="Feed" asp-action="VoteComment" asp-route-commentId="@comment.Id"><i
+                                        class="fa-solid fa-thumbs-up fa-lg"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-controller="Feed" asp-action="VoteComment" asp-route-commentId="@comment.Id"><i
+                                        class="fa-regular fa-thumbs-up fa-lg"></i></a>
+                                        }
+                                    </div>
                                 </div>
                             }
                         </div>
