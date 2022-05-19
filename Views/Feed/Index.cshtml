@@ -60,8 +60,33 @@
                         <h6 class="card-subtitle mb-2 text-muted">@item.Category</h6>
                     }
                     <p class="card-text">@proposal.Description</p>
-                    <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
-                    <a asp-controller="Feed" asp-action="Vote" asp-route-proposalId="@proposal.Id">Votar</a>
+                    <div style="display: flex;">
+                        <h6 class="card-link mr-2">@proposal.Votes</h6>
+
+                        @{
+                            bool liked = false;
+                        }
+
+                        @foreach (AppUserProposalVote proposalsILiked in ViewBag.ProposalsILiked)
+                        {
+                            if (proposal.Id == proposalsILiked.ProposalId)
+                            {
+                                liked = true;
+                            }
+                        }
+
+                        @if (liked)
+                        {
+                            <a asp-controller="Feed" asp-action="Vote" asp-route-proposalId="@proposal.Id"><i
+                        class="fa-solid fa-thumbs-up fa-lg"></i></a>
+                        }
+                        else
+                        {
+                            <a asp-controller="Feed" asp-action="Vote" asp-route-proposalId="@proposal.Id"><i
+                        class="fa-regular fa-thumbs-up fa-lg"></i></a>
+                        }
+                    </div>
+
                     <button data-toggle="modal" data-target="#commentModal" type="button" class="btn btn-primary">
                         Comentar
                     </button>
@@ -78,7 +103,7 @@
                         </div>
                         <div class="modal-body">
                             <!-- -------------------Login----------------- -->
-                            <form asp-controller="Feed" asp-action="Comment" class="mb-3">
+                    <form asp-controller="Feed" asp-action="Comment" class="mb-3">
                                 <div class="form-group">
                                     <label for="comment">Comentar</label>
                                     <textarea class="form-control" id="comment" name="comment"></textarea>

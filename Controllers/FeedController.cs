@@ -169,6 +169,7 @@ namespace innovation_hub.Controllers
             ViewBag.Proposals = _context.Proposals.Include(b => b.Categories).Include(c => c.Comments).ToList();
             InterestArea interestArea = new InterestArea();
             ViewBag.Categories = interestArea.Categories;
+            ViewBag.ProposalsILiked = _context.AppUserProposalVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
             return View();
         }
     }
