@@ -15,6 +15,7 @@ namespace innovation_hub.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Phase> Phases { get; set; }
         public DbSet<AppUserProposalVote> AppUserProposalVote { get; set; }
+        public DbSet<AppUserCommentVote> AppUserCommentVote { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

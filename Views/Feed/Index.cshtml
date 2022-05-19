@@ -92,6 +92,7 @@
                                     <h6>@comment.AppUserNickname</h6>
                                     <p>@comment.CommentText</p>
                                     <p>Votos: @comment.Votes</p>
+                                    <a asp-controller="Feed" asp-action="VoteComment" asp-route-commentId="@comment.Id">Votar</a>
                                 </div>
                             }
                         </div>

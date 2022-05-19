@@ -45,25 +45,31 @@ namespace innovation_hub.Controllers
                 await _context.SaveChangesAsync();
 
                 // Set team members
-                string[] teamMembersList = teamMembers.Split(",");
                 List<AppUserProposal> aup = new List<AppUserProposal>();
-                foreach (string member in teamMembersList)
+                if (teamMembers != null && teamMembers != "")
                 {
-                    if(member != User.FindFirst("username").Value)
+                    string[] teamMembersList = teamMembers.Split(",");
+                    aup = new List<AppUserProposal>();
+                    foreach (string member in teamMembersList)
                     {
-                        AppUser userMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == member);
-                        if(userMember != null)
+                        if (member != User.FindFirst("username").Value)
                         {
-                            aup.Add(new AppUserProposal{
-                                AppUserId = userMember.Id,
-                                ProposalId = proposal.Id
-                            });
+                            AppUser userMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == member);
+                            if (userMember != null)
+                            {
+                                aup.Add(new AppUserProposal
+                                {
+                                    AppUserId = userMember.Id,
+                                    ProposalId = proposal.Id
+                                });
+                            }
                         }
                     }
                 }
 
                 AppUser ManagerMember = _context.AppUsers.FirstOrDefault(p => p.Nickname == User.FindFirst("username").Value);
-                aup.Add(new AppUserProposal{
+                aup.Add(new AppUserProposal
+                {
                     AppUserId = ManagerMember.Id,
                     ProposalId = proposal.Id
                 });
@@ -79,10 +85,11 @@ namespace innovation_hub.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment(string comment, string proposalId)
         {
-            Comment cmt = new Comment{
+            Comment cmt = new Comment
+            {
                 AppUserId = Int32.Parse(User.FindFirst("id").Value),
                 AppUserNickname = User.FindFirst("username").Value,
-                CommentText =  comment,
+                CommentText = comment,
                 ProposalId = Int32.Parse(proposalId)
             };
 
@@ -93,14 +100,17 @@ namespace innovation_hub.Controllers
 
         public async Task<IActionResult> Vote(string proposalId)
         {
-            int AppUserId = Int32.Parse(User.FindFirst("id").Value);
+            int appUserId = Int32.Parse(User.FindFirst("id").Value);
 
-            var aupv = await _context.AppUserProposalVote.FirstOrDefaultAsync(p => p.AppUserId == AppUserId && p.ProposalId == Int32.Parse(proposalId));
+            var aupv = await _context.AppUserProposalVote.FirstOrDefaultAsync(p => p.AppUserId == appUserId && p.ProposalId == Int32.Parse(proposalId));
             if (aupv != null)
             {
                 aupv.Voted = !aupv.Voted;
-            } else {
-                aupv = new AppUserProposalVote{
+            }
+            else
+            {
+                aupv = new AppUserProposalVote
+                {
                     AppUserId = Int32.Parse(User.FindFirst("id").Value),
                     ProposalId = Int32.Parse(proposalId),
                     Voted = true
@@ -116,7 +126,40 @@ namespace innovation_hub.Controllers
             proposal.Votes = count;
 
             await _context.SaveChangesAsync();
-            
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> VoteComment(string commentId)
+        {
+            int appUserId = Int32.Parse(User.FindFirst("id").Value);
+
+            var aucv = await _context.AppUserCommentVote.FirstOrDefaultAsync(p => p.CommentId == Int32.Parse(commentId) && p.AppUserId == appUserId);
+
+            if (aucv != null)
+            {
+                aucv.Voted = !aucv.Voted;
+            }
+            else
+            {
+                aucv = new AppUserCommentVote
+                {
+                    AppUserId = appUserId,
+                    CommentId = Int32.Parse(commentId),
+                    Voted = true
+                };
+                _context.Add(aucv);
+            }
+
+            await _context.SaveChangesAsync();
+
+            var comment = await _context.Comments.FirstOrDefaultAsync(p => p.Id == Int32.Parse(commentId));
+            var commentVotes = _context.AppUserCommentVote.Where(p => p.CommentId == Int32.Parse(commentId)).ToList();
+            int count = commentVotes.Sum(s => s.Voted ? 1 : 0);
+            comment.Votes = count;
+
+            await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
