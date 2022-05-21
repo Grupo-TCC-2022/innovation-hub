@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using innovation_hub.Data;
 
 namespace innovation_hub.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220521153309_FixFavorite")]
+    partial class FixFavorite
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,6 +107,8 @@ namespace innovation_hub.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("AppUserProposalFavorite");
                 });
@@ -270,6 +274,15 @@ namespace innovation_hub.Data.Migrations
                     b.HasOne("innovation_hub.Models.Proposal", null)
                         .WithMany("AppUserProposals")
                         .HasForeignKey("ProposalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("innovation_hub.Models.AppUserProposalFavorite", b =>
+                {
+                    b.HasOne("innovation_hub.Models.AppUser", null)
+                        .WithMany("AppUserProposalFavorite")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

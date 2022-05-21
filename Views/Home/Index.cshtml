@@ -4,7 +4,7 @@
 
 <h4>Minhas propostas</h4>
 
-@if(ViewBag.ProposalsIamIn != null)
+@if (ViewBag.ProposalsIamIn != null)
 {
     @foreach (Proposal proposal in ViewBag.ProposalsIamIn)
     {
@@ -22,3 +22,22 @@
     }
 }
 
+<h4 class="mt-3">Propostas que favoritei</h4>
+
+@if (ViewBag.ProposalsIFavorited != null)
+{
+    @foreach (Proposal proposal in ViewBag.ProposalsIFavorited)
+    {
+        <div class="card feed-item mt-3">
+            <div class="card-body">
+                <h5 class="card-title">@proposal.Title</h5>
+                @foreach (var item in proposal.Categories)
+                {
+                    <h6 class="card-subtitle mb-2 text-muted">@item.Category</h6>
+                }
+                <p class="card-text">@proposal.Description</p>
+                <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
+            </div>
+        </div>
+    }
+}

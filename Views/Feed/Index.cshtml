@@ -54,6 +54,32 @@
         {
             <div class="card feed-item mt-3">
                 <div class="card-body">
+                    <!-- Checar se já favoritou, se sim estrela preenchida, se não estrela vazia -->
+
+                    @{
+                        bool Favorited = false;
+                    }
+
+                    @foreach (AppUserProposalFavorite proposalsIFavorited in ViewBag.ProposalsIFavorited)
+                    {
+                        if (proposal.Id == proposalsIFavorited.ProposalId)
+                        {
+                            Favorited = true;
+                        }
+                    }
+
+                    @if (Favorited)
+                    {
+                        <a asp-controller="Feed" asp-action="Favorite" asp-route-proposalId="@proposal.Id"><i class="fa-solid fa-star fa-lg"></i></a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Feed" asp-action="Favorite" asp-route-proposalId="@proposal.Id"><i class="fa-regular fa-star fa-lg"></i>
+</a>
+                    }
+
+                    <!-- Checar se já favoritou, se sim estrela preenchida, se não estrela vazia -->
+
                     <h5 class="card-title">@proposal.Title</h5>
                     @foreach (var item in proposal.Categories)
                     {
@@ -137,12 +163,12 @@
                                         @if (likedComment)
                                         {
                                             <a asp-controller="Feed" asp-action="VoteComment" asp-route-commentId="@comment.Id"><i
-                                        class="fa-solid fa-thumbs-up fa-lg"></i></a>
+                                    class="fa-solid fa-thumbs-up fa-lg"></i></a>
                                         }
                                         else
                                         {
                                             <a asp-controller="Feed" asp-action="VoteComment" asp-route-commentId="@comment.Id"><i
-                                        class="fa-regular fa-thumbs-up fa-lg"></i></a>
+                                    class="fa-regular fa-thumbs-up fa-lg"></i></a>
                                         }
                                     </div>
                                 </div>

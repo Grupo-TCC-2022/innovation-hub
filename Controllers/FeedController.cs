@@ -163,6 +163,32 @@ namespace innovation_hub.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Favorite(string proposalId)
+        {
+            int appUserId = Int32.Parse(User.FindFirst("id").Value);
+
+            var aupf = await _context.AppUserProposalFavorite.FirstOrDefaultAsync(p => p.AppUserId == appUserId && p.ProposalId == Int32.Parse(proposalId));
+
+            if (aupf != null)
+            {
+                aupf.Favorited = !aupf.Favorited;
+            }
+            else
+            {
+                aupf = new AppUserProposalFavorite
+                {
+                    AppUserId = Int32.Parse(User.FindFirst("id").Value),
+                    ProposalId = Int32.Parse(proposalId),
+                    Favorited = true
+                };
+                _context.Add(aupf);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
         [Authorize]
         public IActionResult Index()
         {
@@ -171,6 +197,7 @@ namespace innovation_hub.Controllers
             ViewBag.Categories = interestArea.Categories;
             ViewBag.ProposalsILiked = _context.AppUserProposalVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
             ViewBag.CommentsILiked = _context.AppUserCommentVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true);
+            ViewBag.ProposalsIFavorited = _context.AppUserProposalFavorite.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Favorited == true);
             return View();
         }
     }
