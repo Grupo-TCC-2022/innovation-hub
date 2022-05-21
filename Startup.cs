@@ -26,6 +26,7 @@ namespace innovation_hub
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IProposalRepository, ProposalRepository>();
             services.AddAuthentication("Identity.Login")
                 .AddCookie("Identity.Login", config =>
                 {

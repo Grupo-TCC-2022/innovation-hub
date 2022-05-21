@@ -16,11 +16,13 @@ namespace innovation_hub.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly DataContext _context;
+        private readonly IProposalRepository _proposalRepository;
 
-        public FeedController(ILogger<HomeController> logger, DataContext context)
+        public FeedController(ILogger<HomeController> logger, DataContext context, IProposalRepository proposalRepository)
         {
             _logger = logger;
             _context = context;
+            _proposalRepository = proposalRepository;
         }
 
         [HttpPost]
@@ -85,106 +87,28 @@ namespace innovation_hub.Controllers
         [HttpPost]
         public async Task<IActionResult> Comment(string comment, string proposalId)
         {
-            Comment cmt = new Comment
-            {
-                AppUserId = Int32.Parse(User.FindFirst("id").Value),
-                AppUserNickname = User.FindFirst("username").Value,
-                CommentText = comment,
-                ProposalId = Int32.Parse(proposalId)
-            };
+            await _proposalRepository.Comment(comment, Int32.Parse(proposalId), Int32.Parse(User.FindFirst("id").Value), User.FindFirst("username").Value);
 
-            _context.Add(cmt);
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Vote(string proposalId)
         {
-            int appUserId = Int32.Parse(User.FindFirst("id").Value);
-
-            var aupv = await _context.AppUserProposalVote.FirstOrDefaultAsync(p => p.AppUserId == appUserId && p.ProposalId == Int32.Parse(proposalId));
-            if (aupv != null)
-            {
-                aupv.Voted = !aupv.Voted;
-            }
-            else
-            {
-                aupv = new AppUserProposalVote
-                {
-                    AppUserId = Int32.Parse(User.FindFirst("id").Value),
-                    ProposalId = Int32.Parse(proposalId),
-                    Voted = true
-                };
-                _context.Add(aupv);
-            }
-
-            await _context.SaveChangesAsync();
-
-            var proposal = await _context.Proposals.FirstOrDefaultAsync(p => p.Id == Int32.Parse(proposalId));
-            var proposalVotes = _context.AppUserProposalVote.Where(p => p.ProposalId == Int32.Parse(proposalId)).ToList();
-            int count = proposalVotes.Sum(s => s.Voted ? 1 : 0);
-            proposal.Votes = count;
-
-            await _context.SaveChangesAsync();
+            await _proposalRepository.Vote(Int32.Parse(proposalId), Int32.Parse(User.FindFirst("id").Value));
 
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> VoteComment(string commentId)
         {
-            int appUserId = Int32.Parse(User.FindFirst("id").Value);
-
-            var aucv = await _context.AppUserCommentVote.FirstOrDefaultAsync(p => p.CommentId == Int32.Parse(commentId) && p.AppUserId == appUserId);
-
-            if (aucv != null)
-            {
-                aucv.Voted = !aucv.Voted;
-            }
-            else
-            {
-                aucv = new AppUserCommentVote
-                {
-                    AppUserId = appUserId,
-                    CommentId = Int32.Parse(commentId),
-                    Voted = true
-                };
-                _context.Add(aucv);
-            }
-
-            await _context.SaveChangesAsync();
-
-            var comment = await _context.Comments.FirstOrDefaultAsync(p => p.Id == Int32.Parse(commentId));
-            var commentVotes = _context.AppUserCommentVote.Where(p => p.CommentId == Int32.Parse(commentId)).ToList();
-            int count = commentVotes.Sum(s => s.Voted ? 1 : 0);
-            comment.Votes = count;
-
-            await _context.SaveChangesAsync();
+            await _proposalRepository.VoteComment(Int32.Parse(commentId), Int32.Parse(User.FindFirst("id").Value));
 
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Favorite(string proposalId)
         {
-            int appUserId = Int32.Parse(User.FindFirst("id").Value);
-
-            var aupf = await _context.AppUserProposalFavorite.FirstOrDefaultAsync(p => p.AppUserId == appUserId && p.ProposalId == Int32.Parse(proposalId));
-
-            if (aupf != null)
-            {
-                aupf.Favorited = !aupf.Favorited;
-            }
-            else
-            {
-                aupf = new AppUserProposalFavorite
-                {
-                    AppUserId = Int32.Parse(User.FindFirst("id").Value),
-                    ProposalId = Int32.Parse(proposalId),
-                    Favorited = true
-                };
-                _context.Add(aupf);
-            }
-
-            await _context.SaveChangesAsync();
+            await _proposalRepository.Favorite(Int32.Parse(proposalId), Int32.Parse(User.FindFirst("id").Value));
 
             return RedirectToAction(nameof(Index));
         }

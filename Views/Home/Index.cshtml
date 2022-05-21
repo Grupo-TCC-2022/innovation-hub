@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h4 class="mt-3">Minhas propostas</h4>
+<h4 class="mt-3">Propostas em que estou</h4>
 
 @if (ViewBag.ProposalsIamIn != null)
 {
@@ -10,7 +10,35 @@
     {
         <div class="card feed-item mt-3">
             <div class="card-body">
-                <h5 class="card-title">@proposal.Title</h5>
+                <!-- Checar se já favoritou, se sim estrela preenchida, se não estrela vazia -->
+
+                @{
+                    bool Favorited = false;
+                }
+
+                @foreach (Proposal proposalsIFavorited in ViewBag.ProposalsIFavorited)
+                {
+                    if (proposal.Id == proposalsIFavorited.Id)
+                    {
+                        Favorited = true;
+                    }
+                }
+
+                @if (Favorited)
+                {
+                    <a asp-controller="Home" asp-action="Favorite" asp-route-proposalId="@proposal.Id"><i
+                class="fa-solid fa-star fa-lg"></i></a>
+                }
+                else
+                {
+                    <a asp-controller="Home" asp-action="Favorite" asp-route-proposalId="@proposal.Id"><i
+                class="fa-regular fa-star fa-lg"></i>
+                    </a>
+                }
+
+                <!-- Checar se já favoritou, se sim estrela preenchida, se não estrela vazia -->
+
+        <h5 class="card-title">@proposal.Title</h5>
                 @{
                     var categoriesFormated = ((IEnumerable<dynamic>)ViewBag.Categories).Where(x => proposal.Categories.Any(y =>
                             Int32.Parse(x.Value) == y.Id));
@@ -21,7 +49,31 @@
                     <h6 class="card-subtitle mb-2 text-muted">@item.Text</h6>
                 }
                 <p class="card-text">@proposal.Description</p>
-                <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
+                <div style="display: flex;">
+                    <h6 class="card-link mr-2">@proposal.Votes</h6>
+                    @{
+                        bool liked = false;
+                    }
+
+                    @foreach (AppUserProposalVote proposalsILiked in ViewBag.ProposalsILiked)
+                    {
+                        if (proposal.Id == proposalsILiked.ProposalId)
+                        {
+                            liked = true;
+                        }
+                    }
+
+                    @if (liked)
+                    {
+                        <a asp-controller="Home" asp-action="Vote" asp-route-proposalId="@proposal.Id"><i
+                    class="fa-solid fa-thumbs-up fa-lg"></i></a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Home" asp-action="Vote" asp-route-proposalId="@proposal.Id"><i
+                    class="fa-regular fa-thumbs-up fa-lg"></i></a>
+                    }
+                </div>
             </div>
         </div>
     }
@@ -35,10 +87,12 @@
     {
         <div class="card feed-item mt-3">
             <div class="card-body">
+                <a asp-controller="Home" asp-action="Favorite" asp-route-proposalId="@proposal.Id"><i
+                class="fa-solid fa-star fa-lg"></i></a>
                 <h5 class="card-title">@proposal.Title</h5>
                 @{
                     var categoriesFormated = ((IEnumerable<dynamic>)ViewBag.Categories).Where(x => proposal.Categories.Any(y =>
-                           Int32.Parse(x.Value) == y.Id));
+                            Int32.Parse(x.Value) == y.Id));
                 }
 
                 @foreach (var item in categoriesFormated)
@@ -46,7 +100,31 @@
                     <h6 class="card-subtitle mb-2 text-muted">@item.Text</h6>
                 }
                 <p class="card-text">@proposal.Description</p>
-                <h6 href="#" class="card-link">Votos: @proposal.Votes</h6>
+                <div style="display: flex;">
+                    <h6 class="card-link mr-2">@proposal.Votes</h6>
+                    @{
+                        bool liked = false;
+                    }
+
+                    @foreach (AppUserProposalVote proposalsILiked in ViewBag.ProposalsILiked)
+                    {
+                        if (proposal.Id == proposalsILiked.ProposalId)
+                        {
+                            liked = true;
+                        }
+                    }
+
+                    @if (liked)
+                    {
+                        <a asp-controller="Home" asp-action="Vote" asp-route-proposalId="@proposal.Id"><i
+                    class="fa-solid fa-thumbs-up fa-lg"></i></a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Home" asp-action="Vote" asp-route-proposalId="@proposal.Id"><i
+                    class="fa-regular fa-thumbs-up fa-lg"></i></a>
+                    }
+                </div>
             </div>
         </div>
     }
