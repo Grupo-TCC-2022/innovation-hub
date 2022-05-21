@@ -81,9 +81,14 @@
                     <!-- Checar se já favoritou, se sim estrela preenchida, se não estrela vazia -->
 
                     <h5 class="card-title">@proposal.Title</h5>
-                    @foreach (var item in proposal.Categories)
+
+                    @{
+                        var categoriesFormated = ((IEnumerable<dynamic>) ViewBag.Categories).Where(x => proposal.Categories.Any(y => Int32.Parse(x.Value) == y.Id));
+                    }
+
+                    @foreach (var item in categoriesFormated)
                     {
-                        <h6 class="card-subtitle mb-2 text-muted">@item.Category</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">@item.Text</h6>
                     }
                     <p class="card-text">@proposal.Description</p>
                     <div style="display: flex;">

@@ -24,16 +24,18 @@ namespace innovation_hub.Controllers
 
         public IActionResult Index()
         {
-            if(User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
                 int id = Int32.Parse(User.FindFirst("id").Value);
                 List<Proposal> projetosQueEstou = _context.Proposals.Include(p => p.AppUserProposals).Where(p => p.AppUserProposals.Any(i => i.AppUserId == id)).Include(p => p.Categories).ToList();
                 ViewBag.ProposalsIamIn = projetosQueEstou;
-                
+
                 var allProposals = _context.Proposals.ToList();
                 List<AppUserProposalFavorite> projetosQueFavoritei = _context.AppUserProposalFavorite.Where(p => p.AppUserId == id && p.Favorited == true).ToList();
                 ViewBag.ProposalsIFavorited = allProposals.Where(x => projetosQueFavoritei.Any(y => x.Id == y.ProposalId));
 
+                InterestArea interestArea = new InterestArea();
+                ViewBag.Categories = interestArea.Categories;
                 return View();
             }
             return View();
