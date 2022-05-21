@@ -29,10 +29,10 @@ namespace innovation_hub.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 int id = Int32.Parse(User.FindFirst("id").Value);
-                List<Proposal> projetosQueEstou = _context.Proposals.Include(p => p.AppUserProposals).Where(p => p.AppUserProposals.Any(i => i.AppUserId == id)).Include(p => p.Categories).ToList();
+                List<Proposal> projetosQueEstou = _context.Proposals.Include(p => p.AppUserProposals).Where(p => p.AppUserProposals.Any(i => i.AppUserId == id)).Include(p => p.Categories).Include(p => p.Comments).ToList();
                 ViewBag.ProposalsIamIn = projetosQueEstou;
 
-                var allProposals = _context.Proposals.ToList();
+                var allProposals = _context.Proposals.Include(p => p.Comments).ToList();
                 List<AppUserProposalFavorite> projetosQueFavoritei = _context.AppUserProposalFavorite.Where(p => p.AppUserId == id && p.Favorited == true).ToList();
                 ViewBag.ProposalsIFavorited = allProposals.Where(x => projetosQueFavoritei.Any(y => x.Id == y.ProposalId));
 
@@ -41,6 +41,9 @@ namespace innovation_hub.Controllers
 
                 ViewBag.ProposalsILiked = _context.AppUserProposalVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
                 
+                ViewBag.ProposalsIManage = _context.Proposals.Include(p => p.Comments).Where(p => p.ManagerId == Int32.Parse(User.FindFirst("id").Value));
+
+                ViewBag.CommentsILiked = _context.AppUserCommentVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
                 return View();
             }
             return View();

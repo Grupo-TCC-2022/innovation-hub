@@ -30,6 +30,6 @@ namespace innovation_hub.Models
         public ICollection<AppUserProposal> AppUserProposals { get; set; }
         [Display(Name = "Tipo de Proposta")]
         public ProposalTypeEnum ProposalType { get; set; }
-        public AppUser Manager { get; set; }
+        public int ManagerId { get; set; }
     }
 }

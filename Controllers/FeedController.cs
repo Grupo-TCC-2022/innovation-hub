@@ -76,6 +76,8 @@ namespace innovation_hub.Controllers
                     ProposalId = proposal.Id
                 });
 
+                proposal.ManagerId = ManagerMember.Id;
+
                 proposal.AppUserProposals = aup;
                 await _context.SaveChangesAsync();
 
