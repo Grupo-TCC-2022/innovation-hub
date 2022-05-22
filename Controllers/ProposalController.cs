@@ -58,19 +58,21 @@ namespace innovation_hub.Controllers
                 try
                 {
                     Proposal p = await _context.Proposals.FirstOrDefaultAsync(p => p.Id == proposal.Id);
-                    AppUser user = await _context.AppUsers.FirstOrDefaultAsync(p => p.Nickname == manager);
 
-                    bool isIn = _context.AppUserProposals.Any(p => p.AppUserId == user.Id && p.ProposalId == p.Id);
-
-                    if(!isIn)
+                    if(manager != null && manager != "")
                     {
-                        _context.AppUserProposals.Add(new AppUserProposal{
-                            AppUserId = user.Id,
-                            ProposalId = p.Id
-                        });
+                        AppUser user = await _context.AppUsers.FirstOrDefaultAsync(p => p.Nickname == manager);
+                        bool isIn = _context.AppUserProposals.Any(p => p.AppUserId == user.Id && p.ProposalId == p.Id);
+                        if(isIn)
+                        {
+                            _context.AppUserProposals.Add(new AppUserProposal{
+                                AppUserId = user.Id,
+                                ProposalId = p.Id
+                            });
+                        }
+                        p.ManagerId = user.Id;
                     }
 
-                    p.ManagerId = user.Id;
                     p.Title = proposal.Title;
                     p.Description = proposal.Description;
                     p.AgeRestriction = proposal.AgeRestriction;
