@@ -41,7 +41,7 @@ namespace innovation_hub.Controllers
 
                 ViewBag.ProposalsILiked = _context.AppUserProposalVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
                 
-                ViewBag.ProposalsIManage = _context.Proposals.Include(p => p.Comments).Where(p => p.ManagerId == Int32.Parse(User.FindFirst("id").Value));
+                ViewBag.ProposalsIManage = _context.Proposals.Include(p => p.Comments).Include(p => p.Categories).Where(p => p.ManagerId == Int32.Parse(User.FindFirst("id").Value));
 
                 ViewBag.CommentsILiked = _context.AppUserCommentVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
                 return View();

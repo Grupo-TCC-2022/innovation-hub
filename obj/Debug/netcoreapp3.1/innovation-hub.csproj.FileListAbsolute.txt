@@ -135,11 +135,6 @@ C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Home\
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Create.cshtml.g.cs
-C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Delete.cshtml.g.cs
-C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Details.cshtml.g.cs
-C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Edit.cshtml.g.cs
-C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Teste\Index.cshtml.g.cs
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.RazorTargetAssemblyInfo.cache
@@ -151,3 +146,5 @@ C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\staticwebassets\i
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.dll
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.pdb
 C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\innovation-hub.genruntimeconfig.cache
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Proposal\Delete.cshtml.g.cs
+C:\Users\Wendel\Desktop\innovation-hub\obj\Debug\netcoreapp3.1\Razor\Views\Proposal\Edit.cshtml.g.cs
