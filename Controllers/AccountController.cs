@@ -33,6 +33,8 @@ namespace innovation_hub.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Cadastro(string email, string nome, string sobrenome, string passeword, DateTime dateofBirth, string nickName)
         {
+            // A FAZER: Validações
+            // A FAZER: Checar se apelido já existe
             AppUser User = new AppUser
             {
                 Email = email,
@@ -49,12 +51,15 @@ namespace innovation_hub.Controllers
 
         public async Task<IActionResult> Login(string password, string nickName)
         {
+            // A FAZER: Validações
+            // Buscar usuário pelo apelido no banco -> checar se senha confere
             AppUser user = await _context.AppUsers.FirstOrDefaultAsync(p => p.Nickname == nickName);
             if (user.Passeword != password)
             {
                 return Error();
             }
 
+            // Processo para criar cookie que guarde id, apelido e nome
             List<Claim> direitosAcesso = new List<Claim>{
                 new Claim("id", user.Id.ToString()),
                 new Claim("username", user.Nickname),

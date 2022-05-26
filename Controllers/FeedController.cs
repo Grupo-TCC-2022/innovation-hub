@@ -12,10 +12,12 @@ using Microsoft.Extensions.Logging;
 
 namespace innovation_hub.Controllers
 {
+    // A FAZER: Validações
     public class FeedController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly DataContext _context;
+        // Como o feed trabalha com as propostas, usei o repositorio da proposta aqui
         private readonly IProposalRepository _proposalRepository;
 
         public FeedController(ILogger<HomeController> logger, DataContext context, IProposalRepository proposalRepository)
@@ -118,9 +120,12 @@ namespace innovation_hub.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            // Enviar propostas para popular o feed
             ViewBag.Proposals = _context.Proposals.Include(b => b.Categories).Include(c => c.Comments).ToList();
+            // Popular a viewbag com todas as categorias enum
             InterestArea interestArea = new InterestArea();
             ViewBag.Categories = interestArea.Categories;
+            // Buscar propostas que dei like para marcar o icone de like como já usado
             ViewBag.ProposalsILiked = _context.AppUserProposalVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true).ToList();
             ViewBag.CommentsILiked = _context.AppUserCommentVote.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Voted == true);
             ViewBag.ProposalsIFavorited = _context.AppUserProposalFavorite.Where(p => p.AppUserId == Int32.Parse(User.FindFirst("id").Value) && p.Favorited == true);

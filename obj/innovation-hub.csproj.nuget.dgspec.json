@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj": {}
+    "c:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj": {
+    "c:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj",
+        "projectUniqueName": "c:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj",
         "projectName": "innovation-hub",
-        "projectPath": "C:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj",
+        "projectPath": "c:\\Users\\Wendel\\Desktop\\innovation-hub\\innovation-hub.csproj",
         "packagesPath": "C:\\Users\\Wendel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wendel\\Desktop\\innovation-hub\\obj\\",
+        "outputPath": "c:\\Users\\Wendel\\Desktop\\innovation-hub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Wendel\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -81,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.419\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
