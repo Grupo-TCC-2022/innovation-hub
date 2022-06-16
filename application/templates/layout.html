@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- JQuery -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <!-- Meu javascript -->
+  <script src="/static/scripts.js"></script>
+  <!-- Meu css -->
+  <link rel="stylesheet" href="/static/styles.css">
+  <!-- Codificação -->
+  <meta charset="UTF-8" />
+  <!-- Responsividade -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Título -->
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body class="background">
+  <!-- Navbar do Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary lato-regular">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for("index") }}">
+        <!-- Logo -->
+        <img src="../static/images/logo.png" alt="logo"
+          class="d-inline-block align-text-top" style="height: 30px; width: 150px;"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fs-5" aria-current="page" href="{{ url_for("index") }}">Início</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link font-large fs-5" href="{{ url_for("feed") }}">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-large fs-5" href="{{ url_for("arquivadas") }}">Propostas Arquivadas</a>
+          </li>
+          {% endif %}
+        </ul>
+        <div class="ml-auto">
+          {% if not user.is_authenticated %}
+          <button class="btn btn-warning mr-3" type="button" data-bs-toggle="modal" data-bs-target="#registro_modal">
+            Cadastrar
+          </button>
+          <button class="btn btn-info" type="button" data-bs-toggle="modal"
+            data-bs-target="#login_modal">Entrar</button>
+          {% else %}
+          <ul class="lista-das-notificacoes" style="list-style-type: none; display: inline-block; margin-right: 10px;">
+            <!-- Peguei daqui: https://codepen.io/gosnippets/pen/qBNGLXp -->
+            <li class="dropdown notification-ui show">
+              <a class="nav-link dropdown-toggle notification-ui_icon" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% if user.notificacoes_pedir_para_participar | length > 0 %}
+                <i class="bi bi-bell-fill"></i>
+                <span class="unread-notification"></span>
+                {% else %}
+                <i class="bi bi-bell"></i>
+                {% endif %}
+              </a>
+              <div class="dropdown-menu notification-ui_dd hide" aria-labelledby="navbarDropdown">
+                <div class="notification-ui_dd-header">
+                    <h3 class="text-center">Notificações</h3>
+                </div>
+                <div class="notification-ui_dd-content">
+                  {% for notificacao in user.notificacoes_pedir_para_participar %}
+                  <div class="notification-list notification-list--unread">
+                        <div class="notification-list_img">
+                            <img src="{{ notificacao.quem_pediu_para_entrar_foto }}" alt="user">
+                        </div>
+                        <div class="notification-list_detail mt-2">
+                            <p style="text-align: start;"><b>{{ notificacao.quem_pediu_para_entrar }}</b> pediu para entrar em <p></p><p><b>{{ notificacao.titulo_da_proposta }}</b></p>
+                            <p>
+                              {% if notificacao.mes_criacao < 10 %}
+                              <small>{{ notificacao.dia_criacao }}/0{{ notificacao.mes_criacao }}/{{
+                                notificacao.ano_criacao }}</small>
+                              {% else %}
+                              <small>{{ notificacao.dia_criacao }}/{{ notificacao.mes_criacao }}/{{
+                                notificacao.ano_criacao }}</small>
+                              {% endif %}
+                            </p>
+                        </div>
+                        <div>
+                          <form class="form_aprovar_participacao" method="post" style="display: inline-block;">
+                            <input class="input_quem_pediu" type="hidden" name="quem_pediu_para_entrar" value="{{ notificacao.quem_pediu_para_entrar }}">
+                            <input class="input_proposta_id" type="hidden" name="proposta_id" value="{{ notificacao.proposta_id }}">
+                            <button type="submit" class="btn btn-primary mr-3">Aprovar</button>
+                          </form>
+                          <form class="form_recusar_participacao" method="post" style="display: inline-block;">
+                            <input class="input_quem_pediu" type="hidden" name="quem_pediu_para_entrar" value="{{ notificacao.quem_pediu_para_entrar }}">
+                            <input class="input_proposta_id" type="hidden" name="proposta_id" value="{{ notificacao.proposta_id }}">
+                            <button type="submit" class="btn btn-danger mr-3">Recusar</button>
+                          </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+              </div>
+            </li>
+          </ul>
+
+          <a href="{{ url_for('configuracoes_usuario') }}" class="btn btn-primary mr-3" type="button">
+            <i class="bi bi-gear"></i>
+            Configurações
+          </a>
+
+          <a href="{{ url_for('logout') }}" class="btn btn-danger mr-3" type="button">
+            Sair
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {% if not user.is_authenticated %}
+  <!-- Modal do Registro -->
+  <div class="modal fade" id="registro_modal" tabindex="-1" aria-labelledby="registro_modal_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title lato-regular tamanho-padrao" id="registro_modal_label">Registrar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{{ url_for("registrar") }}" novalidate enctype="multipart/form-data">
+            {{ formDeRegistro.csrf_token }}
+            <div class="mb-2">
+              {{ formDeRegistro.email.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.email(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.email.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.nome.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.nome(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.nome.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.sobrenome.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.sobrenome(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.sobrenome.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.foto_perfil.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.foto_perfil(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.foto_perfil.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.nascimento.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.nascimento(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.nascimento.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.apelido.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.apelido(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.apelido.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.senha.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.senha(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.senha.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeRegistro.confirmar_senha.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeRegistro.confirmar_senha(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeRegistro.confirmar_senha.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-info lato-regular">Cadastrar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary lato-regular" data-bs-dismiss="modal">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal do Login -->
+  <div class="modal fade" id="login_modal" tabindex="-1" aria-labelledby="login_modal_label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title lato-regular tamanho-padrao" id="login_modal_label">Entrar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="{{ url_for("login") }}" novalidate>
+            {{ formDeLogin.csrf_token }}
+            <div class="mb-2">
+              {{ formDeLogin.apelido.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeLogin.apelido(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeLogin.apelido.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2">
+              {{ formDeLogin.senha.label(class_="form-label lato-regular tamanho-padrao") }}
+              {{ formDeLogin.senha(class_="form-control lato-regular tamanho-padrao") }}
+              {% for error in formDeLogin.senha.errors %}
+              <span class="text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="mb-2 form-check" style="width: 50%; margin-right: auto;">
+              <input name="lembrar_de_mim" class="form-check-input" type="checkbox" id="lembrar_de_mim">
+              <label class="form-check-label lato-regular tamanho-padrao" for="lembrar_de_mim">
+                Lembrar de Mim?
+              </label>
+            </div>
+            <button type="submit" class="btn btn-info lato-regular">Entrar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary lato-regular" data-bs-dismiss="modal">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <main class="container-fluid py-5 text-center">
+    {% block main %}{% endblock %}
+  </main>
+</body>
+
+{% if abrirModalDeRegistro %}
+<script type="text/javascript">
+  $(document).ready(function ($) {
+    $('#registro_modal').modal('show');
+  });
+</script>
+{% endif %}
+
+{% if abrirModalDeLogin %}
+<script type="text/javascript">
+  $(document).ready(function ($) {
+    $('#login_modal').modal('show');
+  });
+</script>
+{% endif %}
+
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast toast-padrao align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+          <div class="toast-body lato-regular">
+              Hello, world! This is a toast message.
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+              aria-label="Close"></button>
+      </div>
+  </div>
+  <div class="toast toast-sucesso align-items-center text-bg-primary bg-success border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+          <div class="toast-body lato-regular">
+              Hello, world! This is a toast message.
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+              aria-label="Close"></button>
+      </div>
+  </div>
+  <div class="toast toast-erro align-items-center text-bg-primary bg-danger border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+          <div class="toast-body lato-regular">
+              Hello, world! This is a toast message.
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+              aria-label="Close"></button>
+      </div>
+  </div>
+</div>
+
+
+</html>

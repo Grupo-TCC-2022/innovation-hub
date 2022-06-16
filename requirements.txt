@@ -1,0 +1,11 @@
+Flask
+Flask-Session
+flask_wtf
+flask-login
+Flask-SQLAlchemy
+cloudinary
+flask-marshmallow
+marshmallow-sqlalchemy
+mysqlclient
+Faker
+requests

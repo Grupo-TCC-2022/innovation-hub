@@ -1,0 +1,555 @@
+@font-face {
+    font-family: LatoRegular;
+    src: url(fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url(fonts/Lato-Bold.ttf);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+body,
+html {
+    height: 100% !important;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.lato-regular {
+    font-family: LatoRegular, sans-serif !important;
+}
+
+.lato-bold {
+    font-family: LatoBold, sans-serif !important;
+}
+
+.postar-restricao-idade {
+    width: 20% !important;
+}
+
+.x-remover-membro {
+    color: white !important;
+    background-color: red !important;
+    border-radius: 50% !important;
+    height: 24px !important;
+    width: 24px !important;
+    position: absolute !important;
+    margin-left: -15px !important;
+    margin-top: -10px !important;
+}
+
+.x-remover-membro:hover {
+    cursor: pointer;
+}
+
+.restricao-idade-label,
+.tipo-proposta-label,
+.label-configuracao {
+    width: 100% !important;
+    text-align: start !important;
+}
+
+.postar-descricao,
+.postar-comentario {
+    height: 8em !important;
+}
+
+.postar-titulo {
+    width: 100% !important;
+}
+
+.postar-titulo-label {
+    visibility: hidden !important;
+}
+
+.div-postar-tipo {
+    width: 30% !important;
+}
+
+.div-postar-titulo {
+    width: 70% !important;
+}
+
+.postar-membro-label,
+.postar-titulo-membro {
+    width: 100% !important;
+    text-align: start !important;
+    padding: 0 !important;
+}
+
+.adicionar-membro {
+    width: 400px !important;
+    display: inline-block !important;
+}
+
+.adicionar-membro-btn {
+    margin: 0 0 0 6px !important;
+}
+
+#lista_de_membros,
+#adicionar_membro_span,
+.categorias-proposta,
+.postar_comentario_span {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: start !important;
+    flex-wrap: wrap !important;
+}
+
+.comentar-participar-likear-feed {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: end !important;
+    flex-wrap: wrap !important;
+}
+
+.margem-direita {
+    margin-right: 15px !important;
+}
+
+.categorias-proposta-item {
+    display: inline !important;
+    margin: 3px 4px !important;
+    background-color: hsl(205, 46%, 92%) !important;
+    color: hsl(205, 47%, 42%) !important;
+    padding: 0.2em 0.3em !important;
+    border-radius: 3px !important;
+}
+
+.membros_lista,
+.membros_lista_amarelo,
+.membros_lista_azul,
+.membros_lista_bege {
+    display: inline !important;
+    padding: 2px 10px !important;
+    border-radius: 25px !important;
+    margin: 3px 6px !important;
+    font-size: 1.2rem !important;
+}
+
+.membros_lista_amarelo,
+.membros_lista {
+    background-color: #F2E973 !important;
+}
+
+.membros_lista_azul {
+    background-color: #95e1f0;
+}
+
+.membros_lista_bege {
+    background-color: #FAD5AB !important;
+}
+
+.classe_invisivel {
+    visibility: hidden !important;
+}
+
+.bg-Projeto {
+    background-color: #73d6f2 !important;
+}
+
+.bg-Ideia {
+    background-color: #f2e973 !important;
+}
+
+.bg-Problema {
+    background-color: #f27373 !important;
+}
+
+.card_de_comentario_titulo {
+    text-align: start !important;
+}
+
+#comentarios_da_proposta {
+    width: 100% !important;
+}
+
+.card_de_comentario_subtitulo {
+    text-align: start !important;
+}
+
+.card_de_comentario_text {
+    text-align: justify !important;
+}
+
+.botao-like-proposta,
+.botao-like-comentario,
+.anchor-like-comentario {
+    margin-right: auto !important;
+    font-size: 2rem !important;
+}
+
+.botao-favoritar-proposta {
+    margin-right: auto !important;
+    font-size: 1.2rem !important;
+    padding: 4px 8px !important;
+}
+
+.botao-likear-proposta,
+.botao-likear-comentario {
+    margin-right: auto !important;
+    font-size: 1.5rem !important;
+    padding: 4px 8px;
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.botao-likear-proposta:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.botao-likear-comentario:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.anchor-like-proposta:hover {
+    cursor: pointer !important;
+}
+
+.anchor-like-comentario:hover {
+    cursor: pointer !important;
+}
+
+.div-do-like {
+    display: block !important;
+    text-align: start !important;
+}
+
+.tamanho-padrao {
+    font-size: 1.2rem !important;
+}
+
+button,
+.descricao-do-card {
+    font-size: 1.1rem !important;
+}
+
+.form_likear_comentario {
+    margin-right: auto !important;
+}
+
+/* Peguei daqui: https://codepen.io/gosnippets/pen/qBNGLXp */
+.notification-ui a:after {
+    display: none;
+}
+
+.notification-ui_icon {
+    position: relative;
+    font-size: 1.5rem !important;
+}
+
+.notification-ui_icon .unread-notification {
+    display: inline-block;
+    height: 7px;
+    width: 7px;
+    border-radius: 7px;
+    background-color: #66BB6A;
+    position: absolute;
+    top: 7px;
+    left: 12px;
+}
+
+@media (min-width: 900px) {
+    .notification-ui_icon .unread-notification {
+        left: 20px;
+    }
+}
+
+.notification-ui_dd {
+    padding: 0;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 5px 20px -3px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 5px 20px -3px rgba(0, 0, 0, 0.16);
+    border: 0;
+    max-width: 700px;
+}
+
+@media (min-width: 900px) {
+    .notification-ui_dd {
+        min-width: 400px;
+        position: absolute;
+        left: -192px;
+        top: 70px;
+    }
+}
+
+.notification-ui_dd:after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 7px);
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid transparent;
+}
+
+.notification-ui_dd .notification-ui_dd-header {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+}
+
+.notification-ui_dd .notification-ui_dd-header h3 {
+    margin-bottom: 0;
+}
+
+.notification-ui_dd .notification-ui_dd-content {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.notification-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: block;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin: 0 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-list--unread {
+    position: relative;
+    right: 0;
+    width: 400px;
+    background-color: #fff !important;
+    margin: 0 0px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    padding-right: 25px !important;
+    padding-left: 25px !important;
+    overflow-x: hidden;
+}
+
+.notification-list .notification-list_img img {
+    height: 48px;
+    width: 48px;
+    margin-right: 20px;
+}
+
+.card_de_comentario_titulo img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.comentario-foto {
+    height: 48px;
+    width: 48px;
+    margin-right: 20px;
+}
+
+.notification-list .notification-list_detail p {
+    margin-bottom: 5px;
+    line-height: 1.2;
+    text-align: justify !important;
+    margin-right: 10px !important;
+}
+
+.notification-list_detail {
+    margin-right: 2px !important;
+    padding-right: 2px !important;
+}
+
+.notification-list .notification-list_feature-img img {
+    height: 48px;
+    width: 48px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .item-feed {
+        width: 95% !important;
+    }
+
+    .tipo-titulo {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .postar-titulo-label {
+        height: 0px !important;
+    }
+
+    .div-postar-tipo {
+        width: 100% !important;
+    }
+
+    .div-postar-titulo {
+        width: 100% !important;
+    }
+
+    .postar-titulo {
+        margin-top: -20px !important;
+    }
+
+    .background {
+        background: url(images/background-para-tela-mobile.png) no-repeat center center fixed !important;
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !important;
+        -o-background-size: cover !important;
+        background-size: cover !important;
+        height: 100% !important;
+    }
+
+    .adicionar-membro-btn {
+        margin: 5px 0 0 0 !important;
+    }
+
+    .comentar-participar-likear-feed a {
+        display: block !important;
+        width: 100% !important;
+        margin: 5px 0 0 0 !important;
+    }
+
+    .comentar-participar-likear-feed {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        justify-content: end !important;
+        flex-wrap: wrap !important;
+    }
+
+    .solicitar_participar_butao {
+        margin: 0 0 5px 0px !important;
+    }
+
+    .anchor-like-proposta,
+    .anchor-like-comentario,
+    botao-favoritar-proposta {
+        text-align: left !important;
+    }
+
+    .lista-das-notificacoes {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .botao-favoritar-proposta {
+        padding: 4px 8px !important;
+    }
+
+    .notification-list--unread {
+        position: relative;
+        right: 0;
+        width: 0;
+        width: fit-content !important;
+        margin: 0 0px !important;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+
+    .lista-das-notificacoes {
+        width: 100% !important;
+    }
+
+    .notification-list {
+        margin: 0 10px !important;
+    }
+
+    .notification-list .notification-list_img img {
+        display: none !important;
+    }
+
+    .notification-list_detail {
+        width: 220px !important;
+    }
+
+    .div-ordenar-filtrar, .div-ordenar-comentario {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .select-ordenar {
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* Medium devices (landscape tablets, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .item-feed {
+        width: 90% !important;
+    }
+
+    .background {
+        background: url(images/background-para-tela-grande.png) no-repeat center center fixed;
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !important;
+        -o-background-size: cover !important;
+        background-size: cover !important;
+        height: 100% !important;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .item-feed {
+        width: 85% !important;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .item-feed {
+        width: 80% !important;
+    }
+}
+
+.select-ordenar {
+    width: 200px;
+    margin-left: auto;
+    border-width: 3px !important;
+    border-width: 3px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.select-ordenar:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.div-ordenar-filtrar, .div-ordenar-comentario {
+    display: flex;
+}
