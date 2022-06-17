@@ -162,13 +162,6 @@
               {% endfor %}
             </div>
             <div class="mb-2">
-              {{ formDeRegistro.foto_perfil.label(class_="form-label lato-regular tamanho-padrao") }}
-              {{ formDeRegistro.foto_perfil(class_="form-control lato-regular tamanho-padrao") }}
-              {% for error in formDeRegistro.foto_perfil.errors %}
-              <span class="text-danger">{{ error }}</span>
-              {% endfor %}
-            </div>
-            <div class="mb-2">
               {{ formDeRegistro.nascimento.label(class_="form-label lato-regular tamanho-padrao") }}
               {{ formDeRegistro.nascimento(class_="form-control lato-regular tamanho-padrao") }}
               {% for error in formDeRegistro.nascimento.errors %}

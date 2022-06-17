@@ -14,13 +14,6 @@
                 {% endfor %}
             </div>
             <div class="mb-2">
-                {{ formDeConfiguracao.foto_perfil.label(class_="form-label lato-regular tamanho-padrao label-configuracao") }}
-                {{ formDeConfiguracao.foto_perfil(class_="form-control lato-regular tamanho-padrao") }}
-                {% for error in formDeConfiguracao.foto_perfil.errors %}
-                <span class="text-danger">{{ error }}</span>
-                {% endfor %}
-            </div>
-            <div class="mb-2">
                 {{ formDeConfiguracao.senha.label(class_="form-label lato-regular tamanho-padrao label-configuracao") }}
                 {{ formDeConfiguracao.senha(class_="form-control lato-regular tamanho-padrao label-configuracao") }}
                 {% for error in formDeConfiguracao.senha.errors %}
